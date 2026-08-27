@@ -1,165 +1,1580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#f7dce5">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#f7dce5">
 
 <title>A Little Surprise 💗</title>
 
 <style>
 
+/* =========================
+   BASIC RESET
+========================= */
+
 *{
     box-sizing:border-box;
 }
 
-:root{
-    --pink:#c65378;
-    --deep:#742c49;
-    --rose:#9d3e61;
-    --soft:#f9e6ec;
-    --paper:rgba(255,255,255,.92);
-    --ink:#5a2638;
-    --shadow:0 25px 80px rgba(105,42,64,.20);
-}
-
-html,body{
+html,
+body{
     margin:0;
+    padding:0;
+    width:100%;
     min-height:100%;
-    font-family:"Trebuchet MS",sans-serif;
-    color:var(--ink);
-    background:#f7dce5;
 }
 
 body{
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    color:#5a2638;
+
+    background:#f7dce5;
+
     overflow-x:hidden;
 }
 
-/* BACKGROUND */
 
-body:before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-3;
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+
+    --pink:#c65378;
+
+    --dark-pink:#742c49;
+
+    --rose:#9d3e61;
+
+    --light:#f9e6ec;
+
+    --paper:#ffffff;
+
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body{
 
     background:
+
         radial-gradient(
             circle at 15% 15%,
-            rgba(255,255,255,.9) 0 3px,
+            rgba(255,255,255,.8)
+            0 4px,
+            transparent 5px
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,255,255,.7)
+            0 3px,
             transparent 4px
         ),
-        radial-gradient(
-            circle at 82% 18%,
-            rgba(255,255,255,.65) 0 3px,
-            transparent 4px
-        ),
-        radial-gradient(
-            circle at 28% 78%,
-            rgba(255,255,255,.6) 0 2px,
-            transparent 3px
-        ),
-        radial-gradient(
-            circle at 75% 70%,
-            rgba(255,255,255,.8) 0 2px,
-            transparent 3px
-        ),
+
         linear-gradient(
             135deg,
             #f9e6ec,
             #f3cbd9
         );
-}
-
-body:after{
-    content:"";
-    position:fixed;
-    inset:-20%;
-    z-index:-2;
-    pointer-events:none;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.25),
-            transparent 55%
-        );
-
-    animation:breath 8s ease-in-out infinite;
-}
-
-@keyframes breath{
-
-    50%{
-        transform:scale(1.08);
-        opacity:.7;
-    }
 
 }
 
 
-/* PAGE */
+/* =========================
+   PAGE SYSTEM
+========================= */
 
 .page{
-    min-height:100svh;
 
-    padding:34px 18px 45px;
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    padding:25px;
 
     display:none;
 
     align-items:center;
+
     justify-content:center;
 
-    position:relative;
+    opacity:0;
+
+    visibility:hidden;
+
+    overflow-y:auto;
+
 }
+
+
+/* ACTIVE PAGE */
 
 .page.active{
-    display:flex;
+
+    display:flex !important;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
 
     animation:
-        pageIn .7s cubic-bezier(.2,.8,.2,1);
+        pageIn
+        .6s
+        ease
+        forwards;
+
 }
+
 
 @keyframes pageIn{
 
     from{
+
         opacity:0;
+
         transform:
-            translateY(25px)
-            scale(.97);
+            scale(.96)
+            translateY(15px);
+
     }
 
     to{
+
         opacity:1;
-        transform:none;
+
+        transform:
+            scale(1)
+            translateY(0);
+
     }
 
 }
 
 
-/* PAPER */
+/* =========================
+   PAPER CARD
+========================= */
 
 .paper{
 
-    width:min(94vw,560px);
+    position:relative;
 
-    min-height:min(76svh,680px);
+    width:min(
+        94vw,
+        560px
+    );
 
-    padding:42px 26px 34px;
+    min-height:
+        min(
+            78vh,
+            680px
+        );
 
-    border:
-        1px solid
-        rgba(255,255,255,.8);
+    padding:
+        55px
+        28px
+        35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
 
     border-radius:
-        32px
-        24px
-        36px
+        30px
+        22px
+        34px
         20px;
 
     background:
-      
-<!-- PAGE 4 -->
+
+        linear-gradient(
+            rgba(255,255,255,.94),
+            rgba(255,255,255,.94)
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 31px,
+            #ead7de 32px
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 31px,
+            #ead7de 32px
+        );
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(105,42,64,.22);
+
+    overflow:hidden;
+
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* =========================
+   TAPE
+========================= */
+
+.tape{
+
+    position:absolute;
+
+    top:15px;
+
+    left:50%;
+
+    width:110px;
+
+    height:30px;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    background:
+        rgba(242,184,201,.75);
+
+    border-radius:5px;
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1,
+h2{
+
+    font-family:
+        Georgia,
+        serif;
+
+    color:var(--dark-pink);
+
+}
+
+
+h1{
+
+    font-size:
+        clamp(
+            40px,
+            10vw,
+            68px
+        );
+
+    line-height:1;
+
+    margin:
+        20px 0
+        15px;
+
+}
+
+
+h2{
+
+    font-size:
+        clamp(
+            34px,
+            8vw,
+            55px
+        );
+
+    line-height:1;
+
+    margin:
+        15px 0;
+
+}
+
+
+p{
+
+    font-size:17px;
+
+    line-height:1.6;
+
+    margin:
+        8px 0
+        25px;
+
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.eyebrow{
+
+    display:inline-block;
+
+    padding:
+        8px 15px;
+
+    border:
+        2px dashed
+        var(--pink);
+
+    border-radius:12px;
+
+    color:var(--rose);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    transform:
+        rotate(-2deg);
+
+}
+
+
+/* =========================
+   EMOJI
+========================= */
+
+.big-emoji{
+
+    font-size:55px;
+
+    animation:
+        float
+        2.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes float{
+
+    50%{
+
+        transform:
+            translateY(-8px)
+            rotate(3deg);
+
+    }
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+
+button{
+
+    border:none;
+
+    padding:
+        14px
+        25px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d15a80,
+            #b9446c
+        );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(150,55,88,.25);
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+button:hover{
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+button:active{
+
+    transform:
+        scale(.94);
+
+}
+
+
+button.secondary{
+
+    background:#8f6a76;
+
+}
+
+
+.small{
+
+    font-size:13px;
+
+    opacity:.7;
+
+    margin-top:18px;
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+
+.floating span{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    font-size:23px;
+
+    opacity:.45;
+
+    animation:
+        rise
+        8s
+        linear
+        infinite;
+
+}
+
+
+.floating span:nth-child(1){
+
+    left:10%;
+
+}
+
+
+.floating span:nth-child(2){
+
+    left:30%;
+
+    animation-delay:2s;
+
+}
+
+
+.floating span:nth-child(3){
+
+    left:60%;
+
+    animation-delay:1s;
+
+}
+
+
+.floating span:nth-child(4){
+
+    left:85%;
+
+    animation-delay:3s;
+
+}
+
+
+@keyframes rise{
+
+    to{
+
+        transform:
+            translateY(-110vh)
+            rotate(30deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================
+   PAGE DOTS
+========================= */
+
+.dots{
+
+    position:fixed;
+
+    top:14px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    display:flex;
+
+    gap:6px;
+
+    z-index:100;
+
+}
+
+
+.dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.8);
+
+}
+
+
+.dot.active{
+
+    width:22px;
+
+    border-radius:10px;
+
+    background:#c65378;
+
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope{
+
+    position:relative;
+
+    width:
+        min(
+            82vw,
+            340px
+        );
+
+    height:210px;
+
+    margin:
+        10px 0
+        30px;
+
+    cursor:pointer;
+
+}
+
+
+.env-back{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#f1b2c7;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 20px 40px
+        rgba(100,40,65,.2);
+
+}
+
+
+.env-flap{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:60%;
+
+    background:#e9a5bd;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin:top;
+
+    transition:
+        transform .7s ease;
+
+    z-index:3;
+
+}
+
+
+.envelope.open
+.env-flap{
+
+    transform:
+        rotateX(180deg);
+
+}
+
+
+.letter{
+
+    position:absolute;
+
+    top:15%;
+
+    left:8%;
+
+    width:84%;
+
+    height:75%;
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:25px 10px;
+
+    z-index:2;
+
+    box-shadow:
+        0 8px 20px
+        rgba(90,38,56,.15);
+
+    transition:
+        transform .7s ease;
+
+}
+
+
+.envelope.open
+.letter{
+
+    transform:
+        translateY(-70px);
+
+}
+
+
+.seal{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:50px;
+
+    height:50px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#c65378;
+
+    color:white;
+
+    z-index:5;
+
+    transition:.3s;
+
+}
+
+
+.envelope.open
+.seal{
+
+    opacity:0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.5);
+
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.cake{
+
+    font-size:75px;
+
+}
+
+
+.birthday-title{
+
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(
+            43px,
+            12vw,
+            75px
+        );
+
+    line-height:.9;
+
+    color:var(--dark-pink);
+
+    margin:15px 0;
+
+}
+
+
+.name{
+
+    font-family:
+        "Brush Script MT",
+        cursive;
+
+    font-size:
+        clamp(
+            45px,
+            12vw,
+            75px
+        );
+
+    color:#d04d79;
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+
+.confetti i{
+
+    position:absolute;
+
+    width:8px;
+
+    height:15px;
+
+    animation:
+        confettiFall
+        2.5s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:
+            translateY(-30px)
+            rotate(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+            translateY(100vh)
+            rotate(700deg);
+
+        opacity:0;
+
+    }
+
+}
+    /* =========================
+   GALLERY
+========================= */
+
+.gallery-wrap{
+
+    width:100%;
+
+}
+
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:13px;
+
+    max-height:42vh;
+
+    overflow-y:auto;
+
+    padding:8px;
+
+}
+
+
+.photo{
+
+    position:relative;
+
+    background:white;
+
+    padding:
+        7px
+        7px
+        28px;
+
+    box-shadow:
+        0 8px 18px
+        rgba(90,38,56,.16);
+
+    cursor:pointer;
+
+    transform:
+        rotate(-2deg);
+
+    transition:.25s;
+
+}
+
+
+.photo:nth-child(2n){
+
+    transform:
+        rotate(2deg);
+
+}
+
+
+.photo:nth-child(3n){
+
+    transform:
+        rotate(-1deg);
+
+}
+
+
+.photo:hover{
+
+    transform:
+        translateY(-5px)
+        rotate(0);
+
+}
+
+
+.photo img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+.photo span{
+
+    position:absolute;
+
+    bottom:6px;
+
+    left:0;
+
+    right:0;
+
+    font-family:
+        "Brush Script MT",
+        cursive;
+
+    color:#74405a;
+
+    font-size:15px;
+
+}
+
+
+.gallery-note{
+
+    font-size:12px;
+
+    opacity:.6;
+
+    margin-top:8px;
+
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-card{
+
+    width:100%;
+
+    padding:9px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(90,38,56,.15);
+
+}
+
+
+.video-card video{
+
+    width:100%;
+
+    max-height:45vh;
+
+    display:block;
+
+    background:#24151c;
+
+    border-radius:12px;
+
+}
+
+
+.video-label{
+
+    font-family:Georgia,serif;
+
+    font-size:18px;
+
+    color:var(--dark-pink);
+
+    margin-top:12px;
+
+}
+
+
+.video-sub{
+
+    font-size:12px;
+
+    opacity:.6;
+
+    margin:4px 0;
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-card{
+
+    width:100%;
+
+    max-height:45vh;
+
+    overflow-y:auto;
+
+    text-align:left;
+
+    padding:22px;
+
+    background:#fffaf9;
+
+    border-radius:15px;
+
+    box-shadow:
+        inset 0 0 0 1px
+        #efdde2;
+
+}
+
+
+.letter-card p{
+
+    font-family:Georgia,serif;
+
+    font-size:16px;
+
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:200;
+
+    background:
+        rgba(40,15,25,.88);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+}
+
+
+.lightbox.show{
+
+    display:flex;
+
+}
+
+
+.lightbox img{
+
+    max-width:95vw;
+
+    max-height:85vh;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+}
+
+
+.close{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:45px;
+
+    height:45px;
+
+    padding:0;
+
+    background:white;
+
+    color:#742c49;
+
+    font-size:25px;
+
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music{
+
+    position:fixed;
+
+    right:15px;
+
+    bottom:15px;
+
+    width:50px;
+
+    height:50px;
+
+    padding:0;
+
+    display:none;
+
+    z-index:150;
+
+}
+
+
+.music.on{
+
+    display:block;
+
+    animation:
+        musicSpin
+        4s
+        linear
+        infinite;
+
+}
+
+
+@keyframes musicSpin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================
+   SMALL SCREENS
+========================= */
+
+@media(max-height:680px){
+
+    .paper{
+
+        min-height:90vh;
+
+        padding:
+            45px
+            20px
+            25px;
+
+    }
+
+
+    h1{
+
+        font-size:40px;
+
+    }
+
+
+    h2{
+
+        font-size:35px;
+
+    }
+
+
+    .gallery{
+
+        max-height:37vh;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- FLOATING HEARTS -->
+
+<div class="floating">
+
+    <span>♥</span>
+
+    <span>♡</span>
+
+    <span>♥</span>
+
+    <span>♡</span>
+
+</div>
+
+
+<!-- PAGE INDICATORS -->
+
+<div
+    class="dots"
+    id="dots"
+></div>
+
+
+<!-- MUSIC -->
+
+<button
+    class="music"
+    id="musicBtn"
+    onclick="toggleMusic()"
+>
+    ♫
+</button>
+
+
+<audio
+    id="music"
+    loop
+>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section
+    class="page active"
+    id="page1"
+>
+
+    <div class="paper">
+
+        <div class="tape"></div>
+
+        <div class="content">
+
+            <div class="big-emoji">
+                💌
+            </div>
+
+
+            <div class="eyebrow">
+                A LITTLE SURPRISE
+            </div>
+
+
+            <h1>
+
+                I have something<br>
+                for you...
+
+            </h1>
+
+
+            <p>
+
+                But first,
+                I need to know something. 👀
+
+            </p>
+
+
+            <div class="buttons">
+
+                <button
+                    onclick="yesFirst()"
+                >
+
+                    YES 💗
+
+                </button>
+
+
+                <button
+                    class="secondary"
+                    onclick="noFirst()"
+                >
+
+                    NO 😐
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="noMessage"
+                class="small"
+            ></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<section
+    class="page"
+    id="page2"
+>
+
+    <div class="paper">
+
+        <div class="content">
+
+
+            <div
+                class="envelope"
+                id="envelope"
+                onclick="openEnvelope()"
+            >
+
+                <div class="env-back"></div>
+
+
+                <div class="letter">
+
+                    For the birthday girl... 💗
+
+                    <br><br>
+
+                    <small>
+                        Tap the envelope
+                    </small>
+
+                </div>
+
+
+                <div class="env-flap"></div>
+
+
+                <div class="seal">
+                    ♥
+                </div>
+
+            </div>
+
+
+            <div class="eyebrow">
+                YOU FOUND IT
+            </div>
+
+
+            <h2>
+
+                A little letter<br>
+                before we begin...
+
+            </h2>
+
+
+            <p id="envelopeHint">
+
+                Tap the envelope.
+                I promise it's worth it. ✨
+
+            </p>
+
+
+            <button
+                onclick="showPage(3)"
+            >
+
+                Open the surprise 🎀
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 3
+========================= -->
+
+<section
+    class="page"
+    id="page3"
+>
+
+    <div class="paper">
+
+        <div class="content">
+
+
+            <div
+                class="confetti"
+                id="confetti"
+            ></div>
+
+
+            <div class="cake">
+                🎂
+            </div>
+
+
+            <div class="eyebrow">
+
+                TODAY IS YOUR DAY
+
+            </div>
+
+
+            <div class="birthday-title">
+
+                HAPPY<br>
+                BIRTHDAY
+
+            </div>
+
+
+            <div class="name">
+
+                BBG! 💕
+
+            </div>
+
+
+            <p>
+
+                One whole day dedicated to
+                celebrating<br>
+                the wonderful person you are.
+
+            </p>
+
+
+            <button
+                onclick="showPage(4); startMusic();"
+            >
+
+                Let's look back 📸
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
 <section
     class="page"
     id="page4"
@@ -169,27 +1584,39 @@ body:after{
 
         <div class="content">
 
+
             <div class="big-emoji">
                 📸
             </div>
 
+
             <div class="eyebrow">
+
                 A FEW OF MY FAVOURITES
+
             </div>
 
+
             <h2>
+
                 Our little<br>
                 memories
+
             </h2>
 
+
             <p>
+
                 Every picture has a story.<br>
                 Tap one. 💗
+
             </p>
+
 
             <div class="gallery-wrap">
 
                 <div class="gallery">
+
 
                     <div
                         class="photo"
@@ -258,30 +1685,38 @@ body:after{
 
                     </div>
 
+
                 </div>
+
 
                 <div class="gallery-note">
 
-                    Replace photo1.jpg – photo4.jpg
-                    with your own pictures.
+                    Replace photo1.jpg –
+                    photo4.jpg with your pictures.
 
                 </div>
 
             </div>
 
-            <button onclick="showPage(5)">
+
+            <button
+                onclick="showPage(5)"
+            >
+
                 There's a video too 🎥
+
             </button>
+
 
         </div>
 
     </div>
 
 </section>
+<!-- =========================
+     PAGE 5
+========================= -->
 
-
-
-<!-- PAGE 5 -->
 <section
     class="page"
     id="page5"
@@ -291,28 +1726,31 @@ body:after{
 
         <div class="content">
 
+
             <div class="big-emoji">
                 🎥
             </div>
+
 
             <div class="eyebrow">
                 PRESS PLAY
             </div>
 
+
             <h2>
+
                 I made this<br>
                 for you.
+
             </h2>
 
 
             <div class="video-card">
 
                 <video
-                    id="birthdayVideo"
                     controls
                     playsinline
                     preload="metadata"
-                    poster="video-poster.jpg"
                 >
 
                     <source
@@ -320,18 +1758,24 @@ body:after{
                         type="video/mp4"
                     >
 
-                    Your browser does not support video.
+                    Your browser does not
+                    support video.
 
                 </video>
 
 
                 <div class="video-label">
+
                     A tiny movie of us 💗
+
                 </div>
 
+
                 <p class="video-sub">
-                    Replace birthday.mp4 with
-                    your own video.
+
+                    Replace birthday.mp4
+                    with your own video.
+
                 </p>
 
             </div>
@@ -346,6 +1790,7 @@ body:after{
 
             </button>
 
+
         </div>
 
     </div>
@@ -354,7 +1799,10 @@ body:after{
 
 
 
-<!-- PAGE 6 -->
+<!-- =========================
+     PAGE 6
+========================= -->
+
 <section
     class="page"
     id="page6"
@@ -364,21 +1812,29 @@ body:after{
 
         <div class="content">
 
+
             <div class="big-emoji">
                 💌
             </div>
 
+
             <div class="eyebrow">
+
                 A MESSAGE FOR YOU
+
             </div>
 
+
             <h2>
+
                 Just a few<br>
                 words...
+
             </h2>
 
 
             <div class="letter-card">
+
 
                 <p>
                     Hey birthday girl,
@@ -388,12 +1844,12 @@ body:after{
                 <p>
 
                     I wanted to make something
-                    that wasn't just another birthday
-                    message.
+                    that wasn't just another
+                    birthday message.
 
                     Something you could open,
-                    smile at, and keep as a little
-                    memory.
+                    smile at, and keep as a
+                    little memory.
 
                 </p>
 
@@ -402,9 +1858,9 @@ body:after{
 
                     Thank you for all the laughs,
                     the random moments,
-                    the conversations, and all the
-                    memories that somehow become
-                    my favourite ones.
+                    the conversations, and all
+                    the memories that somehow
+                    become my favourite ones.
 
                 </p>
 
@@ -413,8 +1869,9 @@ body:after{
 
                     I hope this year brings you
                     everything you're wishing for —
-                    happiness, peace, crazy adventures
-                    and plenty of reasons to smile.
+                    happiness, peace, crazy
+                    adventures and plenty of
+                    reasons to smile.
 
                 </p>
 
@@ -423,7 +1880,8 @@ body:after{
 
                     And whenever you look back
                     at these pictures, I hope you
-                    remember just how special you are. ❤️
+                    remember just how special
+                    you are. ❤️
 
                 </p>
 
@@ -435,6 +1893,7 @@ body:after{
                     </b>
 
                 </p>
+
 
             </div>
 
@@ -448,6 +1907,7 @@ body:after{
 
             </button>
 
+
         </div>
 
     </div>
@@ -456,7 +1916,10 @@ body:after{
 
 
 
-<!-- PAGE 7 -->
+<!-- =========================
+     PAGE 7
+========================= -->
+
 <section
     class="page"
     id="page7"
@@ -466,19 +1929,24 @@ body:after{
 
         <div class="content">
 
+
             <div class="big-emoji">
                 🌙
             </div>
 
 
             <div class="eyebrow">
+
                 THE END... MAYBE
+
             </div>
 
 
             <h2>
+
                 And if you<br>
                 ever forget...
+
             </h2>
 
 
@@ -486,7 +1954,7 @@ body:after{
                 style="
                     font-family:Georgia,serif;
                     font-size:21px;
-                    color:var(--deep);
+                    color:#742c49;
                 "
             >
 
@@ -501,18 +1969,25 @@ body:after{
 
 
             <div class="name">
+
                 Always. ♡
+
             </div>
 
 
-            <div class="stamp">
+            <div class="eyebrow">
+
                 MADE JUST FOR YOU ✨
+
             </div>
 
 
             <p class="small">
+
                 Now go enjoy your birthday. 🎂💗
+
             </p>
+
 
         </div>
 
@@ -522,7 +1997,9 @@ body:after{
 
 
 
-<!-- PHOTO LIGHTBOX -->
+<!-- =========================
+     LIGHTBOX
+========================= -->
 
 <div
     class="lightbox"
@@ -530,11 +2007,14 @@ body:after{
     onclick="closePhoto()"
 >
 
+
     <button
         class="close"
         onclick="closePhoto()"
     >
+
         ×
+
     </button>
 
 
@@ -544,8 +2024,21 @@ body:after{
         alt="Memory"
     >
 
+
 </div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
+
+
+/* =========================
+   VARIABLES
+========================= */
 
 let currentPage = 1;
 
@@ -553,12 +2046,15 @@ const totalPages = 7;
 
 
 
-/* PAGE DOTS */
+/* =========================
+   PAGE DOTS
+========================= */
 
 function updateDots(){
 
     const dots =
         document.getElementById("dots");
+
 
     dots.innerHTML = "";
 
@@ -569,10 +2065,11 @@ function updateDots(){
         i++
     ){
 
-        const d =
+        const dot =
             document.createElement("div");
 
-        d.className =
+
+        dot.className =
             "dot" +
             (
                 i === currentPage
@@ -580,51 +2077,50 @@ function updateDots(){
                 : ""
             );
 
-        dots.appendChild(d);
+
+        dots.appendChild(dot);
 
     }
 
 }
 
+
 updateDots();
 
 
 
-/* CHANGE PAGE */
+/* =========================
+   SHOW PAGE
+========================= */
 
 function showPage(number){
 
-    document
-        .querySelectorAll(".page")
-        .forEach(page => {
-
-            page.classList.remove("active");
-
-        });
+    const pages =
+        document.querySelectorAll(".page");
 
 
-    const next =
+    pages.forEach(function(page){
+
+        page.classList.remove("active");
+
+    });
+
+
+    const selected =
         document.getElementById(
             "page" + number
         );
 
 
-    if(next){
+    if(selected){
 
-        next.classList.add("active");
+        selected.classList.add("active");
+
+        currentPage = number;
+
+        updateDots();
 
     }
-
-
-    currentPage = number;
-
-    updateDots();
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
 
 
     if(number === 3){
@@ -637,7 +2133,21 @@ function showPage(number){
 
 
 
-/* NO BUTTON */
+/* =========================
+   YES
+========================= */
+
+function yesFirst(){
+
+    showPage(2);
+
+}
+
+
+
+/* =========================
+   NO
+========================= */
 
 function noFirst(){
 
@@ -647,14 +2157,14 @@ function noFirst(){
         );
 
 
+    message.innerHTML =
+        "HOW DARE YOU 😭💀<br>Try again.";
+
+
     const paper =
         document.querySelector(
             "#page1 .paper"
         );
-
-
-    message.textContent =
-        "HOW DARE YOU 😭💀 Try again.";
 
 
     paper.animate(
@@ -666,19 +2176,19 @@ function noFirst(){
             },
 
             {
-                transform:"translateX(-9px)"
+                transform:"translateX(-10px)"
             },
 
             {
-                transform:"translateX(9px)"
+                transform:"translateX(10px)"
             },
 
             {
-                transform:"translateX(-6px)"
+                transform:"translateX(-7px)"
             },
 
             {
-                transform:"translateX(6px)"
+                transform:"translateX(7px)"
             },
 
             {
@@ -688,7 +2198,9 @@ function noFirst(){
         ],
 
         {
+
             duration:450
+
         }
 
     );
@@ -697,17 +2209,9 @@ function noFirst(){
 
 
 
-/* YES BUTTON */
-
-function yesFirst(){
-
-    showPage(2);
-
-}
-
-
-
-/* ENVELOPE */
+/* =========================
+   ENVELOPE
+========================= */
 
 function openEnvelope(){
 
@@ -722,7 +2226,7 @@ function openEnvelope(){
 
     document.getElementById(
         "envelopeHint"
-    ).textContent =
+    ).innerHTML =
         "Okay... now you're ready. 💗";
 
 
@@ -732,7 +2236,9 @@ function openEnvelope(){
 
 
 
-/* MUSIC */
+/* =========================
+   MUSIC
+========================= */
 
 function startMusic(){
 
@@ -742,9 +2248,9 @@ function startMusic(){
         );
 
 
-    music
-        .play()
-        .then(() => {
+    music.play()
+
+        .then(function(){
 
             document
                 .getElementById(
@@ -753,12 +2259,12 @@ function startMusic(){
                 .classList.add("on");
 
         })
-        .catch(() => {
 
-            /*
-             Mobile browsers may block
-             autoplay until the user taps.
-            */
+        .catch(function(){
+
+            console.log(
+                "Music requires user interaction."
+            );
 
         });
 
@@ -774,7 +2280,7 @@ function toggleMusic(){
         );
 
 
-    const btn =
+    const button =
         document.getElementById(
             "musicBtn"
         );
@@ -784,7 +2290,7 @@ function toggleMusic(){
 
         music.play();
 
-        btn.classList.add("on");
+        button.classList.add("on");
 
     }
 
@@ -792,7 +2298,7 @@ function toggleMusic(){
 
         music.pause();
 
-        btn.classList.remove("on");
+        button.classList.remove("on");
 
     }
 
@@ -800,7 +2306,9 @@ function toggleMusic(){
 
 
 
-/* CONFETTI */
+/* =========================
+   CONFETTI
+========================= */
 
 function launchConfetti(){
 
@@ -813,9 +2321,20 @@ function launchConfetti(){
     box.innerHTML = "";
 
 
+    const colors = [
+
+        "#d85c83",
+        "#efadc3",
+        "#f4c85b",
+        "#9d3e61",
+        "#ffffff"
+
+    ];
+
+
     for(
         let i = 0;
-        i < 45;
+        i < 50;
         i++
     ){
 
@@ -828,30 +2347,7 @@ function launchConfetti(){
 
 
         piece.style.top =
-            (-10 - Math.random() * 20)
-            + "px";
-
-
-        piece.style.transform =
-            `rotate(
-                ${Math.random() * 360}deg
-            )`;
-
-
-        piece.style.animationDelay =
-            (Math.random() * .6)
-            + "s";
-
-
-        const colors = [
-
-            "#d85c83",
-            "#efadc3",
-            "#f4c85b",
-            "#9d3e61",
-            "#ffffff"
-
-        ];
+            "-20px";
 
 
         piece.style.background =
@@ -863,6 +2359,10 @@ function launchConfetti(){
             ];
 
 
+        piece.style.animationDelay =
+            Math.random() * .7 + "s";
+
+
         box.appendChild(piece);
 
     }
@@ -871,42 +2371,62 @@ function launchConfetti(){
 
 
 
-/* OPEN PHOTO */
+/* =========================
+   OPEN PHOTO
+========================= */
 
 function openPhoto(src){
 
-    document.getElementById(
-        "lightboxImg"
-    ).src = src;
+    const lightbox =
+        document.getElementById(
+            "lightbox"
+        );
 
 
-    document.getElementById(
-        "lightbox"
-    ).classList.add("show");
+    const image =
+        document.getElementById(
+            "lightboxImg"
+        );
+
+
+    image.src = src;
+
+
+    lightbox.classList.add(
+        "show"
+    );
 
 }
 
 
 
-/* CLOSE PHOTO */
+/* =========================
+   CLOSE PHOTO
+========================= */
 
 function closePhoto(){
 
-    document.getElementById(
-        "lightbox"
-    ).classList.remove("show");
+    document
+        .getElementById(
+            "lightbox"
+        )
+        .classList.remove(
+            "show"
+        );
 
 }
 
 
 
-/* ESCAPE KEY */
+/* =========================
+   ESCAPE KEY
+========================= */
 
 document.addEventListener(
     "keydown",
-    function(e){
+    function(event){
 
-        if(e.key === "Escape"){
+        if(event.key === "Escape"){
 
             closePhoto();
 
@@ -915,10 +2435,16 @@ document.addEventListener(
     }
 );
 
+
+/* =========================
+   INITIALIZE
+========================= */
+
+showPage(1);
+
+
 </script>
 
 
 </body>
-
 </html>
-  
