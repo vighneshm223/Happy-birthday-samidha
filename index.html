@@ -66,7 +66,7 @@ body{
 
 
 /* =========================
-   BACKGROUND
+   NORMAL BACKGROUND
 ========================= */
 
 body{
@@ -484,7 +484,6 @@ button:active{
 button.secondary{
 
     background:#8f6a76;
-
 
 }
 
@@ -1059,9 +1058,9 @@ button.secondary{
 
     object-fit:cover;
 
-    z-index:-5;
+    z-index:-10;
 
-    opacity:.22;
+    opacity:1;
 
     pointer-events:none;
 
@@ -1069,6 +1068,10 @@ button.secondary{
 
 }
 
+
+/* =========================
+   VIDEO DARK/PINK OVERLAY
+========================= */
 
 .background-overlay{
 
@@ -1078,15 +1081,26 @@ button.secondary{
 
     background:
         linear-gradient(
-            rgba(247,220,229,.78),
-            rgba(247,220,229,.78)
+            rgba(247,220,229,.70),
+            rgba(247,220,229,.70)
         );
 
-    z-index:-4;
+    z-index:-9;
 
     display:none;
 
     pointer-events:none;
+
+}
+
+
+/* =========================
+   VIDEO ACTIVE
+========================= */
+
+body.video-playing{
+
+    background:#f7dce5;
 
 }
 
@@ -1103,6 +1117,31 @@ body.video-playing
 .background-overlay{
 
     display:block;
+
+}
+
+
+/*
+   When video is playing,
+   floating hearts stay above it.
+*/
+
+body.video-playing
+.floating{
+
+    z-index:3;
+
+}
+
+
+/*
+   Final page stays above video.
+*/
+
+body.video-playing
+.page{
+
+    z-index:10;
 
 }
 
@@ -1202,24 +1241,31 @@ body.video-playing
 
 <!-- =========================
      BACKGROUND VIDEO
-     
-     Put birthday.mp4 in the
-     SAME GitHub folder as this
-     index.html
+
+     IMPORTANT:
+     Keep birthday.mp4 in the
+     same folder as index.html.
+
+     The video already contains
+     your music.
+
+     NO MUTED ATTRIBUTE HERE.
 ========================= -->
 
 <video
     id="backgroundVideo"
     class="background-video"
     loop
-    muted
     playsinline
+    preload="auto"
 >
 
     <source
         src="birthday.mp4"
         type="video/mp4"
     >
+
+    Your browser does not support video.
 
 </video>
 
@@ -1588,7 +1634,7 @@ body.video-playing
 
 
             <button
-                onclick="showPage(5); startBackgroundVideo();"
+                onclick="showPage(5)"
             >
 
                 One last last thing 💌👀
@@ -1605,7 +1651,9 @@ body.video-playing
 
 <!-- =========================
      PAGE 5
-     BACKGROUND VIDEO STARTS
+     LETTER
+
+     VIDEO DOES NOT START HERE.
 ========================= -->
 
 <section
@@ -1704,7 +1752,7 @@ body.video-playing
 
 
             <button
-                onclick="showPage(6); startBackgroundVideo();"
+                onclick="showPage(6)"
                 style="margin-top:18px"
             >
 
@@ -1722,6 +1770,9 @@ body.video-playing
 
 <!-- =========================
      PAGE 6
+     FINAL PAGE
+
+     VIDEO STARTS ONLY HERE.
 ========================= -->
 
 <section
@@ -1891,17 +1942,6 @@ createFloatingHearts();
    PAGE SYSTEM
 ========================= */
 
-/*
-   The website has 6 pages:
-
-   1 = Welcome
-   2 = Envelope
-   3 = Birthday
-   4 = Gallery
-   5 = Letter
-   6 = Ending
-*/
-
 let currentPage = 1;
 
 const totalPages = 6;
@@ -1914,7 +1954,9 @@ const totalPages = 6;
 function updateDots(){
 
     const dots =
-        document.getElementById("dots");
+        document.getElementById(
+            "dots"
+        );
 
 
     dots.innerHTML = "";
@@ -1983,6 +2025,10 @@ function showPage(number){
     }
 
 
+    /* =========================
+       BIRTHDAY CONFETTI
+    ========================= */
+
     if(number === 3){
 
         launchConfetti();
@@ -1990,14 +2036,19 @@ function showPage(number){
     }
 
 
-    /*
-       Start the background video
-       from page 5 onward.
-    */
+    /* =========================
+       VIDEO ONLY ON FINAL PAGE
+    ========================= */
 
-    if(number >= 5){
+    if(number === 6){
 
-        startBackgroundVideo();
+        startFinalVideo();
+
+    }
+
+    else{
+
+        stopFinalVideo();
 
     }
 
@@ -2102,10 +2153,10 @@ function openEnvelope(){
 
 
 /* =========================
-   BACKGROUND VIDEO
+   START FINAL VIDEO
 ========================= */
 
-function startBackgroundVideo(){
+function startFinalVideo(){
 
     const video =
         document.getElementById(
@@ -2113,27 +2164,87 @@ function startBackgroundVideo(){
         );
 
 
+    /*
+       Make video visible.
+    */
+
     document.body.classList.add(
         "video-playing"
     );
 
 
     /*
-       The video is muted because browsers
-       usually block autoplay with sound.
+       IMPORTANT:
+       Do NOT mute the video.
 
-       Your birthday.mp4 can contain music,
-       but the browser may still require a
-       user interaction before allowing sound.
+       The music inside birthday.mp4
+       will be used as the audio.
     */
 
-    video.play().catch(function(){
+    video.muted = false;
 
-        console.log(
-            "Video playback requires user interaction."
+    video.volume = 1;
+
+
+    /*
+       Start from the beginning
+       every time the final page
+       is opened.
+    */
+
+    video.currentTime = 0;
+
+
+    const playVideo =
+        video.play();
+
+
+    if(playVideo !== undefined){
+
+        playVideo.catch(function(error){
+
+            console.log(
+                "Video audio autoplay was blocked:",
+                error
+            );
+
+        });
+
+    }
+
+}
+
+
+/* =========================
+   STOP FINAL VIDEO
+========================= */
+
+function stopFinalVideo(){
+
+    const video =
+        document.getElementById(
+            "backgroundVideo"
         );
 
-    });
+
+    /*
+       Hide video everywhere except
+       final page.
+    */
+
+    document.body.classList.remove(
+        "video-playing"
+    );
+
+
+    /*
+       Stop the video when leaving
+       the final page.
+    */
+
+    video.pause();
+
+    video.currentTime = 0;
 
 }
 
@@ -2207,6 +2318,7 @@ function launchConfetti(){
 ========================= */
 
 showPage(1);
+
 
 </script>
 
