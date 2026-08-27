@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -11,6 +12,7 @@
       content="#f7dce5">
 
 <title>A Little Surprise 💗</title>
+
 
 <style>
 
@@ -121,8 +123,6 @@ body{
 
     overflow-y:auto;
 
-    z-index:5;
-
 }
 
 
@@ -189,8 +189,6 @@ body{
             680px
         );
 
-    max-height:92vh;
-
     padding:
         55px
         28px
@@ -234,7 +232,7 @@ body{
         0 25px 70px
         rgba(105,42,64,.22);
 
-    overflow-y:auto;
+    overflow:hidden;
 
 }
 
@@ -540,7 +538,9 @@ button.secondary{
 
 
 .floating span:nth-child(1){
+
     left:10%;
+
 }
 
 
@@ -649,15 +649,15 @@ button.secondary{
             340px
         );
 
-    height:230px;
+    height:210px;
 
     margin:
-        20px 0
-        35px;
+        35px 0
+        30px;
 
     cursor:pointer;
 
-    flex-shrink:0;
+    perspective:900px;
 
 }
 
@@ -678,6 +678,10 @@ button.secondary{
 
 }
 
+
+/* =========================
+   ENVELOPE FLAP
+========================= */
 
 .env-flap{
 
@@ -710,8 +714,7 @@ button.secondary{
 }
 
 
-.envelope.open
-.env-flap{
+.envelope.open .env-flap{
 
     transform:
         rotateX(180deg);
@@ -719,23 +722,38 @@ button.secondary{
 }
 
 
-.letter{
+/* =========================
+   ENVELOPE LETTER
+   FIXED POSITION
+========================= */
+
+.envelope .letter{
 
     position:absolute;
 
-    top:15%;
+    top:18%;
 
     left:8%;
 
     width:84%;
 
-    height:75%;
+    height:76%;
 
     background:white;
 
     border-radius:10px;
 
-    padding:25px 10px;
+    /*
+       Extra top padding pushes
+       the text lower so the
+       envelope flap doesn't
+       cover it.
+    */
+
+    padding:
+        70px
+        10px
+        10px;
 
     z-index:2;
 
@@ -746,17 +764,24 @@ button.secondary{
     transition:
         transform .7s ease;
 
+    font-size:17px;
+
+    line-height:1.4;
+
 }
 
 
-.envelope.open
-.letter{
+.envelope.open .letter{
 
     transform:
         translateY(-70px);
 
 }
 
+
+/* =========================
+   ENVELOPE SEAL
+========================= */
 
 .seal{
 
@@ -790,8 +815,7 @@ button.secondary{
 }
 
 
-.envelope.open
-.seal{
+.envelope.open .seal{
 
     opacity:0;
 
@@ -954,11 +978,6 @@ button.secondary{
         0 8px 18px
         rgba(90,38,56,.16);
 
-    cursor:default;
-
-    transform:
-        rotate(-2deg);
-
 }
 
 
@@ -1012,17 +1031,6 @@ button.secondary{
 }
 
 
-.gallery-note{
-
-    font-size:12px;
-
-    opacity:.6;
-
-    margin-top:8px;
-
-}
-
-
 /* =========================
    BACKGROUND VIDEO
 ========================= */
@@ -1039,32 +1047,30 @@ button.secondary{
 
     object-fit:cover;
 
-    z-index:0;
+    z-index:-5;
+
+    opacity:.22;
+
+    pointer-events:none;
 
     display:none;
 
-    background:#24151c;
-
 }
 
 
-.background-video.show{
-
-    display:block;
-
-}
-
-
-.video-overlay{
+.background-overlay{
 
     position:fixed;
 
     inset:0;
 
     background:
-        rgba(40,15,25,.52);
+        linear-gradient(
+            rgba(247,220,229,.78),
+            rgba(247,220,229,.78)
+        );
 
-    z-index:1;
+    z-index:-4;
 
     display:none;
 
@@ -1073,19 +1079,18 @@ button.secondary{
 }
 
 
-.video-overlay.show{
+body.video-playing
+.background-video{
 
     display:block;
 
 }
 
 
-/* Make page 6/7 paper slightly transparent */
+body.video-playing
+.background-overlay{
 
-.video-page .paper{
-
-    background:
-        rgba(255,255,255,.88);
+    display:block;
 
 }
 
@@ -1122,55 +1127,6 @@ button.secondary{
     font-family:Georgia,serif;
 
     font-size:16px;
-
-}
-
-
-/* =========================
-   MUSIC BUTTON
-========================= */
-
-.music{
-
-    position:fixed;
-
-    right:15px;
-
-    bottom:15px;
-
-    width:50px;
-
-    height:50px;
-
-    padding:0;
-
-    display:none;
-
-    z-index:150;
-
-}
-
-
-.music.on{
-
-    display:block;
-
-    animation:
-        musicSpin
-        4s
-        linear
-        infinite;
-
-}
-
-
-@keyframes musicSpin{
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
 
 }
 
@@ -1216,11 +1172,9 @@ button.secondary{
 
     .envelope{
 
-        height:210px;
+        margin-top:25px;
 
-        margin:
-            10px 0
-            25px;
+        margin-bottom:25px;
 
     }
 
@@ -1234,13 +1188,39 @@ button.secondary{
 <body>
 
 
+<!-- =========================
+     BACKGROUND VIDEO
+========================= -->
+
+<video
+    id="backgroundVideo"
+    class="background-video"
+    loop
+    muted
+    playsinline
+>
+
+    <source
+        src="birthday.mp4"
+        type="video/mp4"
+    >
+
+</video>
+
+
+<div class="background-overlay"></div>
+
+
 <!-- FLOATING HEARTS -->
 
 <div class="floating">
 
     <span>♥</span>
+
     <span>♡</span>
+
     <span>♥</span>
+
     <span>♡</span>
 
 </div>
@@ -1279,32 +1259,6 @@ button.secondary{
 
 
 <!-- =========================
-     BACKGROUND VIDEO
-========================= -->
-
-<video
-    id="backgroundVideo"
-    class="background-video"
-    muted
-    playsinline
-    preload="auto"
->
-
-    <source
-        src="birthday.mp4"
-        type="video/mp4"
-    >
-
-</video>
-
-
-<div
-    id="videoOverlay"
-    class="video-overlay"
-></div>
-
-
-<!-- =========================
      PAGE 1
 ========================= -->
 
@@ -1331,15 +1285,16 @@ button.secondary{
 
             <h1>
 
-                I have something<br>
-                for you...
+                A little surprise<br>
+                for my birthday girl...
 
             </h1>
 
 
             <p>
 
-                A little surprise for my birthday girl. 💗
+                But first,
+                I need to know something. 👀
 
             </p>
 
@@ -1404,9 +1359,7 @@ button.secondary{
 
                 <div class="letter">
 
-                    <b>
-                        For the birthday girl... 💗
-                    </b>
+                    For the birthday girl... 💗
 
                     <br><br>
 
@@ -1428,7 +1381,9 @@ button.secondary{
 
 
             <div class="eyebrow">
+
                 YOU FOUND IT
+
             </div>
 
 
@@ -1521,7 +1476,7 @@ button.secondary{
 
 
             <button
-                onclick="showPage(4)"
+                onclick="showPage(4); startMusic();"
             >
 
                 Let's look back 📸
@@ -1640,18 +1595,11 @@ button.secondary{
 
                 </div>
 
-
-                <div class="gallery-note">
-
-                    Our little collection of memories. 💕
-
-                </div>
-
             </div>
 
 
             <button
-                onclick="showPage(6)"
+                onclick="showPage(6); startBackgroundVideo();"
             >
 
                 One last thing 💌
@@ -1668,10 +1616,12 @@ button.secondary{
 
 <!-- =========================
      PAGE 6
+     VIDEO NOW RUNS
+     IN BACKGROUND
 ========================= -->
 
 <section
-    class="page video-page"
+    class="page"
     id="page6"
 >
 
@@ -1766,7 +1716,7 @@ button.secondary{
 
 
             <button
-                onclick="showPage(7)"
+                onclick="showPage(7); startBackgroundVideo();"
                 style="margin-top:18px"
             >
 
@@ -1787,7 +1737,7 @@ button.secondary{
 ========================= -->
 
 <section
-    class="page video-page"
+    class="page"
     id="page7"
 >
 
@@ -1868,7 +1818,7 @@ button.secondary{
 
 let currentPage = 1;
 
-const totalPages = 7;
+const totalPages = 6;
 
 
 /* =========================
@@ -1947,48 +1897,16 @@ function showPage(number){
     }
 
 
-    const video =
-        document.getElementById(
-            "backgroundVideo"
-        );
-
-
-    const overlay =
-        document.getElementById(
-            "videoOverlay"
-        );
-
-
-    /*
-       Video starts on Page 6.
-       It stays playing when moving
-       from Page 6 to Page 7.
-    */
-
-    if(number >= 6){
-
-        video.classList.add("show");
-
-        overlay.classList.add("show");
-
-        startBackgroundVideo();
-
-    }
-
-    else{
-
-        video.classList.remove("show");
-
-        overlay.classList.remove("show");
-
-        video.pause();
-
-    }
-
-
     if(number === 3){
 
         launchConfetti();
+
+    }
+
+
+    if(number === 6 || number === 7){
+
+        startBackgroundVideo();
 
     }
 
@@ -2175,15 +2093,18 @@ function startBackgroundVideo(){
         );
 
 
-    video.play()
+    document.body.classList.add(
+        "video-playing"
+    );
 
-        .catch(function(){
 
-            console.log(
-                "Background video could not autoplay."
-            );
+    video.play().catch(function(){
 
-        });
+        console.log(
+            "Background video requires user interaction."
+        );
+
+    });
 
 }
 
@@ -2263,4 +2184,5 @@ showPage(1);
 
 
 </body>
+
 </html>
