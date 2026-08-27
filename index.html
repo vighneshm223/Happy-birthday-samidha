@@ -121,6 +121,8 @@ body{
 
     overflow-y:auto;
 
+    z-index:5;
+
 }
 
 
@@ -187,6 +189,8 @@ body{
             680px
         );
 
+    max-height:92vh;
+
     padding:
         55px
         28px
@@ -230,7 +234,7 @@ body{
         0 25px 70px
         rgba(105,42,64,.22);
 
-    overflow:hidden;
+    overflow-y:auto;
 
 }
 
@@ -536,9 +540,7 @@ button.secondary{
 
 
 .floating span:nth-child(1){
-
     left:10%;
-
 }
 
 
@@ -647,13 +649,15 @@ button.secondary{
             340px
         );
 
-    height:210px;
+    height:230px;
 
     margin:
-        10px 0
-        30px;
+        20px 0
+        35px;
 
     cursor:pointer;
+
+    flex-shrink:0;
 
 }
 
@@ -904,7 +908,9 @@ button.secondary{
     }
 
 }
-    /* =========================
+
+
+/* =========================
    GALLERY
 ========================= */
 
@@ -948,12 +954,10 @@ button.secondary{
         0 8px 18px
         rgba(90,38,56,.16);
 
-    cursor:pointer;
+    cursor:default;
 
     transform:
         rotate(-2deg);
-
-    transition:.25s;
 
 }
 
@@ -970,15 +974,6 @@ button.secondary{
 
     transform:
         rotate(-1deg);
-
-}
-
-
-.photo:hover{
-
-    transform:
-        translateY(-5px)
-        rotate(0);
 
 }
 
@@ -1029,61 +1024,68 @@ button.secondary{
 
 
 /* =========================
-   VIDEO
+   BACKGROUND VIDEO
 ========================= */
 
-.video-card{
+.background-video{
+
+    position:fixed;
+
+    inset:0;
 
     width:100%;
 
-    padding:9px;
+    height:100%;
 
-    background:white;
+    object-fit:cover;
 
-    border-radius:18px;
+    z-index:0;
 
-    box-shadow:
-        0 15px 35px
-        rgba(90,38,56,.15);
-
-}
-
-
-.video-card video{
-
-    width:100%;
-
-    max-height:45vh;
-
-    display:block;
+    display:none;
 
     background:#24151c;
 
-    border-radius:12px;
+}
+
+
+.background-video.show{
+
+    display:block;
 
 }
 
 
-.video-label{
+.video-overlay{
 
-    font-family:Georgia,serif;
+    position:fixed;
 
-    font-size:18px;
+    inset:0;
 
-    color:var(--dark-pink);
+    background:
+        rgba(40,15,25,.52);
 
-    margin-top:12px;
+    z-index:1;
+
+    display:none;
+
+    pointer-events:none;
 
 }
 
 
-.video-sub{
+.video-overlay.show{
 
-    font-size:12px;
+    display:block;
 
-    opacity:.6;
+}
 
-    margin:4px 0;
+
+/* Make page 6/7 paper slightly transparent */
+
+.video-page .paper{
+
+    background:
+        rgba(255,255,255,.88);
 
 }
 
@@ -1120,75 +1122,6 @@ button.secondary{
     font-family:Georgia,serif;
 
     font-size:16px;
-
-}
-
-
-/* =========================
-   LIGHTBOX
-========================= */
-
-.lightbox{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:200;
-
-    background:
-        rgba(40,15,25,.88);
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-
-}
-
-
-.lightbox.show{
-
-    display:flex;
-
-}
-
-
-.lightbox img{
-
-    max-width:95vw;
-
-    max-height:85vh;
-
-    object-fit:contain;
-
-    border-radius:15px;
-
-}
-
-
-.close{
-
-    position:absolute;
-
-    top:15px;
-
-    right:15px;
-
-    width:45px;
-
-    height:45px;
-
-    padding:0;
-
-    background:white;
-
-    color:#742c49;
-
-    font-size:25px;
 
 }
 
@@ -1280,9 +1213,21 @@ button.secondary{
 
     }
 
+
+    .envelope{
+
+        height:210px;
+
+        margin:
+            10px 0
+            25px;
+
+    }
+
 }
 
 </style>
+
 </head>
 
 
@@ -1294,11 +1239,8 @@ button.secondary{
 <div class="floating">
 
     <span>♥</span>
-
     <span>♡</span>
-
     <span>♥</span>
-
     <span>♡</span>
 
 </div>
@@ -1336,6 +1278,31 @@ button.secondary{
 </audio>
 
 
+<!-- =========================
+     BACKGROUND VIDEO
+========================= -->
+
+<video
+    id="backgroundVideo"
+    class="background-video"
+    muted
+    playsinline
+    preload="auto"
+>
+
+    <source
+        src="birthday.mp4"
+        type="video/mp4"
+    >
+
+</video>
+
+
+<div
+    id="videoOverlay"
+    class="video-overlay"
+></div>
+
 
 <!-- =========================
      PAGE 1
@@ -1372,8 +1339,7 @@ button.secondary{
 
             <p>
 
-                But first,
-                I need to know something. 👀
+                A little surprise for my birthday girl. 💗
 
             </p>
 
@@ -1413,7 +1379,6 @@ button.secondary{
 </section>
 
 
-
 <!-- =========================
      PAGE 2
 ========================= -->
@@ -1439,7 +1404,9 @@ button.secondary{
 
                 <div class="letter">
 
-                    For the birthday girl... 💗
+                    <b>
+                        For the birthday girl... 💗
+                    </b>
 
                     <br><br>
 
@@ -1497,7 +1464,6 @@ button.secondary{
 </section>
 
 
-
 <!-- =========================
      PAGE 3
 ========================= -->
@@ -1540,7 +1506,7 @@ button.secondary{
 
             <div class="name">
 
-                BBG! 💕
+                Chamu! 💕
 
             </div>
 
@@ -1555,7 +1521,7 @@ button.secondary{
 
 
             <button
-                onclick="showPage(4); startMusic();"
+                onclick="showPage(4)"
             >
 
                 Let's look back 📸
@@ -1568,7 +1534,6 @@ button.secondary{
     </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1607,8 +1572,7 @@ button.secondary{
 
             <p>
 
-                Every picture has a story.<br>
-                Tap one. 💗
+                Every picture has a story. 💗
 
             </p>
 
@@ -1618,10 +1582,7 @@ button.secondary{
                 <div class="gallery">
 
 
-                    <div
-                        class="photo"
-                        onclick="openPhoto('photo1.jpg')"
-                    >
+                    <div class="photo">
 
                         <img
                             src="photo1.jpg"
@@ -1635,10 +1596,7 @@ button.secondary{
                     </div>
 
 
-                    <div
-                        class="photo"
-                        onclick="openPhoto('photo2.jpg')"
-                    >
+                    <div class="photo">
 
                         <img
                             src="photo2.jpg"
@@ -1652,10 +1610,7 @@ button.secondary{
                     </div>
 
 
-                    <div
-                        class="photo"
-                        onclick="openPhoto('photo3.jpg')"
-                    >
+                    <div class="photo">
 
                         <img
                             src="photo3.jpg"
@@ -1669,10 +1624,7 @@ button.secondary{
                     </div>
 
 
-                    <div
-                        class="photo"
-                        onclick="openPhoto('photo4.jpg')"
-                    >
+                    <div class="photo">
 
                         <img
                             src="photo4.jpg"
@@ -1691,99 +1643,15 @@ button.secondary{
 
                 <div class="gallery-note">
 
-                    Replace photo1.jpg –
-                    photo4.jpg with your pictures.
+                    Our little collection of memories. 💕
 
                 </div>
-
-            </div>
-
-
-            <button
-                onclick="showPage(5)"
-            >
-
-                There's a video too 🎥
-
-            </button>
-
-
-        </div>
-
-    </div>
-
-</section>
-<!-- =========================
-     PAGE 5
-========================= -->
-
-<section
-    class="page"
-    id="page5"
->
-
-    <div class="paper">
-
-        <div class="content">
-
-
-            <div class="big-emoji">
-                🎥
-            </div>
-
-
-            <div class="eyebrow">
-                PRESS PLAY
-            </div>
-
-
-            <h2>
-
-                I made this<br>
-                for you.
-
-            </h2>
-
-
-            <div class="video-card">
-
-                <video
-                    controls
-                    playsinline
-                    preload="metadata"
-                >
-
-                    <source
-                        src="birthday.mp4"
-                        type="video/mp4"
-                    >
-
-                    Your browser does not
-                    support video.
-
-                </video>
-
-
-                <div class="video-label">
-
-                    A tiny movie of us 💗
-
-                </div>
-
-
-                <p class="video-sub">
-
-                    Replace birthday.mp4
-                    with your own video.
-
-                </p>
 
             </div>
 
 
             <button
                 onclick="showPage(6)"
-                style="margin-top:16px"
             >
 
                 One last thing 💌
@@ -1798,13 +1666,12 @@ button.secondary{
 </section>
 
 
-
 <!-- =========================
      PAGE 6
 ========================= -->
 
 <section
-    class="page"
+    class="page video-page"
     id="page6"
 >
 
@@ -1889,7 +1756,7 @@ button.secondary{
                 <p>
 
                     <b>
-                        Happy Birthday, BBG. 💗
+                        Happy Birthday, Chamu. 💗
                     </b>
 
                 </p>
@@ -1915,13 +1782,12 @@ button.secondary{
 </section>
 
 
-
 <!-- =========================
      PAGE 7
 ========================= -->
 
 <section
-    class="page"
+    class="page video-page"
     id="page7"
 >
 
@@ -1982,51 +1848,11 @@ button.secondary{
             </div>
 
 
-            <p class="small">
-
-                Now go enjoy your birthday. 🎂💗
-
-            </p>
-
-
         </div>
 
     </div>
 
 </section>
-
-
-
-<!-- =========================
-     LIGHTBOX
-========================= -->
-
-<div
-    class="lightbox"
-    id="lightbox"
-    onclick="closePhoto()"
->
-
-
-    <button
-        class="close"
-        onclick="closePhoto()"
-    >
-
-        ×
-
-    </button>
-
-
-    <img
-        id="lightboxImg"
-        src=""
-        alt="Memory"
-    >
-
-
-</div>
-
 
 
 <!-- =========================
@@ -2043,7 +1869,6 @@ button.secondary{
 let currentPage = 1;
 
 const totalPages = 7;
-
 
 
 /* =========================
@@ -2088,7 +1913,6 @@ function updateDots(){
 updateDots();
 
 
-
 /* =========================
    SHOW PAGE
 ========================= */
@@ -2123,6 +1947,45 @@ function showPage(number){
     }
 
 
+    const video =
+        document.getElementById(
+            "backgroundVideo"
+        );
+
+
+    const overlay =
+        document.getElementById(
+            "videoOverlay"
+        );
+
+
+    /*
+       Video starts on Page 6.
+       It stays playing when moving
+       from Page 6 to Page 7.
+    */
+
+    if(number >= 6){
+
+        video.classList.add("show");
+
+        overlay.classList.add("show");
+
+        startBackgroundVideo();
+
+    }
+
+    else{
+
+        video.classList.remove("show");
+
+        overlay.classList.remove("show");
+
+        video.pause();
+
+    }
+
+
     if(number === 3){
 
         launchConfetti();
@@ -2130,7 +1993,6 @@ function showPage(number){
     }
 
 }
-
 
 
 /* =========================
@@ -2142,7 +2004,6 @@ function yesFirst(){
     showPage(2);
 
 }
-
 
 
 /* =========================
@@ -2208,7 +2069,6 @@ function noFirst(){
 }
 
 
-
 /* =========================
    ENVELOPE
 ========================= */
@@ -2233,7 +2093,6 @@ function openEnvelope(){
     startMusic();
 
 }
-
 
 
 /* =========================
@@ -2271,7 +2130,6 @@ function startMusic(){
 }
 
 
-
 function toggleMusic(){
 
     const music =
@@ -2304,6 +2162,30 @@ function toggleMusic(){
 
 }
 
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+function startBackgroundVideo(){
+
+    const video =
+        document.getElementById(
+            "backgroundVideo"
+        );
+
+
+    video.play()
+
+        .catch(function(){
+
+            console.log(
+                "Background video could not autoplay."
+            );
+
+        });
+
+}
 
 
 /* =========================
@@ -2368,72 +2250,6 @@ function launchConfetti(){
     }
 
 }
-
-
-
-/* =========================
-   OPEN PHOTO
-========================= */
-
-function openPhoto(src){
-
-    const lightbox =
-        document.getElementById(
-            "lightbox"
-        );
-
-
-    const image =
-        document.getElementById(
-            "lightboxImg"
-        );
-
-
-    image.src = src;
-
-
-    lightbox.classList.add(
-        "show"
-    );
-
-}
-
-
-
-/* =========================
-   CLOSE PHOTO
-========================= */
-
-function closePhoto(){
-
-    document
-        .getElementById(
-            "lightbox"
-        )
-        .classList.remove(
-            "show"
-        );
-
-}
-
-
-
-/* =========================
-   ESCAPE KEY
-========================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            closePhoto();
-
-        }
-
-    }
-);
 
 
 /* =========================
