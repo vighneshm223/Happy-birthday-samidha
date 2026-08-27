@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f7dce5">
+
+<title>A Little Surprise 💗</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+:root{
+    --pink:#c65378;
+    --deep:#742c49;
+    --rose:#9d3e61;
+    --soft:#f9e6ec;
+    --paper:rgba(255,255,255,.92);
+    --ink:#5a2638;
+    --shadow:0 25px 80px rgba(105,42,64,.20);
+}
+
+html,body{
+    margin:0;
+    min-height:100%;
+    font-family:"Trebuchet MS",sans-serif;
+    color:var(--ink);
+    background:#f7dce5;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-3;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255,255,255,.9) 0 3px,
+            transparent 4px
+        ),
+        radial-gradient(
+            circle at 82% 18%,
+            rgba(255,255,255,.65) 0 3px,
+            transparent 4px
+        ),
+        radial-gradient(
+            circle at 28% 78%,
+            rgba(255,255,255,.6) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 75% 70%,
+            rgba(255,255,255,.8) 0 2px,
+            transparent 3px
+        ),
+        linear-gradient(
+            135deg,
+            #f9e6ec,
+            #f3cbd9
+        );
+}
+
+body:after{
+    content:"";
+    position:fixed;
+    inset:-20%;
+    z-index:-2;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.25),
+            transparent 55%
+        );
+
+    animation:breath 8s ease-in-out infinite;
+}
+
+@keyframes breath{
+
+    50%{
+        transform:scale(1.08);
+        opacity:.7;
+    }
+
+}
+
+
+/* PAGE */
+
+.page{
+    min-height:100svh;
+
+    padding:34px 18px 45px;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.page.active{
+    display:flex;
+
+    animation:
+        pageIn .7s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes pageIn{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(25px)
+            scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+
+/* PAPER */
+
+.paper{
+
+    width:min(94vw,560px);
+
+    min-height:min(76svh,680px);
+
+    padding:42px 26px 34px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.8);
+
+    border-radius:
+        32px
+        24px
+        36px
+        20px;
+
+    background:
+      
+<!-- PAGE 4 -->
+<section
+    class="page"
+    id="page4"
+>
+
+    <div class="paper">
+
+        <div class="content">
+
+            <div class="big-emoji">
+                📸
+            </div>
+
+            <div class="eyebrow">
+                A FEW OF MY FAVOURITES
+            </div>
+
+            <h2>
+                Our little<br>
+                memories
+            </h2>
+
+            <p>
+                Every picture has a story.<br>
+                Tap one. 💗
+            </p>
+
+            <div class="gallery-wrap">
+
+                <div class="gallery">
+
+                    <div
+                        class="photo"
+                        onclick="openPhoto('photo1.jpg')"
+                    >
+
+                        <img
+                            src="photo1.jpg"
+                            alt="Memory 1"
+                        >
+
+                        <span>
+                            that smile ♡
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="photo"
+                        onclick="openPhoto('photo2.jpg')"
+                    >
+
+                        <img
+                            src="photo2.jpg"
+                            alt="Memory 2"
+                        >
+
+                        <span>
+                            one of my favourites
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="photo"
+                        onclick="openPhoto('photo3.jpg')"
+                    >
+
+                        <img
+                            src="photo3.jpg"
+                            alt="Memory 3"
+                        >
+
+                        <span>
+                            good times ✨
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="photo"
+                        onclick="openPhoto('photo4.jpg')"
+                    >
+
+                        <img
+                            src="photo4.jpg"
+                            alt="Memory 4"
+                        >
+
+                        <span>
+                            forever a memory
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="gallery-note">
+
+                    Replace photo1.jpg – photo4.jpg
+                    with your own pictures.
+
+                </div>
+
+            </div>
+
+            <button onclick="showPage(5)">
+                There's a video too 🎥
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PAGE 5 -->
+<section
+    class="page"
+    id="page5"
+>
+
+    <div class="paper">
+
+        <div class="content">
+
+            <div class="big-emoji">
+                🎥
+            </div>
+
+            <div class="eyebrow">
+                PRESS PLAY
+            </div>
+
+            <h2>
+                I made this<br>
+                for you.
+            </h2>
+
+
+            <div class="video-card">
+
+                <video
+                    id="birthdayVideo"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="video-poster.jpg"
+                >
+
+                    <source
+                        src="birthday.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video.
+
+                </video>
+
+
+                <div class="video-label">
+                    A tiny movie of us 💗
+                </div>
+
+                <p class="video-sub">
+                    Replace birthday.mp4 with
+                    your own video.
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="showPage(6)"
+                style="margin-top:16px"
+            >
+
+                One last thing 💌
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PAGE 6 -->
+<section
+    class="page"
+    id="page6"
+>
+
+    <div class="paper">
+
+        <div class="content">
+
+            <div class="big-emoji">
+                💌
+            </div>
+
+            <div class="eyebrow">
+                A MESSAGE FOR YOU
+            </div>
+
+            <h2>
+                Just a few<br>
+                words...
+            </h2>
+
+
+            <div class="letter-card">
+
+                <p>
+                    Hey birthday girl,
+                </p>
+
+
+                <p>
+
+                    I wanted to make something
+                    that wasn't just another birthday
+                    message.
+
+                    Something you could open,
+                    smile at, and keep as a little
+                    memory.
+
+                </p>
+
+
+                <p>
+
+                    Thank you for all the laughs,
+                    the random moments,
+                    the conversations, and all the
+                    memories that somehow become
+                    my favourite ones.
+
+                </p>
+
+
+                <p>
+
+                    I hope this year brings you
+                    everything you're wishing for —
+                    happiness, peace, crazy adventures
+                    and plenty of reasons to smile.
+
+                </p>
+
+
+                <p>
+
+                    And whenever you look back
+                    at these pictures, I hope you
+                    remember just how special you are. ❤️
+
+                </p>
+
+
+                <p>
+
+                    <b>
+                        Happy Birthday, BBG. 💗
+                    </b>
+
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="showPage(7)"
+                style="margin-top:18px"
+            >
+
+                Okay... last last thing 👀
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PAGE 7 -->
+<section
+    class="page"
+    id="page7"
+>
+
+    <div class="paper">
+
+        <div class="content">
+
+            <div class="big-emoji">
+                🌙
+            </div>
+
+
+            <div class="eyebrow">
+                THE END... MAYBE
+            </div>
+
+
+            <h2>
+                And if you<br>
+                ever forget...
+            </h2>
+
+
+            <p
+                style="
+                    font-family:Georgia,serif;
+                    font-size:21px;
+                    color:var(--deep);
+                "
+            >
+
+                you are loved,<br>
+
+                you are appreciated,<br>
+
+                and you deserve
+                beautiful things.
+
+            </p>
+
+
+            <div class="name">
+                Always. ♡
+            </div>
+
+
+            <div class="stamp">
+                MADE JUST FOR YOU ✨
+            </div>
+
+
+            <p class="small">
+                Now go enjoy your birthday. 🎂💗
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PHOTO LIGHTBOX -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    onclick="closePhoto()"
+>
+
+    <button
+        class="close"
+        onclick="closePhoto()"
+    >
+        ×
+    </button>
+
+
+    <img
+        id="lightboxImg"
+        src=""
+        alt="Memory"
+    >
+
+</div>
+<script>
+
+let currentPage = 1;
+
+const totalPages = 7;
+
+
+
+/* PAGE DOTS */
+
+function updateDots(){
+
+    const dots =
+        document.getElementById("dots");
+
+    dots.innerHTML = "";
+
+
+    for(
+        let i = 1;
+        i <= totalPages;
+        i++
+    ){
+
+        const d =
+            document.createElement("div");
+
+        d.className =
+            "dot" +
+            (
+                i === currentPage
+                ? " active"
+                : ""
+            );
+
+        dots.appendChild(d);
+
+    }
+
+}
+
+updateDots();
+
+
+
+/* CHANGE PAGE */
+
+function showPage(number){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+
+    const next =
+        document.getElementById(
+            "page" + number
+        );
+
+
+    if(next){
+
+        next.classList.add("active");
+
+    }
+
+
+    currentPage = number;
+
+    updateDots();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+
+    if(number === 3){
+
+        launchConfetti();
+
+    }
+
+}
+
+
+
+/* NO BUTTON */
+
+function noFirst(){
+
+    const message =
+        document.getElementById(
+            "noMessage"
+        );
+
+
+    const paper =
+        document.querySelector(
+            "#page1 .paper"
+        );
+
+
+    message.textContent =
+        "HOW DARE YOU 😭💀 Try again.";
+
+
+    paper.animate(
+
+        [
+
+            {
+                transform:"translateX(0)"
+            },
+
+            {
+                transform:"translateX(-9px)"
+            },
+
+            {
+                transform:"translateX(9px)"
+            },
+
+            {
+                transform:"translateX(-6px)"
+            },
+
+            {
+                transform:"translateX(6px)"
+            },
+
+            {
+                transform:"translateX(0)"
+            }
+
+        ],
+
+        {
+            duration:450
+        }
+
+    );
+
+}
+
+
+
+/* YES BUTTON */
+
+function yesFirst(){
+
+    showPage(2);
+
+}
+
+
+
+/* ENVELOPE */
+
+function openEnvelope(){
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+
+    envelope.classList.add("open");
+
+
+    document.getElementById(
+        "envelopeHint"
+    ).textContent =
+        "Okay... now you're ready. 💗";
+
+
+    startMusic();
+
+}
+
+
+
+/* MUSIC */
+
+function startMusic(){
+
+    const music =
+        document.getElementById(
+            "music"
+        );
+
+
+    music
+        .play()
+        .then(() => {
+
+            document
+                .getElementById(
+                    "musicBtn"
+                )
+                .classList.add("on");
+
+        })
+        .catch(() => {
+
+            /*
+             Mobile browsers may block
+             autoplay until the user taps.
+            */
+
+        });
+
+}
+
+
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById(
+            "music"
+        );
+
+
+    const btn =
+        document.getElementById(
+            "musicBtn"
+        );
+
+
+    if(music.paused){
+
+        music.play();
+
+        btn.classList.add("on");
+
+    }
+
+    else{
+
+        music.pause();
+
+        btn.classList.remove("on");
+
+    }
+
+}
+
+
+
+/* CONFETTI */
+
+function launchConfetti(){
+
+    const box =
+        document.getElementById(
+            "confetti"
+        );
+
+
+    box.innerHTML = "";
+
+
+    for(
+        let i = 0;
+        i < 45;
+        i++
+    ){
+
+        const piece =
+            document.createElement("i");
+
+
+        piece.style.left =
+            Math.random() * 100 + "%";
+
+
+        piece.style.top =
+            (-10 - Math.random() * 20)
+            + "px";
+
+
+        piece.style.transform =
+            `rotate(
+                ${Math.random() * 360}deg
+            )`;
+
+
+        piece.style.animationDelay =
+            (Math.random() * .6)
+            + "s";
+
+
+        const colors = [
+
+            "#d85c83",
+            "#efadc3",
+            "#f4c85b",
+            "#9d3e61",
+            "#ffffff"
+
+        ];
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+
+        box.appendChild(piece);
+
+    }
+
+}
+
+
+
+/* OPEN PHOTO */
+
+function openPhoto(src){
+
+    document.getElementById(
+        "lightboxImg"
+    ).src = src;
+
+
+    document.getElementById(
+        "lightbox"
+    ).classList.add("show");
+
+}
+
+
+
+/* CLOSE PHOTO */
+
+function closePhoto(){
+
+    document.getElementById(
+        "lightbox"
+    ).classList.remove("show");
+
+}
+
+
+
+/* ESCAPE KEY */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            closePhoto();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+  
