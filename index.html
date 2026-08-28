@@ -87,6 +87,99 @@ body{
 
 
 /* =========================
+   TEDDY BEAR BACKGROUND
+========================= */
+
+.teddy-background{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+
+.teddy{
+
+    position:absolute;
+
+    font-size:55px;
+
+    opacity:.22;
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(110,45,70,.12)
+        );
+
+    animation:
+        teddyFloat
+        var(--tduration)
+        ease-in-out
+        infinite;
+
+    animation-delay:
+        var(--tdelay);
+
+}
+
+
+/* Different teddy sizes */
+
+.teddy.small{
+    font-size:35px;
+    opacity:.18;
+}
+
+.teddy.medium{
+    font-size:55px;
+    opacity:.22;
+}
+
+.teddy.large{
+    font-size:78px;
+    opacity:.20;
+}
+
+.teddy.xlarge{
+    font-size:105px;
+    opacity:.16;
+}
+
+
+@keyframes teddyFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(-4deg);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-15px)
+            rotate(4deg);
+
+    }
+
+}
+
+
+/* =========================
    PAGE SYSTEM
 ========================= */
 
@@ -112,6 +205,8 @@ body{
     visibility:hidden;
 
     overflow-y:auto;
+
+    z-index:2;
 
 }
 
@@ -415,6 +510,8 @@ p{
 
     justify-content:center;
 
+    align-items:center;
+
     gap:12px;
 
     flex-wrap:wrap;
@@ -452,7 +549,10 @@ button{
         rgba(150,55,88,.25);
 
     transition:
-        transform .2s ease;
+        transform .25s ease,
+        opacity .25s ease,
+        padding .25s ease,
+        font-size .25s ease;
 
 }
 
@@ -476,6 +576,41 @@ button:active{
 button.secondary{
 
     background:#8f6a76;
+
+}
+
+
+/* =========================
+   NO BUTTON SHRINK
+========================= */
+
+#noBtn{
+
+    transform-origin:center;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+
+}
+
+
+#noBtn:hover{
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+#noBtn.disappearing{
+
+    opacity:0;
+
+    transform:
+        scale(0);
+
+    pointer-events:none;
 
 }
 
@@ -690,10 +825,6 @@ button.secondary{
 }
 
 
-/* =========================
-   ENVELOPE FLAP
-========================= */
-
 .env-flap{
 
     position:absolute;
@@ -732,10 +863,6 @@ button.secondary{
 
 }
 
-
-/* =========================
-   ENVELOPE LETTER
-========================= */
 
 .envelope .letter{
 
@@ -781,10 +908,6 @@ button.secondary{
 
 }
 
-
-/* =========================
-   ENVELOPE SEAL
-========================= */
 
 .seal{
 
@@ -1187,6 +1310,13 @@ button.secondary{
 
     }
 
+
+    .teddy.xlarge{
+
+        font-size:80px;
+
+    }
+
 }
 
 </style>
@@ -1195,6 +1325,65 @@ button.secondary{
 
 
 <body>
+
+
+<!-- =========================
+     TEDDY BEAR BACKGROUND
+========================= -->
+
+<div class="teddy-background">
+
+    <span class="teddy small"
+          style="left:4%;top:12%;--tduration:5s;--tdelay:-1s;">
+        🧸
+    </span>
+
+    <span class="teddy large"
+          style="left:82%;top:8%;--tduration:6s;--tdelay:-3s;">
+        🧸
+    </span>
+
+    <span class="teddy medium"
+          style="left:7%;top:43%;--tduration:7s;--tdelay:-2s;">
+        🧸
+    </span>
+
+    <span class="teddy xlarge"
+          style="left:82%;top:39%;--tduration:8s;--tdelay:-5s;">
+        🧸
+    </span>
+
+    <span class="teddy small"
+          style="left:18%;top:78%;--tduration:5.5s;--tdelay:-4s;">
+        🧸
+    </span>
+
+    <span class="teddy large"
+          style="left:72%;top:77%;--tduration:7s;--tdelay:-1s;">
+        🧸
+    </span>
+
+    <span class="teddy medium"
+          style="left:48%;top:5%;--tduration:6s;--tdelay:-2s;">
+        🧸
+    </span>
+
+    <span class="teddy small"
+          style="left:91%;top:63%;--tduration:5s;--tdelay:-3s;">
+        🧸
+    </span>
+
+    <span class="teddy medium"
+          style="left:2%;top:88%;--tduration:8s;--tdelay:-6s;">
+        🧸
+    </span>
+
+    <span class="teddy small"
+          style="left:55%;top:91%;--tduration:6s;--tdelay:-2s;">
+        🧸
+    </span>
+
+</div>
 
 
 <!-- =========================
@@ -1271,6 +1460,7 @@ button.secondary{
 
                 <button
                     class="secondary"
+                    id="noBtn"
                     onclick="noFirst()"
                 >
 
@@ -1318,7 +1508,7 @@ button.secondary{
 
                 <div class="letter">
 
-                    For the birthday girl... 💗
+                    For my birthday girl... 💗
 
                     <br><br>
 
@@ -1341,7 +1531,7 @@ button.secondary{
 
             <div class="eyebrow">
 
-                YOU FOUND IT
+                YOU FOUND IT YEPPY
 
             </div>
 
@@ -1366,7 +1556,7 @@ button.secondary{
                 onclick="showPage(3)"
             >
 
-                Open the surprise 🎀
+                Open the surprise sweet heart 🎀
 
             </button>
 
@@ -1420,7 +1610,7 @@ button.secondary{
 
             <div class="name">
 
-                Chamu! 💕
+                Chamuu! 💕
 
             </div>
 
@@ -1575,7 +1765,6 @@ button.secondary{
 
 <!-- =========================
      PAGE 5
-     LETTER
 ========================= -->
 
 <section
@@ -1725,10 +1914,6 @@ button.secondary{
             </h2>
 
 
-            <!-- =========================
-                 VIDEO
-            ========================= -->
-
             <div class="video-card">
 
                 <video
@@ -1761,7 +1946,7 @@ button.secondary{
                 onclick="showPage(7)"
             >
 
-                One last thing 💌
+                ok final 😗💌
 
             </button>
 
@@ -1820,7 +2005,7 @@ button.secondary{
                 you are appreciated,<br>
 
                 and you deserve
-                beautiful things my princess 👸🌹.
+                beautiful things my princess 👸🌹
 
             </p>
 
@@ -1854,7 +2039,7 @@ button.secondary{
 
 
 /* =========================
-   CREATE FLOATING HEARTS
+   FLOATING HEARTS
 ========================= */
 
 function createFloatingHearts(){
@@ -1867,30 +2052,12 @@ function createFloatingHearts(){
 
     const hearts = [
 
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥",
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥",
-        "♡",
-        "♥"
+        "♥","♡","♥","♡",
+        "♥","♡","♥","♥",
+        "♡","♥","♡","♥",
+        "♡","♥","♡","♥",
+        "♡","♥","♡","♥",
+        "♡","♥","♡","♥"
 
     ];
 
@@ -1947,6 +2114,13 @@ createFloatingHearts();
 let currentPage = 1;
 
 const totalPages = 7;
+
+
+/* =========================
+   NO BUTTON VARIABLES
+========================= */
+
+let noClicks = 0;
 
 
 /* =========================
@@ -2034,10 +2208,7 @@ function showPage(number){
     }
 
 
-    /*
-       Stop video when leaving
-       the video page.
-    */
+    /* Stop video when leaving Page 6 */
 
     if(number !== 6){
 
@@ -2074,15 +2245,94 @@ function yesFirst(){
 
 function noFirst(){
 
+    noClicks++;
+
+
+    const noButton =
+        document.getElementById(
+            "noBtn"
+        );
+
+
     const message =
         document.getElementById(
             "noMessage"
         );
 
 
-    message.innerHTML =
-        "HOW DARE YOUU! 😭😒<br>Try again.";
+    /* Messages */
 
+    if(noClicks === 1){
+
+        message.innerHTML =
+            "HOW DARE YOUU! 😭😒<br>Try again.";
+
+    }
+
+    else if(noClicks === 2){
+
+        message.innerHTML =
+            "Really?? 😭<br>That button is getting smaller...";
+
+    }
+
+    else if(noClicks === 3){
+
+        message.innerHTML =
+            "Stop clicking NO 😭💗";
+
+    }
+
+    else if(noClicks === 4){
+
+        message.innerHTML =
+            "You can't escape the surprise 👀";
+
+    }
+
+    else if(noClicks === 5){
+
+        message.innerHTML =
+            "Okay okay... one more chance 🥺";
+
+    }
+
+    else{
+
+        message.innerHTML =
+            "BYEEE NO BUTTON 😭💗";
+
+    }
+
+
+    /*
+       Make the button smaller
+       after every click.
+    */
+
+    const scale =
+        Math.pow(0.72, noClicks);
+
+
+    noButton.style.transform =
+        "scale(" + scale + ")";
+
+
+    /*
+       After 6 clicks,
+       completely disappear.
+    */
+
+    if(noClicks >= 6){
+
+        noButton.classList.add(
+            "disappearing"
+        );
+
+    }
+
+
+    /* Little shake */
 
     const paper =
         document.querySelector(
