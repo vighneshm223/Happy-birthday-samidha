@@ -40,36 +40,7 @@ body{
 
     color:#5a2638;
 
-    background:#f7dce5;
-
     overflow-x:hidden;
-}
-
-
-/* =========================
-   VARIABLES
-========================= */
-
-:root{
-
-    --pink:#c65378;
-
-    --dark-pink:#742c49;
-
-    --rose:#9d3e61;
-
-    --light:#f9e6ec;
-
-    --paper:#ffffff;
-
-}
-
-
-/* =========================
-   NORMAL BACKGROUND
-========================= */
-
-body{
 
     background:
 
@@ -92,6 +63,25 @@ body{
             #f9e6ec,
             #f3cbd9
         );
+
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+
+    --pink:#c65378;
+
+    --dark-pink:#742c49;
+
+    --rose:#9d3e61;
+
+    --light:#f9e6ec;
+
+    --paper:#ffffff;
 
 }
 
@@ -126,7 +116,9 @@ body{
 }
 
 
-/* ACTIVE PAGE */
+/* =========================
+   ACTIVE PAGE
+========================= */
 
 .page.active{
 
@@ -1043,105 +1035,64 @@ button.secondary{
 
 
 /* =========================
-   BACKGROUND VIDEO
+   FINAL VIDEO CARD
 ========================= */
 
-.background-video{
-
-    position:fixed;
-
-    inset:0;
+.video-card{
 
     width:100%;
 
-    height:100%;
+    max-width:500px;
+
+    background:#ffffff;
+
+    padding:6px;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(90,38,56,.15);
+
+    margin-top:5px;
+
+}
+
+
+.video-card video{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:9px;
+
+    background:#111;
+
+    aspect-ratio:16/9;
 
     object-fit:cover;
 
-    z-index:-10;
-
-    opacity:1;
-
-    pointer-events:none;
-
-    display:none;
-
 }
 
 
 /* =========================
-   VIDEO DARK/PINK OVERLAY
+   VIDEO CAPTION
 ========================= */
 
-.background-overlay{
+.video-caption{
 
-    position:fixed;
+    font-family:
+        "Brush Script MT",
+        cursive;
 
-    inset:0;
+    color:#74405a;
 
-    background:
-        linear-gradient(
-            rgba(247,220,229,.70),
-            rgba(247,220,229,.70)
-        );
+    font-size:17px;
 
-    z-index:-9;
-
-    display:none;
-
-    pointer-events:none;
-
-}
-
-
-/* =========================
-   VIDEO ACTIVE
-========================= */
-
-body.video-playing{
-
-    background:#f7dce5;
-
-}
-
-
-body.video-playing
-.background-video{
-
-    display:block;
-
-}
-
-
-body.video-playing
-.background-overlay{
-
-    display:block;
-
-}
-
-
-/*
-   When video is playing,
-   floating hearts stay above it.
-*/
-
-body.video-playing
-.floating{
-
-    z-index:3;
-
-}
-
-
-/*
-   Final page stays above video.
-*/
-
-body.video-playing
-.page{
-
-    z-index:10;
+    margin:
+        10px 0
+        18px;
 
 }
 
@@ -1229,6 +1180,13 @@ body.video-playing
 
     }
 
+
+    .video-card video{
+
+        aspect-ratio:16/9;
+
+    }
+
 }
 
 </style>
@@ -1237,40 +1195,6 @@ body.video-playing
 
 
 <body>
-
-
-<!-- =========================
-     BACKGROUND VIDEO
-
-     IMPORTANT:
-     Keep birthday.mp4 in the
-     same folder as index.html.
-
-     The video already contains
-     your music.
-
-     NO MUTED ATTRIBUTE HERE.
-========================= -->
-
-<video
-    id="backgroundVideo"
-    class="background-video"
-    loop
-    playsinline
-    preload="auto"
->
-
-    <source
-        src="birthday.mp4"
-        type="video/mp4"
-    >
-
-    Your browser does not support video.
-
-</video>
-
-
-<div class="background-overlay"></div>
 
 
 <!-- =========================
@@ -1652,8 +1576,6 @@ body.video-playing
 <!-- =========================
      PAGE 5
      LETTER
-
-     VIDEO DOES NOT START HERE.
 ========================= -->
 
 <section
@@ -1770,14 +1692,94 @@ body.video-playing
 
 <!-- =========================
      PAGE 6
-     FINAL PAGE
-
-     VIDEO STARTS ONLY HERE.
+     VIDEO
 ========================= -->
 
 <section
     class="page"
     id="page6"
+>
+
+    <div class="paper">
+
+        <div class="content">
+
+
+            <div class="big-emoji">
+                🎥
+            </div>
+
+
+            <div class="eyebrow">
+
+                PRESS PLAY
+
+            </div>
+
+
+            <h2>
+
+                I made this<br>
+                for you.
+
+            </h2>
+
+
+            <!-- =========================
+                 VIDEO
+            ========================= -->
+
+            <div class="video-card">
+
+                <video
+                    id="finalVideo"
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+
+                    <source
+                        src="birthday.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+
+            <p class="video-caption">
+
+                A tiny movie of us 💗
+
+            </p>
+
+
+            <button
+                onclick="showPage(7)"
+            >
+
+                One last thing 💌
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 7
+========================= -->
+
+<section
+    class="page"
+    id="page7"
 >
 
     <div class="paper">
@@ -1852,7 +1854,7 @@ body.video-playing
 
 
 /* =========================
-   FLOATING HEARTS
+   CREATE FLOATING HEARTS
 ========================= */
 
 function createFloatingHearts(){
@@ -1939,12 +1941,12 @@ createFloatingHearts();
 
 
 /* =========================
-   PAGE SYSTEM
+   VARIABLES
 ========================= */
 
 let currentPage = 1;
 
-const totalPages = 6;
+const totalPages = 7;
 
 
 /* =========================
@@ -1954,9 +1956,7 @@ const totalPages = 6;
 function updateDots(){
 
     const dots =
-        document.getElementById(
-            "dots"
-        );
+        document.getElementById("dots");
 
 
     dots.innerHTML = "";
@@ -2025,9 +2025,7 @@ function showPage(number){
     }
 
 
-    /* =========================
-       BIRTHDAY CONFETTI
-    ========================= */
+    /* Confetti on birthday page */
 
     if(number === 3){
 
@@ -2036,19 +2034,23 @@ function showPage(number){
     }
 
 
-    /* =========================
-       VIDEO ONLY ON FINAL PAGE
-    ========================= */
+    /*
+       Stop video when leaving
+       the video page.
+    */
 
-    if(number === 6){
+    if(number !== 6){
 
-        startFinalVideo();
+        const video =
+            document.getElementById(
+                "finalVideo"
+            );
 
-    }
+        if(video){
 
-    else{
+            video.pause();
 
-        stopFinalVideo();
+        }
 
     }
 
@@ -2148,103 +2150,6 @@ function openEnvelope(){
         "envelopeHint"
     ).innerHTML =
         "Okay... now you're ready. 💗";
-
-}
-
-
-/* =========================
-   START FINAL VIDEO
-========================= */
-
-function startFinalVideo(){
-
-    const video =
-        document.getElementById(
-            "backgroundVideo"
-        );
-
-
-    /*
-       Make video visible.
-    */
-
-    document.body.classList.add(
-        "video-playing"
-    );
-
-
-    /*
-       IMPORTANT:
-       Do NOT mute the video.
-
-       The music inside birthday.mp4
-       will be used as the audio.
-    */
-
-    video.muted = false;
-
-    video.volume = 1;
-
-
-    /*
-       Start from the beginning
-       every time the final page
-       is opened.
-    */
-
-    video.currentTime = 0;
-
-
-    const playVideo =
-        video.play();
-
-
-    if(playVideo !== undefined){
-
-        playVideo.catch(function(error){
-
-            console.log(
-                "Video audio autoplay was blocked:",
-                error
-            );
-
-        });
-
-    }
-
-}
-
-
-/* =========================
-   STOP FINAL VIDEO
-========================= */
-
-function stopFinalVideo(){
-
-    const video =
-        document.getElementById(
-            "backgroundVideo"
-        );
-
-
-    /*
-       Hide video everywhere except
-       final page.
-    */
-
-    document.body.classList.remove(
-        "video-playing"
-    );
-
-
-    /*
-       Stop the video when leaving
-       the final page.
-    */
-
-    video.pause();
-
-    video.currentTime = 0;
 
 }
 
