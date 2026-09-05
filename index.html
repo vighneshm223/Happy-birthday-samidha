@@ -16,9 +16,9 @@
 
 <style>
 
-/* =========================
+/* =====================================================
    BASIC RESET
-========================= */
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -67,9 +67,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    VARIABLES
-========================= */
+===================================================== */
 
 :root{
 
@@ -86,102 +86,9 @@ body{
 }
 
 
-/* =========================
-   TEDDY BEAR BACKGROUND
-========================= */
-
-.teddy-background{
-
-    position:fixed;
-
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    pointer-events:none;
-
-    overflow:hidden;
-
-    z-index:0;
-
-}
-
-
-.teddy{
-
-    position:absolute;
-
-    font-size:55px;
-
-    opacity:.22;
-
-    filter:
-        drop-shadow(
-            0 5px 8px
-            rgba(110,45,70,.12)
-        );
-
-    animation:
-        teddyFloat
-        var(--tduration)
-        ease-in-out
-        infinite;
-
-    animation-delay:
-        var(--tdelay);
-
-}
-
-
-/* Different teddy sizes */
-
-.teddy.small{
-    font-size:35px;
-    opacity:.18;
-}
-
-.teddy.medium{
-    font-size:55px;
-    opacity:.22;
-}
-
-.teddy.large{
-    font-size:78px;
-    opacity:.20;
-}
-
-.teddy.xlarge{
-    font-size:105px;
-    opacity:.16;
-}
-
-
-@keyframes teddyFloat{
-
-    0%,
-    100%{
-
-        transform:
-            translateY(0)
-            rotate(-4deg);
-
-    }
-
-    50%{
-
-        transform:
-            translateY(-15px)
-            rotate(4deg);
-
-    }
-
-}
-
-
-/* =========================
+/* =====================================================
    PAGE SYSTEM
-========================= */
+===================================================== */
 
 .page{
 
@@ -206,14 +113,12 @@ body{
 
     overflow-y:auto;
 
-    z-index:2;
-
 }
 
 
-/* =========================
+/* =====================================================
    ACTIVE PAGE
-========================= */
+===================================================== */
 
 .page.active{
 
@@ -257,9 +162,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    PAPER CARD
-========================= */
+===================================================== */
 
 .paper{
 
@@ -324,9 +229,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    CONTENT
-========================= */
+===================================================== */
 
 .content{
 
@@ -342,14 +247,14 @@ body{
 
     position:relative;
 
-    z-index:2;
+    z-index:10;
 
 }
 
 
-/* =========================
+/* =====================================================
    TAPE
-========================= */
+===================================================== */
 
 .tape{
 
@@ -375,9 +280,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    TEXT
-========================= */
+===================================================== */
 
 h1,
 h2{
@@ -439,9 +344,9 @@ p{
 }
 
 
-/* =========================
+/* =====================================================
    LABEL
-========================= */
+===================================================== */
 
 .eyebrow{
 
@@ -470,9 +375,9 @@ p{
 }
 
 
-/* =========================
+/* =====================================================
    EMOJI
-========================= */
+===================================================== */
 
 .big-emoji{
 
@@ -500,9 +405,9 @@ p{
 }
 
 
-/* =========================
+/* =====================================================
    BUTTONS
-========================= */
+===================================================== */
 
 .buttons{
 
@@ -549,10 +454,8 @@ button{
         rgba(150,55,88,.25);
 
     transition:
-        transform .25s ease,
-        opacity .25s ease,
-        padding .25s ease,
-        font-size .25s ease;
+        transform .2s ease,
+        opacity .3s ease;
 
 }
 
@@ -580,41 +483,6 @@ button.secondary{
 }
 
 
-/* =========================
-   NO BUTTON SHRINK
-========================= */
-
-#noBtn{
-
-    transform-origin:center;
-
-    transition:
-        transform .3s ease,
-        opacity .3s ease;
-
-}
-
-
-#noBtn:hover{
-
-    transform:
-        translateY(-3px);
-
-}
-
-
-#noBtn.disappearing{
-
-    opacity:0;
-
-    transform:
-        scale(0);
-
-    pointer-events:none;
-
-}
-
-
 .small{
 
     font-size:13px;
@@ -626,9 +494,24 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
+   NO BUTTON SHRINKING
+===================================================== */
+
+#noButton{
+
+    transition:
+        transform .25s ease,
+        opacity .35s ease;
+
+    transform-origin:center;
+
+}
+
+
+/* =====================================================
    FLOATING HEARTS
-========================= */
+===================================================== */
 
 .floating{
 
@@ -689,13 +572,11 @@ button.secondary{
 
     }
 
-
     10%{
 
         opacity:.45;
 
     }
-
 
     50%{
 
@@ -709,13 +590,11 @@ button.secondary{
 
     }
 
-
     90%{
 
         opacity:.3;
 
     }
-
 
     100%{
 
@@ -732,9 +611,83 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
+   TEDDY BEARS
+===================================================== */
+
+.teddy-background{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    opacity:.25;
+
+    animation:
+        teddyFloat
+        var(--tduration)
+        ease-in-out
+        infinite;
+
+    animation-delay:
+        var(--tdelay);
+
+    filter:
+        drop-shadow(
+            0 5px 7px
+            rgba(100,40,60,.15)
+        );
+
+}
+
+
+@keyframes teddyFloat{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-45vh)
+            rotate(5deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-110vh)
+            rotate(-5deg);
+
+    }
+
+}
+
+
+/* =====================================================
    PAGE DOTS
-========================= */
+===================================================== */
 
 .dots{
 
@@ -781,9 +734,9 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
    ENVELOPE
-========================= */
+===================================================== */
 
 .envelope{
 
@@ -952,9 +905,9 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
    BIRTHDAY
-========================= */
+===================================================== */
 
 .cake{
 
@@ -1001,9 +954,9 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
    CONFETTI
-========================= */
+===================================================== */
 
 .confetti{
 
@@ -1014,6 +967,8 @@ button.secondary{
     pointer-events:none;
 
     overflow:hidden;
+
+    z-index:20;
 
 }
 
@@ -1060,9 +1015,9 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
    GALLERY
-========================= */
+===================================================== */
 
 .gallery-wrap{
 
@@ -1157,9 +1112,9 @@ button.secondary{
 }
 
 
-/* =========================
-   FINAL VIDEO CARD
-========================= */
+/* =====================================================
+   VIDEO CARD
+===================================================== */
 
 .video-card{
 
@@ -1199,9 +1154,9 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
    VIDEO CAPTION
-========================= */
+===================================================== */
 
 .video-caption{
 
@@ -1220,9 +1175,9 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
    LETTER
-========================= */
+===================================================== */
 
 .letter-card{
 
@@ -1256,9 +1211,317 @@ button.secondary{
 }
 
 
-/* =========================
+/* =====================================================
+   SECRET BUTTON PAGE 7
+===================================================== */
+
+.secret-button{
+
+    position:fixed;
+
+    top:8px;
+
+    right:8px;
+
+    width:22px;
+
+    height:22px;
+
+    padding:0;
+
+    border-radius:50%;
+
+    background:rgba(116,44,73,.15);
+
+    color:rgba(116,44,73,.5);
+
+    font-size:9px;
+
+    box-shadow:none;
+
+    z-index:200;
+
+}
+
+
+.secret-button:hover{
+
+    background:rgba(116,44,73,.3);
+
+    transform:scale(1.1);
+
+}
+
+
+/* =====================================================
+   PAGE 8 FILM ROLL
+===================================================== */
+
+.film-page{
+
+    width:100%;
+
+}
+
+
+.upload-box{
+
+    width:100%;
+
+    background:
+        rgba(255,255,255,.8);
+
+    border:
+        2px dashed
+        #d77b99;
+
+    border-radius:18px;
+
+    padding:15px;
+
+    margin:
+        5px 0
+        15px;
+
+}
+
+
+.upload-label{
+
+    display:inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d15a80,
+            #b9446c
+        );
+
+    color:white;
+
+    padding:
+        12px
+        20px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+}
+
+
+#imageUpload{
+
+    display:none;
+
+}
+
+
+.photo-count{
+
+    font-size:13px;
+
+    margin-top:10px;
+
+    opacity:.7;
+
+}
+
+
+/* =====================================================
+   FILM STRIP
+===================================================== */
+
+.film-container{
+
+    width:100%;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#242024;
+
+    border-radius:12px;
+
+    padding:
+        22px
+        0;
+
+    box-shadow:
+        0 10px 30px
+        rgba(50,20,30,.25);
+
+}
+
+
+/* sprocket holes */
+
+.film-container::before,
+.film-container::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    height:10px;
+
+    background:
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 13px,
+            #f9e6ec 13px 25px,
+            transparent 25px 38px
+        );
+
+    opacity:.8;
+
+    z-index:5;
+
+}
+
+
+.film-container::before{
+
+    top:5px;
+
+}
+
+
+.film-container::after{
+
+    bottom:5px;
+
+}
+
+
+/* =====================================================
+   MOVING FILM
+===================================================== */
+
+.film-track{
+
+    display:flex;
+
+    width:max-content;
+
+    animation:
+        filmMove
+        35s
+        linear
+        infinite;
+
+}
+
+
+.film-track:hover{
+
+    animation-play-state:paused;
+
+}
+
+
+.film-item{
+
+    width:190px;
+
+    height:145px;
+
+    flex-shrink:0;
+
+    margin:
+        0
+        8px;
+
+    padding:8px;
+
+    background:#111;
+
+    position:relative;
+
+}
+
+
+.film-item img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+@keyframes filmMove{
+
+    from{
+
+        transform:
+            translateX(0);
+
+    }
+
+    to{
+
+        transform:
+            translateX(-50%);
+
+    }
+
+}
+
+
+/* =====================================================
+   EMPTY FILM MESSAGE
+===================================================== */
+
+.empty-film{
+
+    color:white;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   RESET BUTTON
+===================================================== */
+
+.reset-button{
+
+    margin-top:15px;
+
+    background:#8f6a76;
+
+    font-size:13px;
+
+    padding:
+        11px
+        18px;
+
+}
+
+
+/* =====================================================
    SMALL SCREENS
-========================= */
+===================================================== */
 
 @media(max-height:680px){
 
@@ -1304,16 +1567,11 @@ button.secondary{
     }
 
 
-    .video-card video{
+    .film-item{
 
-        aspect-ratio:16/9;
+        width:160px;
 
-    }
-
-
-    .teddy.xlarge{
-
-        font-size:80px;
+        height:120px;
 
     }
 
@@ -1327,68 +1585,9 @@ button.secondary{
 <body>
 
 
-<!-- =========================
-     TEDDY BEAR BACKGROUND
-========================= -->
-
-<div class="teddy-background">
-
-    <span class="teddy small"
-          style="left:4%;top:12%;--tduration:5s;--tdelay:-1s;">
-        🧸
-    </span>
-
-    <span class="teddy large"
-          style="left:82%;top:8%;--tduration:6s;--tdelay:-3s;">
-        🧸
-    </span>
-
-    <span class="teddy medium"
-          style="left:7%;top:43%;--tduration:7s;--tdelay:-2s;">
-        🧸
-    </span>
-
-    <span class="teddy xlarge"
-          style="left:82%;top:39%;--tduration:8s;--tdelay:-5s;">
-        🧸
-    </span>
-
-    <span class="teddy small"
-          style="left:18%;top:78%;--tduration:5.5s;--tdelay:-4s;">
-        🧸
-    </span>
-
-    <span class="teddy large"
-          style="left:72%;top:77%;--tduration:7s;--tdelay:-1s;">
-        🧸
-    </span>
-
-    <span class="teddy medium"
-          style="left:48%;top:5%;--tduration:6s;--tdelay:-2s;">
-        🧸
-    </span>
-
-    <span class="teddy small"
-          style="left:91%;top:63%;--tduration:5s;--tdelay:-3s;">
-        🧸
-    </span>
-
-    <span class="teddy medium"
-          style="left:2%;top:88%;--tduration:8s;--tdelay:-6s;">
-        🧸
-    </span>
-
-    <span class="teddy small"
-          style="left:55%;top:91%;--tduration:6s;--tdelay:-2s;">
-        🧸
-    </span>
-
-</div>
-
-
-<!-- =========================
+<!-- =====================================================
      FLOATING HEARTS
-========================= -->
+===================================================== -->
 
 <div
     class="floating"
@@ -1396,9 +1595,19 @@ button.secondary{
 ></div>
 
 
-<!-- =========================
-     PAGE INDICATORS
-========================= -->
+<!-- =====================================================
+     TEDDY BACKGROUND
+===================================================== -->
+
+<div
+    class="teddy-background"
+    id="teddyBackground"
+></div>
+
+
+<!-- =====================================================
+     PAGE DOTS
+===================================================== -->
 
 <div
     class="dots"
@@ -1406,9 +1615,9 @@ button.secondary{
 ></div>
 
 
-<!-- =========================
+<!-- =====================================================
      PAGE 1
-========================= -->
+===================================================== -->
 
 <section
     class="page active"
@@ -1459,8 +1668,8 @@ button.secondary{
 
 
                 <button
+                    id="noButton"
                     class="secondary"
-                    id="noBtn"
                     onclick="noFirst()"
                 >
 
@@ -1483,9 +1692,9 @@ button.secondary{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      PAGE 2
-========================= -->
+===================================================== -->
 
 <section
     class="page"
@@ -1495,7 +1704,6 @@ button.secondary{
     <div class="paper">
 
         <div class="content">
-
 
             <div
                 class="envelope"
@@ -1568,9 +1776,9 @@ button.secondary{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      PAGE 3
-========================= -->
+===================================================== -->
 
 <section
     class="page"
@@ -1580,7 +1788,6 @@ button.secondary{
     <div class="paper">
 
         <div class="content">
-
 
             <div
                 class="confetti"
@@ -1640,9 +1847,9 @@ button.secondary{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      PAGE 4
-========================= -->
+===================================================== -->
 
 <section
     class="page"
@@ -1652,7 +1859,6 @@ button.secondary{
     <div class="paper">
 
         <div class="content">
-
 
             <div class="big-emoji">
                 📸
@@ -1763,9 +1969,9 @@ button.secondary{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      PAGE 5
-========================= -->
+===================================================== -->
 
 <section
     class="page"
@@ -1775,7 +1981,6 @@ button.secondary{
     <div class="paper">
 
         <div class="content">
-
 
             <div class="big-emoji">
                 💌
@@ -1798,7 +2003,6 @@ button.secondary{
 
 
             <div class="letter-card">
-
 
                 <p>
                     Hey birthday girl,
@@ -1879,10 +2083,10 @@ button.secondary{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      PAGE 6
      VIDEO
-========================= -->
+===================================================== -->
 
 <section
     class="page"
@@ -1892,7 +2096,6 @@ button.secondary{
     <div class="paper">
 
         <div class="content">
-
 
             <div class="big-emoji">
                 🎥
@@ -1958,19 +2161,29 @@ button.secondary{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      PAGE 7
-========================= -->
+===================================================== -->
 
 <section
     class="page"
     id="page7"
 >
 
+    <!-- SECRET BUTTON -->
+
+    <button
+        class="secret-button"
+        onclick="showPage(8)"
+        aria-label="Secret"
+    >
+        •
+    </button>
+
+
     <div class="paper">
 
         <div class="content">
-
 
             <div class="big-emoji">
                 🌙
@@ -2031,16 +2244,144 @@ button.secondary{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
+     PAGE 8
+     SECRET FILM ROLL
+===================================================== -->
+
+<section
+    class="page"
+    id="page8"
+>
+
+    <div class="paper">
+
+        <div class="content film-page">
+
+            <div class="big-emoji">
+                🎞️
+            </div>
+
+
+            <div class="eyebrow">
+
+                SECRET MEMORY ROLL
+
+            </div>
+
+
+            <h2>
+
+                Our little<br>
+                film roll 📸
+
+            </h2>
+
+
+            <p>
+
+                Add some memories
+                to the roll. 💗
+
+            </p>
+
+
+            <!-- UPLOAD -->
+
+            <div class="upload-box">
+
+                <label
+                    for="imageUpload"
+                    class="upload-label"
+                >
+
+                    + Add Photos 📸
+
+                </label>
+
+
+                <input
+                    type="file"
+                    id="imageUpload"
+                    accept="image/*"
+                    multiple
+                >
+
+
+                <div
+                    class="photo-count"
+                    id="photoCount"
+                >
+
+                    0 / 10 photos saved
+
+                </div>
+
+            </div>
+
+
+            <!-- FILM -->
+
+            <div
+                class="film-container"
+                id="filmContainer"
+            >
+
+                <div
+                    class="empty-film"
+                    id="emptyFilm"
+                >
+
+                    Your memories will appear here 🎞️💗
+
+                </div>
+
+
+                <div
+                    class="film-track"
+                    id="filmTrack"
+                ></div>
+
+            </div>
+
+
+            <button
+                class="reset-button"
+                onclick="resetFilmRoll()"
+            >
+
+                Reset Film Roll 🗑️
+
+            </button>
+
+
+            <button
+                onclick="showPage(7)"
+                style="margin-top:12px"
+            >
+
+                Back to the end 🌙
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
      JAVASCRIPT
-========================= -->
+===================================================== -->
 
 <script>
 
 
-/* =========================
+/* =====================================================
    FLOATING HEARTS
-========================= */
+===================================================== */
 
 function createFloatingHearts(){
 
@@ -2052,12 +2393,10 @@ function createFloatingHearts(){
 
     const hearts = [
 
-        "♥","♡","♥","♡",
-        "♥","♡","♥","♥",
-        "♡","♥","♡","♥",
-        "♡","♥","♡","♥",
-        "♡","♥","♡","♥",
-        "♡","♥","♡","♥"
+        "♥","♡","♥","♡","♥","♡",
+        "♥","♥","♡","♥","♡","♥",
+        "♡","♥","♡","♥","♡","♥",
+        "♡","♥","♡","♥","♡","♥"
 
     ];
 
@@ -2107,25 +2446,78 @@ function createFloatingHearts(){
 createFloatingHearts();
 
 
-/* =========================
-   VARIABLES
-========================= */
+/* =====================================================
+   TEDDY BEARS
+===================================================== */
+
+function createTeddyBears(){
+
+    const container =
+        document.getElementById(
+            "teddyBackground"
+        );
+
+
+    for(
+        let i = 0;
+        i < 14;
+        i++
+    ){
+
+        const teddy =
+            document.createElement("div");
+
+
+        teddy.className =
+            "teddy";
+
+
+        teddy.innerHTML =
+            "🧸";
+
+
+        teddy.style.left =
+            Math.random() * 100 + "%";
+
+
+        teddy.style.fontSize =
+            (25 + Math.random() * 55) + "px";
+
+
+        teddy.style.setProperty(
+            "--tduration",
+            (12 + Math.random() * 12) + "s"
+        );
+
+
+        teddy.style.setProperty(
+            "--tdelay",
+            (-Math.random() * 15) + "s"
+        );
+
+
+        container.appendChild(teddy);
+
+    }
+
+}
+
+
+createTeddyBears();
+
+
+/* =====================================================
+   PAGE VARIABLES
+===================================================== */
 
 let currentPage = 1;
 
-const totalPages = 7;
+const totalPages = 8;
 
 
-/* =========================
-   NO BUTTON VARIABLES
-========================= */
-
-let noClicks = 0;
-
-
-/* =========================
+/* =====================================================
    PAGE DOTS
-========================= */
+===================================================== */
 
 function updateDots(){
 
@@ -2165,9 +2557,9 @@ function updateDots(){
 updateDots();
 
 
-/* =========================
+/* =====================================================
    SHOW PAGE
-========================= */
+===================================================== */
 
 function showPage(number){
 
@@ -2199,7 +2591,7 @@ function showPage(number){
     }
 
 
-    /* Confetti on birthday page */
+    /* Confetti */
 
     if(number === 3){
 
@@ -2217,6 +2609,7 @@ function showPage(number){
                 "finalVideo"
             );
 
+
         if(video){
 
             video.pause();
@@ -2225,12 +2618,21 @@ function showPage(number){
 
     }
 
+
+    /* Load film roll when opening Page 8 */
+
+    if(number === 8){
+
+        loadFilmRoll();
+
+    }
+
 }
 
 
-/* =========================
+/* =====================================================
    YES BUTTON
-========================= */
+===================================================== */
 
 function yesFirst(){
 
@@ -2239,18 +2641,18 @@ function yesFirst(){
 }
 
 
-/* =========================
+/* =====================================================
    NO BUTTON
-========================= */
+===================================================== */
+
+let noClicks = 0;
+
 
 function noFirst(){
 
-    noClicks++;
-
-
-    const noButton =
+    const button =
         document.getElementById(
-            "noBtn"
+            "noButton"
         );
 
 
@@ -2260,79 +2662,12 @@ function noFirst(){
         );
 
 
-    /* Messages */
-
-    if(noClicks === 1){
-
-        message.innerHTML =
-            "HOW DARE YOUU! 😭😒<br>Try again.";
-
-    }
-
-    else if(noClicks === 2){
-
-        message.innerHTML =
-            "Really?? 😭<br>That button is getting smaller...";
-
-    }
-
-    else if(noClicks === 3){
-
-        message.innerHTML =
-            "Stop clicking NO 😭💗";
-
-    }
-
-    else if(noClicks === 4){
-
-        message.innerHTML =
-            "You can't escape the surprise 👀";
-
-    }
-
-    else if(noClicks === 5){
-
-        message.innerHTML =
-            "Okay okay... one more chance 🥺";
-
-    }
-
-    else{
-
-        message.innerHTML =
-            "BYEEE NO BUTTON 😭💗";
-
-    }
+    noClicks++;
 
 
-    /*
-       Make the button smaller
-       after every click.
-    */
+    message.innerHTML =
+        "HOW DARE YOUU! 😭😒<br>Try again.";
 
-    const scale =
-        Math.pow(0.72, noClicks);
-
-
-    noButton.style.transform =
-        "scale(" + scale + ")";
-
-
-    /*
-       After 6 clicks,
-       completely disappear.
-    */
-
-    if(noClicks >= 6){
-
-        noButton.classList.add(
-            "disappearing"
-        );
-
-    }
-
-
-    /* Little shake */
 
     const paper =
         document.querySelector(
@@ -2378,12 +2713,39 @@ function noFirst(){
 
     );
 
+
+    /* Make button smaller */
+
+    const scale =
+        Math.max(
+            0,
+            1 - (noClicks * 0.18)
+        );
+
+
+    button.style.transform =
+        "scale(" + scale + ")";
+
+
+    /* Eventually vanish */
+
+    if(noClicks >= 6){
+
+        button.style.opacity = "0";
+
+        button.style.pointerEvents = "none";
+
+        message.innerHTML =
+            "Fineee 😭 You have no choice now 💗";
+
+    }
+
 }
 
 
-/* =========================
+/* =====================================================
    ENVELOPE
-========================= */
+===================================================== */
 
 function openEnvelope(){
 
@@ -2404,9 +2766,9 @@ function openEnvelope(){
 }
 
 
-/* =========================
+/* =====================================================
    CONFETTI
-========================= */
+===================================================== */
 
 function launchConfetti(){
 
@@ -2468,11 +2830,372 @@ function launchConfetti(){
 }
 
 
-/* =========================
+/* =====================================================
+   FILM ROLL STORAGE
+===================================================== */
+
+const STORAGE_KEY =
+    "chamu_memory_film_roll";
+
+
+/* =====================================================
+   IMAGE COMPRESSION
+===================================================== */
+
+function compressImage(file){
+
+    return new Promise(function(resolve,reject){
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload = function(event){
+
+            const img =
+                new Image();
+
+
+            img.onload = function(){
+
+                const maxSize = 900;
+
+
+                let width =
+                    img.width;
+
+
+                let height =
+                    img.height;
+
+
+                if(width > height){
+
+                    if(width > maxSize){
+
+                        height =
+                            height *
+                            maxSize /
+                            width;
+
+                        width =
+                            maxSize;
+
+                    }
+
+                }
+
+                else{
+
+                    if(height > maxSize){
+
+                        width =
+                            width *
+                            maxSize /
+                            height;
+
+                        height =
+                            maxSize;
+
+                    }
+
+                }
+
+
+                const canvas =
+                    document.createElement(
+                        "canvas"
+                    );
+
+
+                canvas.width =
+                    width;
+
+
+                canvas.height =
+                    height;
+
+
+                const ctx =
+                    canvas.getContext(
+                        "2d"
+                    );
+
+
+                ctx.drawImage(
+                    img,
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+
+                const compressed =
+                    canvas.toDataURL(
+                        "image/jpeg",
+                        0.75
+                    );
+
+
+                resolve(compressed);
+
+            };
+
+
+            img.onerror =
+                reject;
+
+
+            img.src =
+                event.target.result;
+
+        };
+
+
+        reader.onerror =
+            reject;
+
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+/* =====================================================
+   IMAGE UPLOAD
+===================================================== */
+
+document
+    .getElementById("imageUpload")
+    .addEventListener(
+        "change",
+        async function(event){
+
+            const files =
+                Array.from(
+                    event.target.files
+                );
+
+
+            let saved =
+                JSON.parse(
+                    localStorage.getItem(
+                        STORAGE_KEY
+                    ) || "[]"
+                );
+
+
+            if(saved.length >= 10){
+
+                alert(
+                    "The film roll already has 10 photos 💗"
+                );
+
+                return;
+
+            }
+
+
+            const remaining =
+                10 - saved.length;
+
+
+            const selected =
+                files.slice(
+                    0,
+                    remaining
+                );
+
+
+            for(
+                const file of selected
+            ){
+
+                try{
+
+                    const image =
+                        await compressImage(
+                            file
+                        );
+
+
+                    saved.push(image);
+
+                }
+
+                catch(error){
+
+                    console.log(
+                        "Could not process image."
+                    );
+
+                }
+
+            }
+
+
+            localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify(saved)
+            );
+
+
+            event.target.value = "";
+
+
+            loadFilmRoll();
+
+        }
+    );
+
+
+/* =====================================================
+   LOAD FILM ROLL
+===================================================== */
+
+function loadFilmRoll(){
+
+    const track =
+        document.getElementById(
+            "filmTrack"
+        );
+
+
+    const empty =
+        document.getElementById(
+            "emptyFilm"
+        );
+
+
+    const count =
+        document.getElementById(
+            "photoCount"
+        );
+
+
+    let saved =
+        JSON.parse(
+            localStorage.getItem(
+                STORAGE_KEY
+            ) || "[]"
+        );
+
+
+    track.innerHTML = "";
+
+
+    count.innerHTML =
+        saved.length +
+        " / 10 photos saved";
+
+
+    if(saved.length === 0){
+
+        empty.style.display =
+            "block";
+
+        track.style.display =
+            "none";
+
+        return;
+
+    }
+
+
+    empty.style.display =
+        "none";
+
+
+    track.style.display =
+        "flex";
+
+
+    /*
+       Duplicate the photos.
+
+       This allows the film strip
+       to move continuously.
+    */
+
+    const allPhotos =
+        saved.concat(saved);
+
+
+    allPhotos.forEach(function(image){
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.className =
+            "film-item";
+
+
+        const img =
+            document.createElement(
+                "img"
+            );
+
+
+        img.src =
+            image;
+
+
+        img.alt =
+            "Memory";
+
+
+        item.appendChild(img);
+
+
+        track.appendChild(item);
+
+    });
+
+}
+
+
+/* =====================================================
+   RESET FILM ROLL
+===================================================== */
+
+function resetFilmRoll(){
+
+    const confirmReset =
+        confirm(
+            "Are you sure you want to remove all memories from the film roll? 💗"
+        );
+
+
+    if(!confirmReset){
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        STORAGE_KEY
+    );
+
+
+    loadFilmRoll();
+
+}
+
+
+/* =====================================================
    INITIALIZE
-========================= */
+===================================================== */
 
 showPage(1);
+
+loadFilmRoll();
 
 
 </script>
