@@ -14,9 +14,9 @@
 
 <style>
 
-/* =========================
+/* =====================================================
    BASIC
-========================= */
+===================================================== */
 
 *{
  box-sizing:border-box;
@@ -30,11 +30,8 @@ html,body{
 }
 
 body{
-
  font-family:"Trebuchet MS",sans-serif;
-
  color:#5a2638;
-
  overflow-x:hidden;
 
  background:
@@ -53,66 +50,47 @@ body{
   #f9e6ec,
   #f3cbd9
  );
-
 }
 
 
 :root{
-
  --pink:#c65378;
-
  --dark-pink:#742c49;
-
  --rose:#9d3e61;
-
  --light:#f9e6ec;
-
- --paper:#ffffff;
-
 }
 
 
-/* =========================
-   PAGES
-========================= */
+/* =====================================================
+   NORMAL PAGES
+===================================================== */
 
 .page{
-
  position:fixed;
-
  inset:0;
-
  width:100%;
-
  height:100%;
-
  padding:25px;
 
  display:none;
 
  align-items:center;
-
  justify-content:center;
 
  opacity:0;
-
  visibility:hidden;
 
  overflow-y:auto;
-
 }
 
 
 .page.active{
-
  display:flex !important;
-
  opacity:1 !important;
-
  visibility:visible !important;
 
- animation:pageIn .6s ease forwards;
-
+ animation:
+ pageIn .6s ease forwards;
 }
 
 
@@ -120,20 +98,24 @@ body{
 
  from{
   opacity:0;
-  transform:scale(.96) translateY(15px);
+  transform:
+   scale(.96)
+   translateY(15px);
  }
 
  to{
   opacity:1;
-  transform:scale(1) translateY(0);
+  transform:
+   scale(1)
+   translateY(0);
  }
 
 }
 
 
-/* =========================
-   PAPER
-========================= */
+/* =====================================================
+   PAPER CARD
+===================================================== */
 
 .paper{
 
@@ -148,7 +130,6 @@ body{
  display:flex;
 
  align-items:center;
-
  justify-content:center;
 
  text-align:center;
@@ -161,11 +142,13 @@ body{
   rgba(255,255,255,.94),
   rgba(255,255,255,.94)
  ),
+
  repeating-linear-gradient(
   0deg,
   transparent 0 31px,
   #ead7de 32px
  ),
+
  repeating-linear-gradient(
   90deg,
   transparent 0 31px,
@@ -173,10 +156,10 @@ body{
  );
 
  box-shadow:
- 0 25px 70px rgba(105,42,64,.22);
+ 0 25px 70px
+ rgba(105,42,64,.22);
 
  overflow:hidden;
-
 }
 
 
@@ -195,13 +178,12 @@ body{
  position:relative;
 
  z-index:2;
-
 }
 
 
-/* =========================
+/* =====================================================
    TAPE
-========================= */
+===================================================== */
 
 .tape{
 
@@ -223,20 +205,18 @@ body{
  rgba(242,184,201,.75);
 
  border-radius:5px;
-
 }
 
 
-/* =========================
+/* =====================================================
    TEXT
-========================= */
+===================================================== */
 
 h1,h2{
 
  font-family:Georgia,serif;
 
  color:var(--dark-pink);
-
 }
 
 
@@ -248,7 +228,6 @@ h1{
  line-height:1;
 
  margin:20px 0 15px;
-
 }
 
 
@@ -260,7 +239,6 @@ h2{
  line-height:1;
 
  margin:15px 0;
-
 }
 
 
@@ -271,7 +249,6 @@ p{
  line-height:1.6;
 
  margin:8px 0 25px;
-
 }
 
 
@@ -281,7 +258,9 @@ p{
 
  padding:8px 15px;
 
- border:2px dashed var(--pink);
+ border:
+ 2px dashed
+ var(--pink);
 
  border-radius:12px;
 
@@ -294,7 +273,6 @@ p{
  letter-spacing:1px;
 
  transform:rotate(-2deg);
-
 }
 
 
@@ -303,8 +281,9 @@ p{
  font-size:55px;
 
  animation:
- float 2.5s ease-in-out infinite;
-
+ float 2.5s
+ ease-in-out
+ infinite;
 }
 
 
@@ -312,16 +291,16 @@ p{
 
  50%{
   transform:
-  translateY(-8px)
-  rotate(3deg);
+   translateY(-8px)
+   rotate(3deg);
  }
 
 }
 
 
-/* =========================
+/* =====================================================
    BUTTONS
-========================= */
+===================================================== */
 
 .buttons{
 
@@ -332,7 +311,6 @@ p{
  gap:12px;
 
  flex-wrap:wrap;
-
 }
 
 
@@ -365,7 +343,6 @@ button{
 
  transition:
  transform .2s ease;
-
 }
 
 
@@ -373,7 +350,6 @@ button:hover{
 
  transform:
  translateY(-3px);
-
 }
 
 
@@ -381,14 +357,12 @@ button:active{
 
  transform:
  scale(.94);
-
 }
 
 
 button.secondary{
 
  background:#8f6a76;
-
 }
 
 
@@ -399,13 +373,12 @@ button.secondary{
  opacity:.7;
 
  margin-top:18px;
-
 }
 
 
-/* =========================
+/* =====================================================
    FALLING HEARTS
-========================= */
+===================================================== */
 
 .floating{
 
@@ -418,7 +391,6 @@ button.secondary{
  overflow:hidden;
 
  z-index:1;
-
 }
 
 
@@ -443,10 +415,9 @@ button.secondary{
 
  filter:
  drop-shadow(
- 0 3px 5px
- rgba(150,55,88,.12)
+  0 3px 5px
+  rgba(150,55,88,.12)
  );
-
 }
 
 
@@ -455,13 +426,12 @@ button.secondary{
  0%{
 
   transform:
-  translateY(0)
-  translateX(0)
-  rotate(0deg)
-  scale(.8);
+   translateY(0)
+   translateX(0)
+   rotate(0deg)
+   scale(.8);
 
   opacity:0;
-
  }
 
  10%{
@@ -471,13 +441,12 @@ button.secondary{
  50%{
 
   transform:
-  translateY(-50vh)
-  translateX(var(--drift))
-  rotate(180deg)
-  scale(1);
+   translateY(-50vh)
+   translateX(var(--drift))
+   rotate(180deg)
+   scale(1);
 
   opacity:.5;
-
  }
 
  90%{
@@ -487,23 +456,22 @@ button.secondary{
  100%{
 
   transform:
-  translateY(-115vh)
-  translateX(
-   calc(var(--drift) * -1)
-  )
-  rotate(360deg)
-  scale(.7);
+   translateY(-115vh)
+   translateX(
+    calc(var(--drift) * -1)
+   )
+   rotate(360deg)
+   scale(.7);
 
   opacity:0;
-
  }
 
 }
 
 
-/* =========================
+/* =====================================================
    TEDDY BEARS
-========================= */
+===================================================== */
 
 .teddy-background{
 
@@ -518,8 +486,7 @@ button.secondary{
  z-index:1;
 
  transition:
- opacity .5s ease;
-
+  opacity .5s ease;
 }
 
 
@@ -532,14 +499,13 @@ button.secondary{
  opacity:var(--opacity);
 
  transform:
- rotate(var(--rotation));
+  rotate(var(--rotation));
 
  animation:
- teddyFloat
- var(--duration)
- ease-in-out
- infinite;
-
+  teddyFloat
+  var(--duration)
+  ease-in-out
+  infinite;
 }
 
 
@@ -548,27 +514,27 @@ button.secondary{
  0%,100%{
 
   transform:
-  translateY(0)
-  rotate(var(--rotation));
-
+   translateY(0)
+   rotate(var(--rotation));
  }
 
  50%{
 
   transform:
-  translateY(-12px)
-  rotate(
-   calc(var(--rotation) + 4deg)
-  );
-
+   translateY(-12px)
+   rotate(
+    calc(
+     var(--rotation) + 4deg
+    )
+   );
  }
 
 }
 
 
-/* =========================
-   DOTS
-========================= */
+/* =====================================================
+   PAGE DOTS
+===================================================== */
 
 .dots{
 
@@ -579,14 +545,13 @@ button.secondary{
  left:50%;
 
  transform:
- translateX(-50%);
+  translateX(-50%);
 
  display:flex;
 
  gap:6px;
 
  z-index:100;
-
 }
 
 
@@ -599,8 +564,7 @@ button.secondary{
  border-radius:50%;
 
  background:
- rgba(255,255,255,.8);
-
+  rgba(255,255,255,.8);
 }
 
 
@@ -611,13 +575,12 @@ button.secondary{
  border-radius:10px;
 
  background:#c65378;
-
 }
 
 
-/* =========================
+/* =====================================================
    ENVELOPE
-========================= */
+===================================================== */
 
 .envelope{
 
@@ -632,7 +595,6 @@ button.secondary{
  cursor:pointer;
 
  perspective:900px;
-
 }
 
 
@@ -649,7 +611,6 @@ button.secondary{
  box-shadow:
  0 20px 40px
  rgba(100,40,65,.2);
-
 }
 
 
@@ -668,19 +629,18 @@ button.secondary{
  background:#e9a5bd;
 
  clip-path:
- polygon(
- 0 0,
- 100% 0,
- 50% 100%
- );
+  polygon(
+   0 0,
+   100% 0,
+   50% 100%
+  );
 
  transform-origin:top;
 
  transition:
- transform .7s ease;
+  transform .7s ease;
 
  z-index:3;
-
 }
 
 
@@ -688,8 +648,7 @@ button.secondary{
 .env-flap{
 
  transform:
- rotateX(180deg);
-
+  rotateX(180deg);
 }
 
 
@@ -715,15 +674,14 @@ button.secondary{
 
  box-shadow:
  0 8px 20px
- rgba(90,38,56,.15);
+  rgba(90,38,56,.15);
 
  transition:
- transform .7s ease;
+  transform .7s ease;
 
  font-size:17px;
 
  line-height:1.4;
-
 }
 
 
@@ -731,8 +689,7 @@ button.secondary{
 .letter{
 
  transform:
- translateY(-70px);
-
+  translateY(-70px);
 }
 
 
@@ -745,7 +702,7 @@ button.secondary{
  top:50%;
 
  transform:
- translate(-50%,-50%);
+  translate(-50%,-50%);
 
  width:50px;
 
@@ -764,7 +721,6 @@ button.secondary{
  z-index:5;
 
  transition:.3s;
-
 }
 
 
@@ -774,20 +730,18 @@ button.secondary{
  opacity:0;
 
  transform:
- translate(-50%,-50%)
- scale(.5);
-
+  translate(-50%,-50%)
+  scale(.5);
 }
 
 
-/* =========================
+/* =====================================================
    BIRTHDAY
-========================= */
+===================================================== */
 
 .cake{
 
  font-size:75px;
-
 }
 
 
@@ -796,14 +750,13 @@ button.secondary{
  font-family:Georgia,serif;
 
  font-size:
- clamp(43px,12vw,75px);
+  clamp(43px,12vw,75px);
 
  line-height:.9;
 
  color:var(--dark-pink);
 
  margin:15px 0;
-
 }
 
 
@@ -814,12 +767,15 @@ button.secondary{
  cursive;
 
  font-size:
- clamp(45px,12vw,75px);
+  clamp(45px,12vw,75px);
 
  color:#d04d79;
-
 }
 
+
+/* =====================================================
+   CONFETTI
+===================================================== */
 
 .confetti{
 
@@ -830,7 +786,6 @@ button.secondary{
  pointer-events:none;
 
  overflow:hidden;
-
 }
 
 
@@ -843,9 +798,10 @@ button.secondary{
  height:15px;
 
  animation:
- confettiFall
- 2.5s ease-out forwards;
-
+  confettiFall
+  2.5s
+  ease-out
+  forwards;
 }
 
 
@@ -854,34 +810,31 @@ button.secondary{
  from{
 
   transform:
-  translateY(-30px)
-  rotate(0);
+   translateY(-30px)
+   rotate(0);
 
   opacity:1;
-
  }
 
  to{
 
   transform:
-  translateY(100vh)
-  rotate(700deg);
+   translateY(100vh)
+   rotate(700deg);
 
   opacity:0;
-
  }
 
 }
 
 
-/* =========================
+/* =====================================================
    GALLERY
-========================= */
+===================================================== */
 
 .gallery-wrap{
 
  width:100%;
-
 }
 
 
@@ -890,7 +843,7 @@ button.secondary{
  display:grid;
 
  grid-template-columns:
- repeat(2,1fr);
+  repeat(2,1fr);
 
  gap:13px;
 
@@ -899,7 +852,6 @@ button.secondary{
  overflow-y:auto;
 
  padding:8px;
-
 }
 
 
@@ -914,24 +866,21 @@ button.secondary{
 
  box-shadow:
  0 8px 18px
- rgba(90,38,56,.16);
-
+  rgba(90,38,56,.16);
 }
 
 
 .photo:nth-child(2n){
 
  transform:
- rotate(2deg);
-
+  rotate(2deg);
 }
 
 
 .photo:nth-child(3n){
 
  transform:
- rotate(-1deg);
-
+  rotate(-1deg);
 }
 
 
@@ -944,7 +893,6 @@ button.secondary{
  object-fit:cover;
 
  display:block;
-
 }
 
 
@@ -965,13 +913,12 @@ button.secondary{
  color:#74405a;
 
  font-size:15px;
-
 }
 
 
-/* =========================
+/* =====================================================
    VIDEO
-========================= */
+===================================================== */
 
 .video-card{
 
@@ -990,7 +937,6 @@ button.secondary{
  rgba(90,38,56,.15);
 
  margin-top:5px;
-
 }
 
 
@@ -1007,7 +953,6 @@ button.secondary{
  aspect-ratio:16/9;
 
  object-fit:cover;
-
 }
 
 
@@ -1021,14 +966,14 @@ button.secondary{
 
  font-size:17px;
 
- margin:10px 0 18px;
-
+ margin:
+ 10px 0 18px;
 }
 
 
-/* =========================
+/* =====================================================
    LETTER
-========================= */
+===================================================== */
 
 .letter-card{
 
@@ -1047,8 +992,8 @@ button.secondary{
  border-radius:15px;
 
  box-shadow:
- inset 0 0 0 1px #efdde2;
-
+  inset 0 0 0 1px
+  #efdde2;
 }
 
 
@@ -1057,82 +1002,107 @@ button.secondary{
  font-family:Georgia,serif;
 
  font-size:16px;
-
 }
 
 
-/* =========================
-   SECRET BUTTON
-========================= */
+/* =====================================================
+   SECRET BUTTON ON PAGE 7
+===================================================== */
+
+.secret-gift{
+
+ position:fixed;
+
+ top:48px;
+
+ right:14px;
+
+ z-index:9999;
+
+ display:flex;
+
+ flex-direction:column;
+
+ align-items:center;
+
+ justify-content:center;
+
+ pointer-events:auto;
+}
+
 
 .secret-btn{
 
- position:absolute;
+ width:auto;
 
- top:10px;
+ height:auto;
 
- right:12px;
+ padding:3px;
 
- width:48px;
-
- height:45px;
-
- padding:0;
+ margin:0;
 
  border:none;
 
  background:transparent;
 
- color:#c65378;
+ box-shadow:none;
 
- font-size:30px;
+ border-radius:0;
+
+ font-size:38px;
 
  line-height:1;
 
  cursor:pointer;
 
- z-index:20;
-
- opacity:.8;
-
- box-shadow:none;
+ opacity:.95;
 
  transition:
- transform .2s ease,
- opacity .2s ease;
-
+  transform .2s ease,
+  opacity .2s ease;
 }
 
 
 .secret-btn:hover{
 
  transform:
- scale(1.15)
- rotate(-4deg);
+  scale(1.18)
+  rotate(-5deg);
 
  opacity:1;
-
 }
 
 
-.secret-message{
+.secret-btn:active{
 
- margin-top:4px;
+ transform:
+  scale(.95);
+}
 
- font-size:13px;
+
+.secret-gift-text{
+
+ margin-top:2px;
+
+ font-family:
+ "Trebuchet MS",
+ sans-serif;
+
+ font-size:10px;
+
+ font-weight:bold;
 
  color:#9d3e61;
 
- font-style:italic;
+ white-space:nowrap;
 
  opacity:.85;
-
 }
 
 
-/* ==================================================
-   SECRET FULL SCREEN FILM ROLL
-================================================== */
+/* =====================================================
+   FULL SCREEN SECRET FILM PAGE
+===================================================== */
 
 .film-page{
 
@@ -1141,23 +1111,21 @@ button.secondary{
  overflow:hidden !important;
 
  background:#111 !important;
-
 }
 
 
 /*
- Hide the normal paper completely
+ Hide normal card completely
 */
 
 .film-page .paper{
 
- display:none;
-
+ display:none !important;
 }
 
 
 /*
- Full screen film background
+ Full-screen film background
 */
 
 .full-film-background{
@@ -1175,12 +1143,11 @@ button.secondary{
  overflow:hidden;
 
  z-index:1;
-
 }
 
 
 /*
- Film strip
+ Film strip position
 */
 
 .film-moving{
@@ -1194,13 +1161,12 @@ button.secondary{
  width:max-content;
 
  transform:
- translateY(-50%);
-
+  translateY(-50%);
 }
 
 
 /*
- Moving roll
+ Moving film
 */
 
 .film-roll{
@@ -1214,14 +1180,31 @@ button.secondary{
  align-items:center;
 
  animation:
- filmMove 25s
- linear infinite;
+  filmMove 25s
+  linear
+  infinite;
+}
+
+
+@keyframes filmMove{
+
+ from{
+
+  transform:
+   translateX(0);
+ }
+
+ to{
+
+  transform:
+   translateX(-50%);
+ }
 
 }
 
 
 /*
- Two copies of film
+ Individual film sets
 */
 
 .film-set{
@@ -1232,19 +1215,21 @@ button.secondary{
 
  gap:12px;
 
- padding:55px 20px;
+ padding:
+ 55px 20px;
 
  background:#111;
 
- border-top:48px solid #111;
+ border-top:
+ 48px solid #111;
 
- border-bottom:48px solid #111;
-
+ border-bottom:
+ 48px solid #111;
 }
 
 
 /*
- Individual photo
+ Individual picture frame
 */
 
 .film-photo{
@@ -1265,7 +1250,6 @@ button.secondary{
  0 0 0 2px #555,
  0 8px 20px
  rgba(0,0,0,.6);
-
 }
 
 
@@ -1278,12 +1262,11 @@ button.secondary{
  display:block;
 
  object-fit:cover;
-
 }
 
 
 /*
- Film sprocket holes
+ Sprocket holes
 */
 
 .film-holes{
@@ -1301,17 +1284,11 @@ button.secondary{
  background:
 
  repeating-linear-gradient(
-
   90deg,
-
   transparent 0 18px,
-
   #111 18px 31px,
-
   transparent 31px 52px
-
  );
-
 }
 
 
@@ -1321,7 +1298,6 @@ button.secondary{
 
  border-bottom:
  8px solid #222;
-
 }
 
 
@@ -1331,12 +1307,11 @@ button.secondary{
 
  border-top:
  8px solid #222;
-
 }
 
 
 /*
- Dark edges of film
+ Dark top and bottom film edges
 */
 
 .full-film-background::before,
@@ -1355,50 +1330,24 @@ button.secondary{
  background:#111;
 
  z-index:4;
-
 }
 
 
 .full-film-background::before{
 
  top:0;
-
 }
 
 
 .full-film-background::after{
 
  bottom:0;
-
 }
 
 
-/*
- Continuous movement
-*/
-
-@keyframes filmMove{
-
- from{
-
-  transform:
-  translateX(0);
-
- }
-
- to{
-
-  transform:
-  translateX(-50%);
-
- }
-
-}
-
-
-/*
- Center information card
-*/
+/* =====================================================
+   FILM CENTER CARD
+===================================================== */
 
 .film-overlay{
 
@@ -1415,16 +1364,11 @@ button.secondary{
  justify-content:center;
 
  background:
- rgba(30,10,18,.22);
+  rgba(30,10,18,.22);
 
  pointer-events:none;
-
 }
 
-
-/*
- Film roll content
-*/
 
 .film-content{
 
@@ -1435,7 +1379,7 @@ button.secondary{
  text-align:center;
 
  background:
- rgba(255,255,255,.94);
+  rgba(255,255,255,.94);
 
  border-radius:25px;
 
@@ -1444,28 +1388,24 @@ button.secondary{
  rgba(0,0,0,.45);
 
  pointer-events:auto;
-
 }
 
 
 .film-content h2{
 
  margin:15px 0;
-
 }
 
 
 .film-content p{
 
  margin-bottom:20px;
-
 }
 
 
 .film-content button{
 
  margin:5px;
-
 }
 
 
@@ -1478,7 +1418,6 @@ button.secondary{
  color:#742c49;
 
  opacity:.8;
-
 }
 
 
@@ -1491,48 +1430,72 @@ button.secondary{
  padding:50px;
 
  white-space:nowrap;
-
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:600px){
+
+ .secret-gift{
+
+  top:48px;
+
+  right:9px;
+ }
+
+
+ .secret-btn{
+
+  font-size:36px;
+ }
+
+
+ .secret-gift-text{
+
+  font-size:9px;
+ }
+
 
  .film-roll{
 
   height:230px;
-
  }
+
 
  .film-set{
 
   gap:8px;
 
-  padding:35px 15px;
-
+  padding:
+   35px 15px;
  }
+
 
  .film-photo{
 
   width:190px;
 
   height:135px;
-
  }
+
 
  .film-content{
 
   width:88vw;
 
-  padding:28px 18px;
-
+  padding:
+   28px 18px;
  }
 
 }
 
+
+/* =====================================================
+   SHORT SCREENS
+===================================================== */
 
 @media(max-height:680px){
 
@@ -1540,40 +1503,40 @@ button.secondary{
 
   min-height:90vh;
 
-  padding:45px 20px 25px;
-
+  padding:
+   45px 20px 25px;
  }
+
 
  h1{
 
   font-size:40px;
-
  }
+
 
  h2{
 
   font-size:35px;
-
  }
+
 
  .gallery{
 
   max-height:37vh;
-
  }
+
 
  .envelope{
 
   margin-top:25px;
 
   margin-bottom:25px;
-
  }
+
 
  .video-card video{
 
   aspect-ratio:16/9;
-
  }
 
 }
@@ -1587,9 +1550,9 @@ button.secondary{
 <body>
 
 
-<!-- ==========================================
+<!-- =====================================================
      FALLING HEARTS
-========================================== -->
+===================================================== -->
 
 <div
  class="floating"
@@ -1597,9 +1560,9 @@ button.secondary{
 </div>
 
 
-<!-- ==========================================
+<!-- =====================================================
      TEDDY BEARS
-========================================== -->
+===================================================== -->
 
 <div
  class="teddy-background"
@@ -1607,9 +1570,10 @@ button.secondary{
 </div>
 
 
-<!-- ==========================================
+<!-- =====================================================
      PAGE DOTS
-========================================== -->
+     Only 7 dots because Page 8 is SECRET
+===================================================== -->
 
 <div
  class="dots"
@@ -1617,9 +1581,9 @@ button.secondary{
 </div>
 
 
-<!-- =================================================
+<!-- =====================================================
      PAGE 1
-================================================= -->
+===================================================== -->
 
 <section
  class="page active"
@@ -1652,14 +1616,19 @@ button.secondary{
 
     <button
      onclick="yesFirst()">
+
      YES 💗
+
     </button>
+
 
     <button
      class="secondary"
      id="noBtn"
      onclick="noFirst()">
+
      NO 😐
+
     </button>
 
    </div>
@@ -1676,9 +1645,9 @@ button.secondary{
 </section>
 
 
-<!-- =================================================
+<!-- =====================================================
      PAGE 2
-================================================= -->
+===================================================== -->
 
 <section
  class="page"
@@ -1696,11 +1665,15 @@ button.secondary{
     <div class="env-back"></div>
 
     <div class="letter">
+
      For my birthday girl... 💗
+
      <br><br>
+
      <small>
       Tap the envelope
      </small>
+
     </div>
 
     <div class="env-flap"></div>
@@ -1711,23 +1684,29 @@ button.secondary{
 
    </div>
 
+
    <div class="eyebrow">
     YOU FOUND IT YEPPY
    </div>
+
 
    <h2>
     A little letter<br>
     before we begin...
    </h2>
 
+
    <p id="envelopeHint">
     Tap the envelope.
     I promise it's worth it. ✨
    </p>
 
+
    <button
     onclick="showPage(3)">
+
     Open the surprise sweet heart 🎀
+
    </button>
 
   </div>
@@ -1737,9 +1716,9 @@ button.secondary{
 </section>
 
 
-<!-- =================================================
+<!-- =====================================================
      PAGE 3
-================================================= -->
+===================================================== -->
 
 <section
  class="page"
@@ -1754,31 +1733,39 @@ button.secondary{
     id="confetti">
    </div>
 
+
    <div class="cake">
     🎂
    </div>
 
+
    <div class="eyebrow">
     TODAY IS YOUR DAY
    </div>
+
 
    <div class="birthday-title">
     HAPPY<br>
     BIRTHDAY
    </div>
 
+
    <div class="name">
     Chamuu! 💕
    </div>
+
 
    <p>
     One whole day dedicated to celebrating<br>
     the wonderful person you are.
    </p>
 
+
    <button
     onclick="showPage(4)">
+
     Let's look back 📸
+
    </button>
 
   </div>
@@ -1788,9 +1775,9 @@ button.secondary{
 </section>
 
 
-<!-- =================================================
+<!-- =====================================================
      PAGE 4
-================================================= -->
+===================================================== -->
 
 <section
  class="page"
@@ -1804,22 +1791,27 @@ button.secondary{
     📸
    </div>
 
+
    <div class="eyebrow">
     A FEW OF MY FAVOURITES
    </div>
+
 
    <h2>
     Our little<br>
     memories
    </h2>
 
+
    <p>
     Every picture has a story. 💗
    </p>
 
+
    <div class="gallery-wrap">
 
     <div class="gallery">
+
 
      <div class="photo">
 
@@ -1872,13 +1864,17 @@ button.secondary{
 
      </div>
 
+
     </div>
 
    </div>
 
+
    <button
     onclick="showPage(5)">
+
     One last last thing 💌👀
+
    </button>
 
   </div>
@@ -1888,9 +1884,9 @@ button.secondary{
 </section>
 
 
-<!-- =================================================
+<!-- =====================================================
      PAGE 5
-================================================= -->
+===================================================== -->
 
 <section
  class="page"
@@ -1904,20 +1900,24 @@ button.secondary{
     💌
    </div>
 
+
    <div class="eyebrow">
     A MESSAGE FOR YOU
    </div>
+
 
    <h2>
     Just a few<br>
     words...
    </h2>
 
+
    <div class="letter-card">
 
     <p>
      Hey birthday girl,
     </p>
+
 
     <p>
      I wanted to make something that wasn't
@@ -1926,12 +1926,14 @@ button.secondary{
      and keep as a little memory.
     </p>
 
+
     <p>
      Thank you for all the laughs,
      the random moments, the conversations,
      and all the memories that somehow
      become my favourite ones.
     </p>
+
 
     <p>
      I hope this year brings you everything
@@ -1940,11 +1942,13 @@ button.secondary{
      reasons to smile.
     </p>
 
+
     <p>
      And whenever you look back at these
      pictures, I hope you remember just
      how special you are. ❤️
     </p>
+
 
     <p>
      <b>
@@ -1952,7 +1956,9 @@ button.secondary{
      </b>
     </p>
 
+
    </div>
+
 
    <button
     onclick="showPage(6)"
@@ -1969,9 +1975,9 @@ button.secondary{
 </section>
 
 
-<!-- =================================================
+<!-- =====================================================
      PAGE 6
-================================================= -->
+===================================================== -->
 
 <section
  class="page"
@@ -1985,14 +1991,17 @@ button.secondary{
     🎥
    </div>
 
+
    <div class="eyebrow">
     PRESS PLAY
    </div>
+
 
    <h2>
     I made this<br>
     for you.
    </h2>
+
 
    <div class="video-card">
 
@@ -2012,13 +2021,17 @@ button.secondary{
 
    </div>
 
+
    <p class="video-caption">
     A tiny movie of us 💗
    </p>
 
+
    <button
     onclick="showPage(7)">
+
     ok final 😗💌
+
    </button>
 
   </div>
@@ -2028,43 +2041,35 @@ button.secondary{
 </section>
 
 
-<!-- =================================================
+<!-- =====================================================
      PAGE 7
-================================================= -->
+===================================================== -->
 
 <section
  class="page"
  id="page7">
 
+
  <div class="paper">
 
-
-  <!-- SECRET BUTTON -->
-
-  <button
-   class="secret-btn"
-   onclick="showPage(8)"
-   aria-label="Secret page">
-
-   🎞️
-
-  </button>
-
-
   <div class="content">
+
 
    <div class="big-emoji">
     🌙
    </div>
 
+
    <div class="eyebrow">
     THE END... MAYBE
    </div>
+
 
    <h2>
     And if you<br>
     ever forget...
    </h2>
+
 
    <p
     style="
@@ -2082,21 +2087,14 @@ button.secondary{
 
    </p>
 
+
    <div class="name">
     Always. ♡
    </div>
 
+
    <div class="eyebrow">
     MADE JUST FOR YOU ✨
-   </div>
-
-
-   <!-- MESSAGE BELOW SECRET FILM BUTTON -->
-
-   <div class="secret-message">
-
-    There is one more secret gift for you 💗
-
    </div>
 
 
@@ -2104,20 +2102,51 @@ button.secondary{
 
  </div>
 
+
+ <!-- =================================================
+      SECRET FILM BUTTON
+      FIXED TO SCREEN
+ ================================================= -->
+
+ <div class="secret-gift">
+
+
+  <button
+   class="secret-btn"
+   onclick="showPage(8)"
+   aria-label="One more secret">
+
+   🎞️
+
+  </button>
+
+
+  <div class="secret-gift-text">
+
+   one more secret 🤫
+
+  </div>
+
+
+ </div>
+
+
 </section>
 
 
-<!-- =================================================
+<!-- =====================================================
      PAGE 8
-     SECRET FILM ROLL
-================================================= -->
+     SECRET FULL SCREEN FILM ROLL
+===================================================== -->
 
 <section
  class="page film-page"
  id="page8">
 
 
- <!-- FULL SCREEN FILM -->
+ <!-- =================================================
+      FULL SCREEN FILM BACKGROUND
+ ================================================= -->
 
  <div class="full-film-background">
 
@@ -2129,10 +2158,12 @@ button.secondary{
 
   <div class="film-moving">
 
+
    <div
     id="filmRoll"
     class="film-roll">
    </div>
+
 
   </div>
 
@@ -2145,9 +2176,12 @@ button.secondary{
  </div>
 
 
- <!-- CENTER CONTROLS -->
+ <!-- =================================================
+      CENTER CONTROL CARD
+ ================================================= -->
 
  <div class="film-overlay">
+
 
   <div class="film-content">
 
@@ -2181,8 +2215,8 @@ button.secondary{
     type="button"
     onclick="
      document
-     .getElementById('photoUpload')
-     .click()
+      .getElementById('photoUpload')
+      .click()
     ">
 
     Add Photos 📸
@@ -2220,13 +2254,13 @@ button.secondary{
 <script>
 
 
-/* =================================================
+/* =====================================================
    FALLING HEARTS
-================================================= */
+===================================================== */
 
 function createFloatingHearts(){
 
- const container =
+ const container=
   document.getElementById(
    "floatingHearts"
   );
@@ -2242,44 +2276,59 @@ function createFloatingHearts(){
  ];
 
 
- hearts.forEach(function(heart){
+ hearts.forEach(
+  function(heart){
 
-  const span=
-   document.createElement("span");
-
-
-  span.innerHTML=heart;
-
-
-  span.style.left=
-   Math.random()*100+"%";
+   const span=
+    document.createElement(
+     "span"
+    );
 
 
-  span.style.fontSize=
-   (16+Math.random()*18)+"px";
+   span.innerHTML=
+    heart;
 
 
-  span.style.setProperty(
-   "--duration",
-   (6+Math.random()*7)+"s"
-  );
+   span.style.left=
+    Math.random()*100+
+    "%";
 
 
-  span.style.setProperty(
-   "--delay",
-   (-Math.random()*10)+"s"
-  );
+   span.style.fontSize=
+    (16+
+     Math.random()*18)+
+    "px";
 
 
-  span.style.setProperty(
-   "--drift",
-   (-50+Math.random()*100)+"px"
-  );
+   span.style.setProperty(
+    "--duration",
+    (6+
+     Math.random()*7)+
+    "s"
+   );
 
 
-  container.appendChild(span);
+   span.style.setProperty(
+    "--delay",
+    (-Math.random()*10)+
+    "s"
+   );
 
- });
+
+   span.style.setProperty(
+    "--drift",
+    (-50+
+     Math.random()*100)+
+    "px"
+   );
+
+
+   container.appendChild(
+    span
+   );
+
+  }
+ );
 
 }
 
@@ -2288,9 +2337,9 @@ createFloatingHearts();
 
 
 
-/* =================================================
+/* =====================================================
    TEDDY BEARS
-================================================= */
+===================================================== */
 
 function createTeddyBears(){
 
@@ -2303,55 +2352,75 @@ function createTeddyBears(){
  const teddyCount=18;
 
 
- for(let i=0;i<teddyCount;i++){
+ for(
+  let i=0;
+  i<teddyCount;
+  i++
+ ){
 
   const teddy=
-   document.createElement("div");
+   document.createElement(
+    "div"
+   );
 
 
-  teddy.className="teddy";
+  teddy.className=
+   "teddy";
 
 
-  teddy.innerHTML="🧸";
+  teddy.innerHTML=
+   "🧸";
 
 
   teddy.style.left=
-   Math.random()*100+"%";
+   Math.random()*100+
+   "%";
 
 
   teddy.style.top=
-   Math.random()*100+"%";
+   Math.random()*100+
+   "%";
 
 
   teddy.style.setProperty(
    "--size",
-   (22+Math.random()*42)+"px"
+   (22+
+    Math.random()*42)+
+   "px"
   );
 
 
   teddy.style.setProperty(
    "--opacity",
-   (0.12+Math.random()*0.22)
+   (0.12+
+    Math.random()*0.22)
   );
 
 
   teddy.style.setProperty(
    "--rotation",
-   (-15+Math.random()*30)+"deg"
+   (-15+
+    Math.random()*30)+
+   "deg"
   );
 
 
   teddy.style.setProperty(
    "--duration",
-   (3+Math.random()*4)+"s"
+   (3+
+    Math.random()*4)+
+   "s"
   );
 
 
   teddy.style.animationDelay=
-   (-Math.random()*5)+"s";
+   (-Math.random()*5)+
+   "s";
 
 
-  container.appendChild(teddy);
+  container.appendChild(
+   teddy
+  );
 
  }
 
@@ -2362,9 +2431,9 @@ createTeddyBears();
 
 
 
-/* =================================================
+/* =====================================================
    PAGE SYSTEM
-================================================= */
+===================================================== */
 
 let currentPage=1;
 
@@ -2375,7 +2444,9 @@ const totalVisiblePages=7;
 function updateDots(){
 
  const dots=
-  document.getElementById("dots");
+  document.getElementById(
+   "dots"
+  );
 
 
  dots.innerHTML="";
@@ -2388,17 +2459,25 @@ function updateDots(){
  ){
 
   const dot=
-   document.createElement("div");
+   document.createElement(
+    "div"
+   );
 
 
   dot.className=
    "dot"+
-   (i===currentPage
-    ?" active"
-    :"");
+   (
+    i===currentPage
+     ?
+     " active"
+     :
+     ""
+   );
 
 
-  dots.appendChild(dot);
+  dots.appendChild(
+   dot
+  );
 
  }
 
@@ -2406,22 +2485,29 @@ function updateDots(){
 
 
 
-/* =================================================
+/* =====================================================
    SHOW PAGE
-================================================= */
+===================================================== */
 
 function showPage(number){
 
+
+ /* Remove active class */
+
  document
   .querySelectorAll(".page")
-  .forEach(function(page){
+  .forEach(
+   function(page){
 
-   page.classList.remove(
-    "active"
-   );
+    page.classList.remove(
+     "active"
+    );
 
-  });
+   }
+  );
 
+
+ /* Select requested page */
 
  const selected=
   document.getElementById(
@@ -2435,7 +2521,8 @@ function showPage(number){
    "active"
   );
 
-  currentPage=number;
+  currentPage=
+   number;
 
   updateDots();
 
@@ -2450,12 +2537,17 @@ function showPage(number){
   );
 
 
- if(video && number!==6){
+ if(
+  video &&
+  number!==6
+ ){
 
   video.pause();
 
  }
 
+
+ /* Normal background */
 
  const hearts=
   document.getElementById(
@@ -2469,44 +2561,60 @@ function showPage(number){
   );
 
 
- /*
-    NORMAL PAGES
- */
-
  if(number!==8){
 
-  hearts.style.display="block";
+  /*
+   Show hearts
+  */
 
-  teddy.style.display="block";
+  hearts.style.display=
+   "block";
+
+
+  /*
+   Show teddy bears
+  */
+
+  teddy.style.display=
+   "block";
+
+
+  /*
+   Restore pink background
+  */
 
   document.body.style.background=
    "";
 
+
  }
 
 
- /*
-    SECRET FILM PAGE
- */
+ /* =================================================
+    PAGE 8
+    REMOVE EVERYTHING FROM NORMAL BACKGROUND
+ ================================================= */
 
  if(number===8){
 
   /*
-     REMOVE HEARTS
+   REMOVE FALLING HEARTS
   */
 
-  hearts.style.display="none";
+  hearts.style.display=
+   "none";
 
 
   /*
-     REMOVE TEDDY BEARS
+   REMOVE TEDDY BEARS
   */
 
-  teddy.style.display="none";
+  teddy.style.display=
+   "none";
 
 
   /*
-     REMOVE PINK BACKGROUND
+   REMOVE PINK BACKGROUND
   */
 
   document.body.style.background=
@@ -2514,7 +2622,7 @@ function showPage(number){
 
 
   /*
-     Load saved film roll
+   LOAD SAVED PHOTOS
   */
 
   loadFilmRoll();
@@ -2522,9 +2630,7 @@ function showPage(number){
  }
 
 
- /*
-    Confetti
- */
+ /* Confetti */
 
  if(number===3){
 
@@ -2536,9 +2642,9 @@ function showPage(number){
 
 
 
-/* =================================================
+/* =====================================================
    YES BUTTON
-================================================= */
+===================================================== */
 
 function yesFirst(){
 
@@ -2548,9 +2654,9 @@ function yesFirst(){
 
 
 
-/* =================================================
+/* =====================================================
    NO BUTTON
-================================================= */
+===================================================== */
 
 let noClicks=0;
 
@@ -2579,19 +2685,23 @@ function noFirst(){
  const scale=
   Math.max(
    0,
-   1-(noClicks*0.18)
+   1-
+   (noClicks*0.18)
   );
 
 
  noBtn.style.transform=
-  "scale("+scale+")";
+  "scale("+
+  scale+
+  ")";
 
 
  noBtn.style.opacity=
   String(
    Math.max(
     0,
-    1-(noClicks*0.16)
+    1-
+    (noClicks*0.16)
    )
   );
 
@@ -2617,17 +2727,35 @@ function noFirst(){
  paper.animate(
 
   [
-   {transform:"translateX(0)"},
+   {
+    transform:
+     "translateX(0)"
+   },
 
-   {transform:"translateX(-10px)"},
+   {
+    transform:
+     "translateX(-10px)"
+   },
 
-   {transform:"translateX(10px)"},
+   {
+    transform:
+     "translateX(10px)"
+   },
 
-   {transform:"translateX(-7px)"},
+   {
+    transform:
+     "translateX(-7px)"
+   },
 
-   {transform:"translateX(7px)"},
+   {
+    transform:
+     "translateX(7px)"
+   },
 
-   {transform:"translateX(0)"}
+   {
+    transform:
+     "translateX(0)"
+   }
   ],
 
   {
@@ -2640,9 +2768,9 @@ function noFirst(){
 
 
 
-/* =================================================
+/* =====================================================
    ENVELOPE
-================================================= */
+===================================================== */
 
 function openEnvelope(){
 
@@ -2666,9 +2794,9 @@ function openEnvelope(){
 
 
 
-/* =================================================
+/* =====================================================
    CONFETTI
-================================================= */
+===================================================== */
 
 function launchConfetti(){
 
@@ -2697,29 +2825,38 @@ function launchConfetti(){
  ){
 
   const piece=
-   document.createElement("i");
+   document.createElement(
+    "i"
+   );
 
 
   piece.style.left=
-   Math.random()*100+"%";
+   Math.random()*100+
+   "%";
 
 
-  piece.style.top="-20px";
+  piece.style.top=
+   "-20px";
 
 
   piece.style.background=
    colors[
     Math.floor(
-     Math.random()*colors.length
+     Math.random()*
+     colors.length
     )
    ];
 
 
   piece.style.animationDelay=
-   Math.random()*0.7+"s";
+   Math.random()*
+   0.7+
+   "s";
 
 
-  box.appendChild(piece);
+  box.appendChild(
+   piece
+  );
 
  }
 
@@ -2727,10 +2864,9 @@ function launchConfetti(){
 
 
 
-/* =================================================
-   INDEXED DB
-   SECRET FILM ROLL
-================================================= */
+/* =====================================================
+   INDEXED DATABASE
+===================================================== */
 
 const DB_NAME=
  "chamuMemoryRollDB";
@@ -2765,7 +2901,9 @@ function openPhotoDB(){
 
      if(
       !db.objectStoreNames
-      .contains(STORE_NAME)
+       .contains(
+        STORE_NAME
+       )
      ){
 
       db.createObjectStore(
@@ -2807,168 +2945,178 @@ function openPhotoDB(){
 
 
 
-/* =================================================
-   GET STORED PHOTOS
-================================================= */
+/* =====================================================
+   GET SAVED PHOTOS
+===================================================== */
 
 function getStoredPhotos(){
 
  return openPhotoDB()
-  .then(function(db){
+  .then(
+   function(db){
 
-   return new Promise(
-    function(resolve,reject){
+    return new Promise(
+     function(resolve,reject){
 
-     const transaction=
-      db.transaction(
-       STORE_NAME,
-       "readonly"
-      );
-
-
-     const store=
-      transaction.objectStore(
-       STORE_NAME
-      );
-
-
-     const request=
-      store.getAll();
-
-
-     request.onsuccess=
-      function(){
-
-       resolve(
-        request.result
+      const transaction=
+       db.transaction(
+        STORE_NAME,
+        "readonly"
        );
 
-      };
 
-
-     request.onerror=
-      function(){
-
-       reject(
-        request.error
+      const store=
+       transaction.objectStore(
+        STORE_NAME
        );
 
-      };
 
-    }
-   );
+      const request=
+       store.getAll();
 
-  });
+
+      request.onsuccess=
+       function(){
+
+        resolve(
+         request.result
+        );
+
+       };
+
+
+      request.onerror=
+       function(){
+
+        reject(
+         request.error
+        );
+
+       };
+
+     }
+    );
+
+   }
+  );
 
 }
 
 
 
-/* =================================================
-   ADD PHOTO
-================================================= */
+/* =====================================================
+   ADD PHOTO TO DATABASE
+===================================================== */
 
 function addStoredPhoto(blob){
 
  return openPhotoDB()
-  .then(function(db){
+  .then(
+   function(db){
 
-   return new Promise(
-    function(resolve,reject){
+    return new Promise(
+     function(resolve,reject){
 
-     const transaction=
-      db.transaction(
-       STORE_NAME,
-       "readwrite"
-      );
-
-
-     transaction
-      .objectStore(STORE_NAME)
-      .add({
-       blob:blob
-      });
-
-
-     transaction.oncomplete=
-      function(){
-
-       resolve();
-
-      };
-
-
-     transaction.onerror=
-      function(){
-
-       reject(
-        transaction.error
+      const transaction=
+       db.transaction(
+        STORE_NAME,
+        "readwrite"
        );
 
-      };
 
-    }
-   );
+      transaction
+       .objectStore(
+        STORE_NAME
+       )
+       .add({
+        blob:blob
+       });
 
-  });
+
+      transaction.oncomplete=
+       function(){
+
+        resolve();
+
+       };
+
+
+      transaction.onerror=
+       function(){
+
+        reject(
+         transaction.error
+        );
+
+       };
+
+     }
+    );
+
+   }
+  );
 
 }
 
 
 
-/* =================================================
+/* =====================================================
    DELETE ALL PHOTOS
-================================================= */
+===================================================== */
 
 function deleteAllStoredPhotos(){
 
  return openPhotoDB()
-  .then(function(db){
+  .then(
+   function(db){
 
-   return new Promise(
-    function(resolve,reject){
+    return new Promise(
+     function(resolve,reject){
 
-     const transaction=
-      db.transaction(
-       STORE_NAME,
-       "readwrite"
-      );
-
-
-     transaction
-      .objectStore(STORE_NAME)
-      .clear();
-
-
-     transaction.oncomplete=
-      function(){
-
-       resolve();
-
-      };
-
-
-     transaction.onerror=
-      function(){
-
-       reject(
-        transaction.error
+      const transaction=
+       db.transaction(
+        STORE_NAME,
+        "readwrite"
        );
 
-      };
 
-    }
-   );
+      transaction
+       .objectStore(
+        STORE_NAME
+       )
+       .clear();
 
-  });
+
+      transaction.oncomplete=
+       function(){
+
+        resolve();
+
+       };
+
+
+      transaction.onerror=
+       function(){
+
+        reject(
+         transaction.error
+        );
+
+       };
+
+     }
+    );
+
+   }
+  );
 
 }
 
 
 
-/* =================================================
+/* =====================================================
    COMPRESS IMAGE
-================================================= */
+===================================================== */
 
 function compressImage(file){
 
@@ -3032,9 +3180,12 @@ function compressImage(file){
         );
 
 
-       canvas.width=width;
+       canvas.width=
+        width;
 
-       canvas.height=height;
+
+       canvas.height=
+        height;
 
 
        const ctx=
@@ -3057,7 +3208,9 @@ function compressImage(file){
 
          if(blob){
 
-          resolve(blob);
+          resolve(
+           blob
+          );
 
          }else{
 
@@ -3105,7 +3258,9 @@ function compressImage(file){
     };
 
 
-   reader.readAsDataURL(file);
+   reader.readAsDataURL(
+    file
+   );
 
   }
  );
@@ -3114,9 +3269,9 @@ function compressImage(file){
 
 
 
-/* =================================================
+/* =====================================================
    RENDER FILM ROLL
-================================================= */
+===================================================== */
 
 function renderFilmRoll(records){
 
@@ -3202,9 +3357,8 @@ function renderFilmRoll(records){
 
 
  /*
-    Two identical copies
-    create the continuous
-    film-loop effect.
+   Two copies make
+   continuous animation
  */
 
  roll.appendChild(
@@ -3220,9 +3374,9 @@ function renderFilmRoll(records){
 
 
 
-/* =================================================
+/* =====================================================
    LOAD FILM ROLL
-================================================= */
+===================================================== */
 
 async function loadFilmRoll(){
 
@@ -3250,7 +3404,9 @@ async function loadFilmRoll(){
 
  }catch(error){
 
-  console.error(error);
+  console.error(
+   error
+  );
 
 
   status.textContent=
@@ -3262,12 +3418,14 @@ async function loadFilmRoll(){
 
 
 
-/* =================================================
+/* =====================================================
    UPLOAD PHOTOS
-================================================= */
+===================================================== */
 
 document
- .getElementById("photoUpload")
+ .getElementById(
+  "photoUpload"
+ )
  .addEventListener(
   "change",
   async function(event){
@@ -3362,7 +3520,9 @@ document
 
    }catch(error){
 
-    console.error(error);
+    console.error(
+     error
+    );
 
 
     status.textContent=
@@ -3378,9 +3538,9 @@ document
 
 
 
-/* =================================================
-   RESET FILM ROLL
-================================================= */
+/* =====================================================
+   RESET ROLL
+===================================================== */
 
 async function resetRoll(){
 
@@ -3418,7 +3578,9 @@ async function resetRoll(){
 
  }catch(error){
 
-  console.error(error);
+  console.error(
+   error
+  );
 
 
   document.getElementById(
@@ -3432,9 +3594,9 @@ async function resetRoll(){
 
 
 
-/* =================================================
-   START
-================================================= */
+/* =====================================================
+   START WEBSITE
+===================================================== */
 
 updateDots();
 
