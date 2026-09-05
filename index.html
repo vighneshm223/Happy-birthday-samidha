@@ -5,1539 +5,2030 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#f7dce5">
+<meta name="theme-color"
+      content="#f7dce5">
 
 <title>A Little Surprise for my Chamu 😙💗</title>
 
 
 <style>
 
-/* =====================================================
+/* =========================================================
    BASIC
-===================================================== */
+========================================================= */
 
 *{
- box-sizing:border-box;
+    box-sizing:border-box;
 }
 
-html,body{
- margin:0;
- padding:0;
- width:100%;
- min-height:100%;
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
 }
 
 body{
- font-family:"Trebuchet MS",sans-serif;
- color:#5a2638;
- overflow-x:hidden;
 
- background:
- radial-gradient(
-  circle at 15% 15%,
-  rgba(255,255,255,.8) 0 4px,
-  transparent 5px
- ),
- radial-gradient(
-  circle at 85% 20%,
-  rgba(255,255,255,.7) 0 3px,
-  transparent 4px
- ),
- linear-gradient(
-  135deg,
-  #f9e6ec,
-  #f3cbd9
- );
+    font-family:"Trebuchet MS",sans-serif;
+
+    color:#5a2638;
+
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(
+        circle at 15% 15%,
+        rgba(255,255,255,.8) 0 4px,
+        transparent 5px
+    ),
+    radial-gradient(
+        circle at 85% 20%,
+        rgba(255,255,255,.7) 0 3px,
+        transparent 4px
+    ),
+    linear-gradient(
+        135deg,
+        #f9e6ec,
+        #f3cbd9
+    );
+
 }
 
 
 :root{
- --pink:#c65378;
- --dark-pink:#742c49;
- --rose:#9d3e61;
- --light:#f9e6ec;
+
+    --pink:#c65378;
+
+    --dark-pink:#742c49;
+
+    --rose:#9d3e61;
+
+    --light:#f9e6ec;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    NORMAL PAGES
-===================================================== */
+========================================================= */
 
 .page{
- position:fixed;
- inset:0;
- width:100%;
- height:100%;
- padding:25px;
 
- display:none;
+    position:fixed;
 
- align-items:center;
- justify-content:center;
+    inset:0;
 
- opacity:0;
- visibility:hidden;
+    width:100%;
 
- overflow-y:auto;
+    height:100%;
+
+    padding:25px;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    overflow-y:auto;
+
 }
 
 
 .page.active{
- display:flex !important;
- opacity:1 !important;
- visibility:visible !important;
 
- animation:
- pageIn .6s ease forwards;
+    display:flex !important;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+
+    animation:
+    pageIn .6s ease forwards;
+
 }
 
 
 @keyframes pageIn{
 
- from{
-  opacity:0;
-  transform:
-   scale(.96)
-   translateY(15px);
- }
+    from{
 
- to{
-  opacity:1;
-  transform:
-   scale(1)
-   translateY(0);
- }
+        opacity:0;
+
+        transform:
+        scale(.96)
+        translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0);
+
+    }
 
 }
 
 
-/* =====================================================
-   PAPER CARD
-===================================================== */
+/* =========================================================
+   PAPER
+========================================================= */
 
 .paper{
 
- position:relative;
+    position:relative;
 
- width:min(94vw,560px);
+    width:min(94vw,560px);
 
- min-height:min(78vh,680px);
+    min-height:min(78vh,680px);
 
- padding:55px 28px 35px;
+    padding:55px 28px 35px;
 
- display:flex;
+    display:flex;
 
- align-items:center;
- justify-content:center;
+    align-items:center;
 
- text-align:center;
+    justify-content:center;
 
- border-radius:
- 30px 22px 34px 20px;
+    text-align:center;
 
- background:
- linear-gradient(
-  rgba(255,255,255,.94),
-  rgba(255,255,255,.94)
- ),
+    border-radius:
+    30px 22px 34px 20px;
 
- repeating-linear-gradient(
-  0deg,
-  transparent 0 31px,
-  #ead7de 32px
- ),
+    background:
 
- repeating-linear-gradient(
-  90deg,
-  transparent 0 31px,
-  #ead7de 32px
- );
+    linear-gradient(
+        rgba(255,255,255,.94),
+        rgba(255,255,255,.94)
+    ),
 
- box-shadow:
- 0 25px 70px
- rgba(105,42,64,.22);
+    repeating-linear-gradient(
+        0deg,
+        transparent 0 31px,
+        #ead7de 32px
+    ),
 
- overflow:hidden;
+    repeating-linear-gradient(
+        90deg,
+        transparent 0 31px,
+        #ead7de 32px
+    );
+
+    box-shadow:
+    0 25px 70px
+    rgba(105,42,64,.22);
+
+    overflow:hidden;
+
 }
 
 
 .content{
 
- width:100%;
+    width:100%;
 
- display:flex;
+    display:flex;
 
- flex-direction:column;
+    flex-direction:column;
 
- align-items:center;
+    align-items:center;
 
- justify-content:center;
+    justify-content:center;
 
- position:relative;
+    position:relative;
 
- z-index:2;
+    z-index:2;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    TAPE
-===================================================== */
+========================================================= */
 
 .tape{
 
- position:absolute;
+    position:absolute;
 
- top:15px;
+    top:15px;
 
- left:50%;
+    left:50%;
 
- width:110px;
+    width:110px;
 
- height:30px;
+    height:30px;
 
- transform:
- translateX(-50%)
- rotate(-2deg);
+    transform:
+    translateX(-50%)
+    rotate(-2deg);
 
- background:
- rgba(242,184,201,.75);
+    background:
+    rgba(242,184,201,.75);
 
- border-radius:5px;
+    border-radius:5px;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    TEXT
-===================================================== */
+========================================================= */
 
-h1,h2{
+h1,
+h2{
 
- font-family:Georgia,serif;
+    font-family:Georgia,serif;
 
- color:var(--dark-pink);
+    color:var(--dark-pink);
+
 }
 
 
 h1{
 
- font-size:
- clamp(40px,10vw,68px);
+    font-size:
+    clamp(40px,10vw,68px);
 
- line-height:1;
+    line-height:1;
 
- margin:20px 0 15px;
+    margin:20px 0 15px;
+
 }
 
 
 h2{
 
- font-size:
- clamp(34px,8vw,55px);
+    font-size:
+    clamp(34px,8vw,55px);
 
- line-height:1;
+    line-height:1;
 
- margin:15px 0;
+    margin:15px 0;
+
 }
 
 
 p{
 
- font-size:17px;
+    font-size:17px;
 
- line-height:1.6;
+    line-height:1.6;
 
- margin:8px 0 25px;
+    margin:8px 0 25px;
+
 }
 
 
 .eyebrow{
 
- display:inline-block;
+    display:inline-block;
 
- padding:8px 15px;
+    padding:8px 15px;
 
- border:
- 2px dashed
- var(--pink);
+    border:
+    2px dashed
+    var(--pink);
 
- border-radius:12px;
+    border-radius:12px;
 
- color:var(--rose);
+    color:var(--rose);
 
- font-size:12px;
+    font-size:12px;
 
- font-weight:bold;
+    font-weight:bold;
 
- letter-spacing:1px;
+    letter-spacing:1px;
 
- transform:rotate(-2deg);
+    transform:rotate(-2deg);
+
 }
 
 
 .big-emoji{
 
- font-size:55px;
+    font-size:55px;
 
- animation:
- float 2.5s
- ease-in-out
- infinite;
+    animation:
+    float 2.5s
+    ease-in-out
+    infinite;
+
 }
 
 
 @keyframes float{
 
- 50%{
-  transform:
-   translateY(-8px)
-   rotate(3deg);
- }
+    50%{
+
+        transform:
+        translateY(-8px)
+        rotate(3deg);
+
+    }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    BUTTONS
-===================================================== */
+========================================================= */
 
 .buttons{
 
- display:flex;
+    display:flex;
 
- justify-content:center;
+    justify-content:center;
 
- gap:12px;
+    gap:12px;
 
- flex-wrap:wrap;
+    flex-wrap:wrap;
+
 }
 
 
 button{
 
- border:none;
+    border:none;
 
- padding:14px 25px;
+    padding:14px 25px;
 
- border-radius:999px;
+    border-radius:999px;
 
- background:
- linear-gradient(
-  135deg,
-  #d15a80,
-  #b9446c
- );
+    background:
+    linear-gradient(
+        135deg,
+        #d15a80,
+        #b9446c
+    );
 
- color:white;
+    color:white;
 
- font-size:15px;
+    font-size:15px;
 
- font-weight:bold;
+    font-weight:bold;
 
- cursor:pointer;
+    cursor:pointer;
 
- box-shadow:
- 0 10px 25px
- rgba(150,55,88,.25);
+    box-shadow:
+    0 10px 25px
+    rgba(150,55,88,.25);
 
- transition:
- transform .2s ease;
+    transition:
+    transform .2s ease,
+    opacity .2s ease;
+
 }
 
 
 button:hover{
 
- transform:
- translateY(-3px);
+    transform:
+    translateY(-3px);
+
 }
 
 
 button:active{
 
- transform:
- scale(.94);
+    transform:
+    scale(.94);
+
 }
 
 
 button.secondary{
 
- background:#8f6a76;
+    background:#8f6a76;
+
 }
 
 
 .small{
 
- font-size:13px;
+    font-size:13px;
 
- opacity:.7;
+    opacity:.7;
 
- margin-top:18px;
+    margin-top:18px;
+
 }
 
 
-/* =====================================================
-   FALLING HEARTS
-===================================================== */
+/* =========================================================
+   FALLING / FLOWING HEARTS
+========================================================= */
 
 .floating{
 
- position:fixed;
+    position:fixed;
 
- inset:0;
+    inset:0;
 
- pointer-events:none;
+    pointer-events:none;
 
- overflow:hidden;
+    overflow:hidden;
 
- z-index:1;
+    z-index:1;
+
 }
 
 
 .floating span{
 
- position:absolute;
+    position:absolute;
 
- bottom:-50px;
+    bottom:-60px;
 
- color:#c65378;
+    color:#c65378;
 
- font-size:23px;
+    font-size:23px;
 
- opacity:.45;
+    opacity:.45;
 
- animation:
- rise var(--duration)
- linear infinite;
+    animation:
+    heartFlow
+    var(--duration)
+    linear
+    infinite;
 
- animation-delay:
- var(--delay);
+    animation-delay:
+    var(--delay);
 
- filter:
- drop-shadow(
-  0 3px 5px
-  rgba(150,55,88,.12)
- );
-}
-
-
-@keyframes rise{
-
- 0%{
-
-  transform:
-   translateY(0)
-   translateX(0)
-   rotate(0deg)
-   scale(.8);
-
-  opacity:0;
- }
-
- 10%{
-  opacity:.45;
- }
-
- 50%{
-
-  transform:
-   translateY(-50vh)
-   translateX(var(--drift))
-   rotate(180deg)
-   scale(1);
-
-  opacity:.5;
- }
-
- 90%{
-  opacity:.3;
- }
-
- 100%{
-
-  transform:
-   translateY(-115vh)
-   translateX(
-    calc(var(--drift) * -1)
-   )
-   rotate(360deg)
-   scale(.7);
-
-  opacity:0;
- }
+    filter:
+    drop-shadow(
+        0 3px 5px
+        rgba(150,55,88,.12)
+    );
 
 }
 
 
-/* =====================================================
+@keyframes heartFlow{
+
+    0%{
+
+        transform:
+        translate3d(0,0,0)
+        rotate(0deg)
+        scale(.7);
+
+        opacity:0;
+
+    }
+
+    8%{
+
+        opacity:.45;
+
+    }
+
+    25%{
+
+        transform:
+        translate3d(
+            var(--drift1),
+            -25vh,
+            0
+        )
+        rotate(90deg)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate3d(
+            var(--drift2),
+            -55vh,
+            0
+        )
+        rotate(180deg)
+        scale(.95);
+
+        opacity:.55;
+
+    }
+
+    75%{
+
+        transform:
+        translate3d(
+            var(--drift3),
+            -85vh,
+            0
+        )
+        rotate(270deg)
+        scale(1.05);
+
+    }
+
+    100%{
+
+        transform:
+        translate3d(
+            var(--drift4),
+            -120vh,
+            0
+        )
+        rotate(360deg)
+        scale(.65);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
    TEDDY BEARS
-===================================================== */
+   CONTINUOUS FLOW
+========================================================= */
 
 .teddy-background{
 
- position:fixed;
+    position:fixed;
 
- inset:0;
+    inset:0;
 
- pointer-events:none;
+    pointer-events:none;
 
- overflow:hidden;
+    overflow:hidden;
 
- z-index:1;
+    z-index:1;
 
- transition:
-  opacity .5s ease;
 }
 
 
 .teddy{
 
- position:absolute;
+    position:absolute;
 
- font-size:var(--size);
+    bottom:-100px;
 
- opacity:var(--opacity);
+    font-size:var(--size);
 
- transform:
-  rotate(var(--rotation));
+    opacity:var(--opacity);
 
- animation:
-  teddyFloat
-  var(--duration)
-  ease-in-out
-  infinite;
-}
+    animation:
+    teddyFlow
+    var(--duration)
+    linear
+    infinite;
 
+    animation-delay:
+    var(--delay);
 
-@keyframes teddyFloat{
+    filter:
+    drop-shadow(
+        0 5px 8px
+        rgba(100,40,65,.10)
+    );
 
- 0%,100%{
-
-  transform:
-   translateY(0)
-   rotate(var(--rotation));
- }
-
- 50%{
-
-  transform:
-   translateY(-12px)
-   rotate(
-    calc(
-     var(--rotation) + 4deg
-    )
-   );
- }
+    will-change:
+    transform,
+    opacity;
 
 }
 
 
-/* =====================================================
+@keyframes teddyFlow{
+
+    0%{
+
+        transform:
+        translate3d(0,0,0)
+        rotate(var(--rotation))
+        scale(.75);
+
+        opacity:0;
+
+    }
+
+    8%{
+
+        opacity:var(--opacity);
+
+    }
+
+    25%{
+
+        transform:
+        translate3d(
+            var(--drift1),
+            -25vh,
+            0
+        )
+        rotate(
+            calc(
+                var(--rotation) + 7deg
+            )
+        )
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate3d(
+            var(--drift2),
+            -55vh,
+            0
+        )
+        rotate(
+            calc(
+                var(--rotation) - 5deg
+            )
+        )
+        scale(.95);
+
+    }
+
+    75%{
+
+        transform:
+        translate3d(
+            var(--drift3),
+            -85vh,
+            0
+        )
+        rotate(
+            calc(
+                var(--rotation) + 8deg
+            )
+        )
+        scale(1.05);
+
+    }
+
+    100%{
+
+        transform:
+        translate3d(
+            var(--drift4),
+            -125vh,
+            0
+        )
+        rotate(
+            calc(
+                var(--rotation) - 8deg
+            )
+        )
+        scale(.7);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
    PAGE DOTS
-===================================================== */
+========================================================= */
 
 .dots{
 
- position:fixed;
+    position:fixed;
 
- top:14px;
+    top:14px;
 
- left:50%;
+    left:50%;
 
- transform:
-  translateX(-50%);
+    transform:
+    translateX(-50%);
 
- display:flex;
+    display:flex;
 
- gap:6px;
+    gap:6px;
 
- z-index:100;
+    z-index:100;
+
 }
 
 
 .dot{
 
- width:7px;
+    width:7px;
 
- height:7px;
+    height:7px;
 
- border-radius:50%;
+    border-radius:50%;
 
- background:
-  rgba(255,255,255,.8);
+    background:
+    rgba(255,255,255,.8);
+
 }
 
 
 .dot.active{
 
- width:22px;
+    width:22px;
 
- border-radius:10px;
+    border-radius:10px;
 
- background:#c65378;
+    background:#c65378;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    ENVELOPE
-===================================================== */
+========================================================= */
 
 .envelope{
 
- position:relative;
+    position:relative;
 
- width:min(82vw,340px);
+    width:min(82vw,340px);
 
- height:210px;
+    height:210px;
 
- margin:35px 0 30px;
+    margin:35px 0 30px;
 
- cursor:pointer;
+    cursor:pointer;
 
- perspective:900px;
+    perspective:900px;
+
 }
 
 
 .env-back{
 
- position:absolute;
+    position:absolute;
 
- inset:0;
+    inset:0;
 
- background:#f1b2c7;
+    background:#f1b2c7;
 
- border-radius:15px;
+    border-radius:15px;
 
- box-shadow:
- 0 20px 40px
- rgba(100,40,65,.2);
+    box-shadow:
+    0 20px 40px
+    rgba(100,40,65,.2);
+
 }
 
 
 .env-flap{
 
- position:absolute;
+    position:absolute;
 
- top:0;
+    top:0;
 
- left:0;
+    left:0;
 
- width:100%;
+    width:100%;
 
- height:60%;
+    height:60%;
 
- background:#e9a5bd;
+    background:#e9a5bd;
 
- clip-path:
-  polygon(
-   0 0,
-   100% 0,
-   50% 100%
-  );
+    clip-path:
+    polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
 
- transform-origin:top;
+    transform-origin:top;
 
- transition:
-  transform .7s ease;
+    transition:
+    transform .7s ease;
 
- z-index:3;
+    z-index:3;
+
 }
 
 
 .envelope.open
 .env-flap{
 
- transform:
-  rotateX(180deg);
+    transform:
+    rotateX(180deg);
+
 }
 
 
 .envelope .letter{
 
- position:absolute;
+    position:absolute;
 
- top:18%;
+    top:18%;
 
- left:8%;
+    left:8%;
 
- width:84%;
+    width:84%;
 
- height:76%;
+    height:76%;
 
- background:white;
+    background:white;
 
- border-radius:10px;
+    border-radius:10px;
 
- padding:70px 10px 10px;
+    padding:70px 10px 10px;
 
- z-index:2;
+    z-index:2;
 
- box-shadow:
- 0 8px 20px
-  rgba(90,38,56,.15);
+    box-shadow:
+    0 8px 20px
+    rgba(90,38,56,.15);
 
- transition:
-  transform .7s ease;
+    transition:
+    transform .7s ease;
 
- font-size:17px;
+    font-size:17px;
 
- line-height:1.4;
+    line-height:1.4;
+
 }
 
 
 .envelope.open
 .letter{
 
- transform:
-  translateY(-70px);
+    transform:
+    translateY(-70px);
+
 }
 
 
 .seal{
 
- position:absolute;
+    position:absolute;
 
- left:50%;
+    left:50%;
 
- top:50%;
+    top:50%;
 
- transform:
-  translate(-50%,-50%);
+    transform:
+    translate(-50%,-50%);
 
- width:50px;
+    width:50px;
 
- height:50px;
+    height:50px;
 
- display:grid;
+    display:grid;
 
- place-items:center;
+    place-items:center;
 
- border-radius:50%;
+    border-radius:50%;
 
- background:#c65378;
+    background:#c65378;
 
- color:white;
+    color:white;
 
- z-index:5;
+    z-index:5;
 
- transition:.3s;
+    transition:.3s;
+
 }
 
 
 .envelope.open
 .seal{
 
- opacity:0;
+    opacity:0;
 
- transform:
-  translate(-50%,-50%)
-  scale(.5);
+    transform:
+    translate(-50%,-50%)
+    scale(.5);
+
 }
 
 
-/* =====================================================
+/* =========================================================
    BIRTHDAY
-===================================================== */
+========================================================= */
 
 .cake{
 
- font-size:75px;
+    font-size:75px;
+
 }
 
 
 .birthday-title{
 
- font-family:Georgia,serif;
+    font-family:Georgia,serif;
 
- font-size:
-  clamp(43px,12vw,75px);
+    font-size:
+    clamp(43px,12vw,75px);
 
- line-height:.9;
+    line-height:.9;
 
- color:var(--dark-pink);
+    color:var(--dark-pink);
 
- margin:15px 0;
+    margin:15px 0;
+
 }
 
 
 .name{
 
- font-family:
- "Brush Script MT",
- cursive;
+    font-family:
+    "Brush Script MT",
+    cursive;
 
- font-size:
-  clamp(45px,12vw,75px);
+    font-size:
+    clamp(45px,12vw,75px);
 
- color:#d04d79;
+    color:#d04d79;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    CONFETTI
-===================================================== */
+========================================================= */
 
 .confetti{
 
- position:absolute;
+    position:absolute;
 
- inset:0;
+    inset:0;
 
- pointer-events:none;
+    pointer-events:none;
 
- overflow:hidden;
+    overflow:hidden;
+
 }
 
 
 .confetti i{
 
- position:absolute;
+    position:absolute;
 
- width:8px;
+    width:8px;
 
- height:15px;
+    height:15px;
 
- animation:
-  confettiFall
-  2.5s
-  ease-out
-  forwards;
+    animation:
+    confettiFall
+    2.5s
+    ease-out
+    forwards;
+
 }
 
 
 @keyframes confettiFall{
 
- from{
+    from{
 
-  transform:
-   translateY(-30px)
-   rotate(0);
+        transform:
+        translateY(-30px)
+        rotate(0);
 
-  opacity:1;
- }
+        opacity:1;
 
- to{
+    }
 
-  transform:
-   translateY(100vh)
-   rotate(700deg);
+    to{
 
-  opacity:0;
- }
+        transform:
+        translateY(100vh)
+        rotate(700deg);
+
+        opacity:0;
+
+    }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    GALLERY
-===================================================== */
+========================================================= */
 
 .gallery-wrap{
 
- width:100%;
+    width:100%;
+
 }
 
 
 .gallery{
 
- display:grid;
+    display:grid;
 
- grid-template-columns:
-  repeat(2,1fr);
+    grid-template-columns:
+    repeat(2,1fr);
 
- gap:13px;
+    gap:13px;
 
- max-height:42vh;
+    max-height:42vh;
 
- overflow-y:auto;
+    overflow-y:auto;
 
- padding:8px;
+    padding:8px;
+
 }
 
 
 .photo{
 
- position:relative;
+    position:relative;
 
- background:white;
+    background:white;
 
- padding:
- 7px 7px 28px;
+    padding:
+    7px 7px 28px;
 
- box-shadow:
- 0 8px 18px
-  rgba(90,38,56,.16);
+    box-shadow:
+    0 8px 18px
+    rgba(90,38,56,.16);
+
 }
 
 
 .photo:nth-child(2n){
 
- transform:
-  rotate(2deg);
+    transform:
+    rotate(2deg);
+
 }
 
 
 .photo:nth-child(3n){
 
- transform:
-  rotate(-1deg);
+    transform:
+    rotate(-1deg);
+
 }
 
 
 .photo img{
 
- width:100%;
+    width:100%;
 
- aspect-ratio:1/1;
+    aspect-ratio:1/1;
 
- object-fit:cover;
+    object-fit:cover;
 
- display:block;
+    display:block;
+
 }
 
 
 .photo span{
 
- position:absolute;
+    position:absolute;
 
- bottom:6px;
+    bottom:6px;
 
- left:0;
+    left:0;
 
- right:0;
+    right:0;
 
- font-family:
- "Brush Script MT",
- cursive;
+    font-family:
+    "Brush Script MT",
+    cursive;
 
- color:#74405a;
+    color:#74405a;
 
- font-size:15px;
+    font-size:15px;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    VIDEO
-===================================================== */
+========================================================= */
 
 .video-card{
 
- width:100%;
+    width:100%;
 
- max-width:500px;
+    max-width:500px;
 
- background:#fff;
+    background:#fff;
 
- padding:6px;
+    padding:6px;
 
- border-radius:14px;
+    border-radius:14px;
 
- box-shadow:
- 0 8px 20px
- rgba(90,38,56,.15);
+    box-shadow:
+    0 8px 20px
+    rgba(90,38,56,.15);
 
- margin-top:5px;
+    margin-top:5px;
+
 }
 
 
 .video-card video{
 
- width:100%;
+    width:100%;
 
- display:block;
+    display:block;
 
- border-radius:9px;
+    border-radius:9px;
 
- background:#111;
+    background:#111;
 
- aspect-ratio:16/9;
+    aspect-ratio:16/9;
 
- object-fit:cover;
+    object-fit:cover;
+
 }
 
 
 .video-caption{
 
- font-family:
- "Brush Script MT",
- cursive;
+    font-family:
+    "Brush Script MT",
+    cursive;
 
- color:#74405a;
+    color:#74405a;
 
- font-size:17px;
+    font-size:17px;
 
- margin:
- 10px 0 18px;
+    margin:
+    10px 0 18px;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    LETTER
-===================================================== */
+========================================================= */
 
 .letter-card{
 
- width:100%;
+    width:100%;
 
- max-height:45vh;
+    max-height:45vh;
 
- overflow-y:auto;
+    overflow-y:auto;
 
- text-align:left;
+    text-align:left;
 
- padding:22px;
+    padding:22px;
 
- background:#fffaf9;
+    background:#fffaf9;
 
- border-radius:15px;
+    border-radius:15px;
 
- box-shadow:
-  inset 0 0 0 1px
-  #efdde2;
+    box-shadow:
+    inset 0 0 0 1px
+    #efdde2;
+
 }
 
 
 .letter-card p{
 
- font-family:Georgia,serif;
+    font-family:Georgia,serif;
 
- font-size:16px;
+    font-size:16px;
+
 }
 
 
-/* =====================================================
-   SECRET BUTTON ON PAGE 7
-===================================================== */
+/* =========================================================
+   PAGE 7 SECRET BUTTON
+========================================================= */
 
 .secret-gift{
 
- position:fixed;
+    position:fixed;
 
- top:48px;
+    top:48px;
 
- right:14px;
+    right:14px;
 
- z-index:9999;
+    z-index:9999;
 
- display:flex;
+    display:flex;
 
- flex-direction:column;
+    flex-direction:column;
 
- align-items:center;
+    align-items:center;
 
- justify-content:center;
+    justify-content:center;
 
- pointer-events:auto;
+    pointer-events:auto;
+
 }
 
 
 .secret-btn{
 
- width:auto;
+    width:auto;
 
- height:auto;
+    height:auto;
 
- padding:3px;
+    padding:2px;
 
- margin:0;
+    margin:0;
 
- border:none;
+    border:none;
 
- background:transparent;
+    background:transparent;
 
- box-shadow:none;
+    box-shadow:none;
 
- border-radius:0;
+    border-radius:0;
 
- font-size:38px;
+    font-size:42px;
 
- line-height:1;
+    line-height:1;
 
- cursor:pointer;
+    cursor:pointer;
 
- opacity:.95;
+    opacity:.95;
 
- transition:
-  transform .2s ease,
-  opacity .2s ease;
 }
 
 
 .secret-btn:hover{
 
- transform:
-  scale(1.18)
-  rotate(-5deg);
+    transform:
+    scale(1.18)
+    rotate(-5deg);
 
- opacity:1;
-}
-
-
-.secret-btn:active{
-
- transform:
-  scale(.95);
 }
 
 
 .secret-gift-text{
 
- margin-top:2px;
+    margin-top:3px;
 
- font-family:
- "Trebuchet MS",
- sans-serif;
+    font-family:
+    "Trebuchet MS",
+    sans-serif;
 
- font-size:10px;
+    font-size:10px;
 
- font-weight:bold;
+    font-weight:bold;
 
- color:#9d3e61;
+    color:#9d3e61;
 
- white-space:nowrap;
+    white-space:nowrap;
 
- opacity:.85;
+    opacity:.9;
+
 }
 
 
-/* =====================================================
-   FULL SCREEN SECRET FILM PAGE
-===================================================== */
+/* =========================================================
+   PAGE 8
+   FULL SCREEN VERTICAL FILM
+========================================================= */
 
 .film-page{
 
- padding:0 !important;
+    padding:0 !important;
 
- overflow:hidden !important;
+    overflow:hidden !important;
 
- background:#111 !important;
+    background:#090909 !important;
+
+}
+
+
+.film-page.active{
+
+    display:block !important;
+
 }
 
 
 /*
- Hide normal card completely
+   Hide normal paper on secret page
 */
 
 .film-page .paper{
 
- display:none !important;
+    display:none !important;
+
 }
 
 
-/*
- Full-screen film background
-*/
+/* =========================================================
+   FILM BACKGROUND
+========================================================= */
 
 .full-film-background{
 
- position:absolute;
+    position:absolute;
 
- inset:0;
+    inset:0;
 
- width:100%;
+    width:100%;
 
- height:100%;
+    height:100%;
 
- background:#111;
+    background:
 
- overflow:hidden;
+    radial-gradient(
+        ellipse at center,
+        #252020 0%,
+        #100e0e 55%,
+        #050505 100%
+    );
 
- z-index:1;
+    overflow:hidden;
+
+    z-index:1;
+
 }
 
 
-/*
- Film strip position
-*/
+/* =========================================================
+   VERTICAL FILM TRACK
+========================================================= */
 
 .film-moving{
 
- position:absolute;
+    position:absolute;
 
- left:0;
+    top:0;
 
- top:50%;
+    left:50%;
 
- width:max-content;
+    width:min(68vw,760px);
 
- transform:
-  translateY(-50%);
+    height:max-content;
+
+    transform:
+    translateX(-50%);
+
 }
 
 
 /*
- Moving film
+   The film itself moves vertically.
 */
 
 .film-roll{
 
- display:flex;
+    display:flex;
 
- width:max-content;
+    flex-direction:column;
 
- height:310px;
+    width:100%;
 
- align-items:center;
+    height:max-content;
 
- animation:
-  filmMove 25s
-  linear
-  infinite;
-}
+    animation:
+    verticalFilmMove
+    32s
+    linear
+    infinite;
 
-
-@keyframes filmMove{
-
- from{
-
-  transform:
-   translateX(0);
- }
-
- to{
-
-  transform:
-   translateX(-50%);
- }
+    will-change:
+    transform;
 
 }
 
 
 /*
- Individual film sets
+   Seamless vertical movement
 */
+
+@keyframes verticalFilmMove{
+
+    from{
+
+        transform:
+        translateY(0);
+
+    }
+
+    to{
+
+        transform:
+        translateY(-50%);
+
+    }
+
+}
+
+
+/* =========================================================
+   FILM SET
+========================================================= */
 
 .film-set{
 
- display:flex;
+    display:flex;
 
- align-items:center;
+    flex-direction:column;
 
- gap:12px;
+    align-items:center;
 
- padding:
- 55px 20px;
+    gap:18px;
 
- background:#111;
+    width:100%;
 
- border-top:
- 48px solid #111;
+    padding:
+    65px 70px 65px;
 
- border-bottom:
- 48px solid #111;
+    background:
+
+    linear-gradient(
+        90deg,
+        #111 0%,
+        #181818 10%,
+        #111 50%,
+        #181818 90%,
+        #111 100%
+    );
+
+    border-left:
+    9px solid #292929;
+
+    border-right:
+    9px solid #292929;
+
 }
 
 
-/*
- Individual picture frame
-*/
+/* =========================================================
+   FILM PHOTO
+========================================================= */
 
 .film-photo{
 
- flex:none;
+    position:relative;
 
- width:260px;
+    width:min(54vw,600px);
 
- height:185px;
+    min-height:100px;
 
- padding:7px;
+    padding:8px;
 
- background:#222;
+    background:#181818;
 
- border:5px solid #111;
+    border:
+    4px solid #303030;
 
- box-shadow:
- 0 0 0 2px #555,
- 0 8px 20px
- rgba(0,0,0,.6);
+    box-shadow:
+    0 0 0 2px #050505,
+    0 10px 28px
+    rgba(0,0,0,.65);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
 }
 
+
+/*
+   Image is NOT cropped.
+   JS calculates natural ratio.
+*/
 
 .film-photo img{
 
- width:100%;
+    display:block;
 
- height:100%;
+    width:100%;
 
- display:block;
+    height:auto;
 
- object-fit:cover;
+    max-height:65vh;
+
+    object-fit:contain;
+
 }
 
 
-/*
- Sprocket holes
-*/
+/* =========================================================
+   FILM NUMBER / MARKING
+========================================================= */
+
+.film-photo::after{
+
+    content:
+    "FRAME";
+
+    position:absolute;
+
+    right:8px;
+
+    bottom:4px;
+
+    color:#b57a39;
+
+    font-size:8px;
+
+    letter-spacing:1px;
+
+    opacity:.7;
+
+}
+
+
+/* =========================================================
+   SPROCKET HOLES
+========================================================= */
 
 .film-holes{
 
- position:absolute;
+    position:absolute;
 
- left:0;
+    top:0;
 
- width:100%;
+    bottom:0;
 
- height:38px;
+    width:32px;
 
- z-index:5;
+    z-index:8;
 
- background:
+    background:
 
- repeating-linear-gradient(
-  90deg,
-  transparent 0 18px,
-  #111 18px 31px,
-  transparent 31px 52px
- );
-}
+    repeating-linear-gradient(
+        to bottom,
+        #030303 0 18px,
+        transparent 18px 32px
+    );
 
-
-.top-holes{
-
- top:0;
-
- border-bottom:
- 8px solid #222;
-}
-
-
-.bottom-holes{
-
- bottom:0;
-
- border-top:
- 8px solid #222;
 }
 
 
 /*
- Dark top and bottom film edges
+   Left holes
 */
 
-.full-film-background::before,
-.full-film-background::after{
+.left-holes{
 
- content:"";
+    left:
+    calc(
+        50% -
+        min(34vw,380px)
+    );
 
- position:absolute;
-
- left:0;
-
- width:100%;
-
- height:55px;
-
- background:#111;
-
- z-index:4;
 }
 
+
+/*
+   Right holes
+*/
+
+.right-holes{
+
+    right:
+    calc(
+        50% -
+        min(34vw,380px)
+    );
+
+}
+
+
+/*
+   Add actual hole appearance
+*/
+
+.left-holes::after,
+.right-holes::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+        to bottom,
+        transparent 0 5px,
+        #050505 5px 18px,
+        transparent 18px 32px
+    );
+
+}
+
+
+/* =========================================================
+   DARK SIDE VIGNETTE
+========================================================= */
 
 .full-film-background::before{
 
- top:0;
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:6;
+
+    pointer-events:none;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.85) 0%,
+        transparent 22%,
+        transparent 78%,
+        rgba(0,0,0,.85) 100%
+    );
+
 }
 
 
-.full-film-background::after{
+/* =========================================================
+   FILM CONTROL PANEL
+========================================================= */
 
- bottom:0;
+.film-controls{
+
+    position:fixed;
+
+    left:22px;
+
+    top:50%;
+
+    transform:
+    translateY(-50%);
+
+    width:min(270px,28vw);
+
+    min-width:210px;
+
+    padding:28px 22px;
+
+    background:
+    rgba(15,12,13,.92);
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.55);
+
+    z-index:20;
+
+    color:white;
+
+    text-align:left;
+
 }
 
 
-/* =====================================================
-   FILM CENTER CARD
-===================================================== */
+.film-controls h2{
 
-.film-overlay{
+    color:#fff;
 
- position:absolute;
+    font-size:32px;
 
- inset:0;
+    line-height:1;
 
- z-index:10;
+    margin:
+    12px 0 18px;
 
- display:flex;
-
- align-items:center;
-
- justify-content:center;
-
- background:
-  rgba(30,10,18,.22);
-
- pointer-events:none;
 }
 
 
-.film-content{
+.film-controls p{
 
- width:min(90vw,480px);
+    color:#ddd;
 
- padding:35px 25px;
+    font-size:13px;
 
- text-align:center;
+    line-height:1.5;
 
- background:
-  rgba(255,255,255,.94);
+    margin-bottom:18px;
 
- border-radius:25px;
-
- box-shadow:
- 0 20px 60px
- rgba(0,0,0,.45);
-
- pointer-events:auto;
 }
 
 
-.film-content h2{
+.film-controls .eyebrow{
 
- margin:15px 0;
+    color:#f2b5c8;
+
+    border-color:#c65378;
+
 }
 
 
-.film-content p{
+.film-controls button{
 
- margin-bottom:20px;
-}
+    width:100%;
 
+    margin-top:8px;
 
-.film-content button{
-
- margin:5px;
 }
 
 
 .film-status{
 
- font-size:13px;
+    margin-top:14px;
 
- margin-top:14px;
+    color:#ddd;
 
- color:#742c49;
+    font-size:12px;
 
- opacity:.8;
+    line-height:1.4;
+
 }
 
+
+/* =========================================================
+   EMPTY FILM
+========================================================= */
 
 .empty-roll{
 
- color:white;
+    min-height:500px;
 
- font-size:18px;
+    width:100%;
 
- padding:50px;
+    display:flex;
 
- white-space:nowrap;
-}
+    align-items:center;
 
+    justify-content:center;
 
-/* =====================================================
-   MOBILE
-===================================================== */
+    text-align:center;
 
-@media(max-width:600px){
+    color:#eee;
 
- .secret-gift{
+    font-size:18px;
 
-  top:48px;
-
-  right:9px;
- }
-
-
- .secret-btn{
-
-  font-size:36px;
- }
-
-
- .secret-gift-text{
-
-  font-size:9px;
- }
-
-
- .film-roll{
-
-  height:230px;
- }
-
-
- .film-set{
-
-  gap:8px;
-
-  padding:
-   35px 15px;
- }
-
-
- .film-photo{
-
-  width:190px;
-
-  height:135px;
- }
-
-
- .film-content{
-
-  width:88vw;
-
-  padding:
-   28px 18px;
- }
+    padding:60px;
 
 }
 
 
-/* =====================================================
-   SHORT SCREENS
-===================================================== */
+/* =========================================================
+   MOBILE SECRET FILM
+========================================================= */
+
+@media(max-width:700px){
+
+    .film-moving{
+
+        width:92vw;
+
+    }
+
+
+    .film-set{
+
+        padding:
+        55px 35px;
+
+        gap:15px;
+
+    }
+
+
+    .film-photo{
+
+        width:76vw;
+
+        padding:6px;
+
+        border-width:3px;
+
+    }
+
+
+    .film-photo img{
+
+        max-height:55vh;
+
+    }
+
+
+    .film-holes{
+
+        width:20px;
+
+    }
+
+
+    .left-holes{
+
+        left:
+        calc(
+            50% -
+            46vw
+        );
+
+    }
+
+
+    .right-holes{
+
+        right:
+        calc(
+            50% -
+            46vw
+        );
+
+    }
+
+
+    /*
+       Mobile controls become
+       bottom floating panel.
+    */
+
+    .film-controls{
+
+        top:auto;
+
+        bottom:15px;
+
+        left:50%;
+
+        transform:
+        translateX(-50%);
+
+        width:calc(100vw - 30px);
+
+        min-width:0;
+
+        max-width:380px;
+
+        padding:
+        14px 16px;
+
+        border-radius:18px;
+
+        display:grid;
+
+        grid-template-columns:
+        1fr 1fr;
+
+        gap:7px;
+
+        align-items:center;
+
+    }
+
+
+    .film-controls .eyebrow{
+
+        grid-column:
+        1 / -1;
+
+        justify-self:center;
+
+    }
+
+
+    .film-controls h2{
+
+        grid-column:
+        1 / -1;
+
+        font-size:25px;
+
+        text-align:center;
+
+        margin:3px 0;
+
+    }
+
+
+    .film-controls p{
+
+        display:none;
+
+    }
+
+
+    .film-controls button{
+
+        width:100%;
+
+        margin:0;
+
+        padding:
+        11px 10px;
+
+        font-size:12px;
+
+    }
+
+
+    .film-status{
+
+        grid-column:
+        1 / -1;
+
+        text-align:center;
+
+        margin:2px 0 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL NORMAL SCREENS
+========================================================= */
 
 @media(max-height:680px){
 
- .paper{
+    .paper{
 
-  min-height:90vh;
+        min-height:90vh;
 
-  padding:
-   45px 20px 25px;
- }
+        padding:
+        45px 20px 25px;
 
-
- h1{
-
-  font-size:40px;
- }
+    }
 
 
- h2{
+    h1{
 
-  font-size:35px;
- }
+        font-size:40px;
 
-
- .gallery{
-
-  max-height:37vh;
- }
+    }
 
 
- .envelope{
+    h2{
 
-  margin-top:25px;
+        font-size:35px;
 
-  margin-bottom:25px;
- }
+    }
 
 
- .video-card video{
+    .gallery{
 
-  aspect-ratio:16/9;
- }
+        max-height:37vh;
+
+    }
+
+
+    .envelope{
+
+        margin-top:25px;
+
+        margin-bottom:25px;
+
+    }
+
+
+    .video-card video{
+
+        aspect-ratio:16/9;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECRET BUTTON MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .secret-gift{
+
+        top:45px;
+
+        right:8px;
+
+    }
+
+
+    .secret-btn{
+
+        font-size:40px;
+
+    }
+
+
+    .secret-gift-text{
+
+        font-size:9px;
+
+    }
 
 }
 
@@ -1550,702 +2041,658 @@ button.secondary{
 <body>
 
 
-<!-- =====================================================
-     FALLING HEARTS
-===================================================== -->
+<!-- =======================================================
+     NORMAL BACKGROUND HEARTS
+======================================================= -->
 
 <div
- class="floating"
- id="floatingHearts">
+    class="floating"
+    id="floatingHearts">
 </div>
 
 
-<!-- =====================================================
-     TEDDY BEARS
-===================================================== -->
+<!-- =======================================================
+     MOVING TEDDY BEARS
+======================================================= -->
 
 <div
- class="teddy-background"
- id="teddyBackground">
+    class="teddy-background"
+    id="teddyBackground">
 </div>
 
 
-<!-- =====================================================
+<!-- =======================================================
      PAGE DOTS
-     Only 7 dots because Page 8 is SECRET
-===================================================== -->
+======================================================= -->
 
 <div
- class="dots"
- id="dots">
+    class="dots"
+    id="dots">
 </div>
 
 
-<!-- =====================================================
+<!-- =======================================================
      PAGE 1
-===================================================== -->
+======================================================= -->
 
 <section
- class="page active"
- id="page1">
+    class="page active"
+    id="page1">
 
- <div class="paper">
+    <div class="paper">
 
-  <div class="tape"></div>
+        <div class="tape"></div>
 
-  <div class="content">
+        <div class="content">
 
-   <div class="big-emoji">
-    💌
-   </div>
+            <div class="big-emoji">
+                💌
+            </div>
 
-   <div class="eyebrow">
-    A LITTLE SURPRISE
-   </div>
+            <div class="eyebrow">
+                A LITTLE SURPRISE
+            </div>
 
-   <h1>
-    A little surprise<br>
-    for my birthday girl...
-   </h1>
+            <h1>
+                A little surprise<br>
+                for my birthday girl...
+            </h1>
 
-   <p>
-    But first, I need to know something. 👀
-   </p>
+            <p>
+                But first, I need to know something. 👀
+            </p>
 
-   <div class="buttons">
+            <div class="buttons">
 
-    <button
-     onclick="yesFirst()">
+                <button
+                    onclick="yesFirst()">
+                    YES 💗
+                </button>
 
-     YES 💗
+                <button
+                    class="secondary"
+                    id="noBtn"
+                    onclick="noFirst()">
+                    NO 😐
+                </button>
 
-    </button>
+            </div>
 
+            <div
+                id="noMessage"
+                class="small">
+            </div>
 
-    <button
-     class="secondary"
-     id="noBtn"
-     onclick="noFirst()">
+        </div>
 
-     NO 😐
-
-    </button>
-
-   </div>
-
-   <div
-    id="noMessage"
-    class="small">
-   </div>
-
-  </div>
-
- </div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =======================================================
      PAGE 2
-===================================================== -->
+======================================================= -->
 
 <section
- class="page"
- id="page2">
+    class="page"
+    id="page2">
 
- <div class="paper">
+    <div class="paper">
 
-  <div class="content">
+        <div class="content">
 
-   <div
-    class="envelope"
-    id="envelope"
-    onclick="openEnvelope()">
+            <div
+                class="envelope"
+                id="envelope"
+                onclick="openEnvelope()">
 
-    <div class="env-back"></div>
+                <div class="env-back"></div>
 
-    <div class="letter">
+                <div class="letter">
 
-     For my birthday girl... 💗
+                    For my birthday girl... 💗
 
-     <br><br>
+                    <br><br>
 
-     <small>
-      Tap the envelope
-     </small>
+                    <small>
+                        Tap the envelope
+                    </small>
+
+                </div>
+
+                <div class="env-flap"></div>
+
+                <div class="seal">
+                    ♥
+                </div>
+
+            </div>
+
+
+            <div class="eyebrow">
+                YOU FOUND IT YEPPY
+            </div>
+
+
+            <h2>
+                A little letter<br>
+                before we begin...
+            </h2>
+
+
+            <p id="envelopeHint">
+                Tap the envelope.
+                I promise it's worth it. ✨
+            </p>
+
+
+            <button
+                onclick="showPage(3)">
+
+                Open the surprise sweet heart 🎀
+
+            </button>
+
+        </div>
 
     </div>
-
-    <div class="env-flap"></div>
-
-    <div class="seal">
-     ♥
-    </div>
-
-   </div>
-
-
-   <div class="eyebrow">
-    YOU FOUND IT YEPPY
-   </div>
-
-
-   <h2>
-    A little letter<br>
-    before we begin...
-   </h2>
-
-
-   <p id="envelopeHint">
-    Tap the envelope.
-    I promise it's worth it. ✨
-   </p>
-
-
-   <button
-    onclick="showPage(3)">
-
-    Open the surprise sweet heart 🎀
-
-   </button>
-
-  </div>
-
- </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =======================================================
      PAGE 3
-===================================================== -->
+======================================================= -->
 
 <section
- class="page"
- id="page3">
+    class="page"
+    id="page3">
 
- <div class="paper">
+    <div class="paper">
 
-  <div class="content">
+        <div class="content">
 
-   <div
-    class="confetti"
-    id="confetti">
-   </div>
+            <div
+                class="confetti"
+                id="confetti">
+            </div>
 
+            <div class="cake">
+                🎂
+            </div>
 
-   <div class="cake">
-    🎂
-   </div>
+            <div class="eyebrow">
+                TODAY IS YOUR DAY
+            </div>
 
+            <div class="birthday-title">
+                HAPPY<br>
+                BIRTHDAY
+            </div>
 
-   <div class="eyebrow">
-    TODAY IS YOUR DAY
-   </div>
+            <div class="name">
+                Chamuu! 💕
+            </div>
 
+            <p>
+                One whole day dedicated to celebrating<br>
+                the wonderful person you are.
+            </p>
 
-   <div class="birthday-title">
-    HAPPY<br>
-    BIRTHDAY
-   </div>
+            <button
+                onclick="showPage(4)">
 
+                Let's look back 📸
 
-   <div class="name">
-    Chamuu! 💕
-   </div>
+            </button>
 
+        </div>
 
-   <p>
-    One whole day dedicated to celebrating<br>
-    the wonderful person you are.
-   </p>
-
-
-   <button
-    onclick="showPage(4)">
-
-    Let's look back 📸
-
-   </button>
-
-  </div>
-
- </div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =======================================================
      PAGE 4
-===================================================== -->
+======================================================= -->
 
 <section
- class="page"
- id="page4">
+    class="page"
+    id="page4">
 
- <div class="paper">
+    <div class="paper">
 
-  <div class="content">
+        <div class="content">
 
-   <div class="big-emoji">
-    📸
-   </div>
+            <div class="big-emoji">
+                📸
+            </div>
 
+            <div class="eyebrow">
+                A FEW OF MY FAVOURITES
+            </div>
 
-   <div class="eyebrow">
-    A FEW OF MY FAVOURITES
-   </div>
+            <h2>
+                Our little<br>
+                memories
+            </h2>
 
+            <p>
+                Every picture has a story. 💗
+            </p>
 
-   <h2>
-    Our little<br>
-    memories
-   </h2>
+            <div class="gallery-wrap">
 
+                <div class="gallery">
 
-   <p>
-    Every picture has a story. 💗
-   </p>
+                    <div class="photo">
 
+                        <img
+                            src="photo1.jpg"
+                            alt="Memory 1">
 
-   <div class="gallery-wrap">
+                        <span>
+                            that smile ♡
+                        </span>
 
-    <div class="gallery">
-
-
-     <div class="photo">
-
-      <img
-       src="photo1.jpg"
-       alt="Memory 1">
-
-      <span>
-       that smile ♡
-      </span>
-
-     </div>
+                    </div>
 
 
-     <div class="photo">
+                    <div class="photo">
 
-      <img
-       src="photo2.jpg"
-       alt="Memory 2">
+                        <img
+                            src="photo2.jpg"
+                            alt="Memory 2">
 
-      <span>
-       one of my favourites
-      </span>
+                        <span>
+                            one of my favourites
+                        </span>
 
-     </div>
-
-
-     <div class="photo">
-
-      <img
-       src="photo3.jpg"
-       alt="Memory 3">
-
-      <span>
-       good times ✨
-      </span>
-
-     </div>
+                    </div>
 
 
-     <div class="photo">
+                    <div class="photo">
 
-      <img
-       src="photo4.jpg"
-       alt="Memory 4">
+                        <img
+                            src="photo3.jpg"
+                            alt="Memory 3">
 
-      <span>
-       forever a memory
-      </span>
+                        <span>
+                            good times ✨
+                        </span>
 
-     </div>
+                    </div>
+
+
+                    <div class="photo">
+
+                        <img
+                            src="photo4.jpg"
+                            alt="Memory 4">
+
+                        <span>
+                            forever a memory
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                onclick="showPage(5)">
+
+                One last last thing 💌👀
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PAGE 5
+======================================================= -->
+
+<section
+    class="page"
+    id="page5">
+
+    <div class="paper">
+
+        <div class="content">
+
+            <div class="big-emoji">
+                💌
+            </div>
+
+            <div class="eyebrow">
+                A MESSAGE FOR YOU
+            </div>
+
+            <h2>
+                Just a few<br>
+                words...
+            </h2>
+
+            <div class="letter-card">
+
+                <p>
+                    Hey birthday girl,
+                </p>
+
+                <p>
+                    I wanted to make something that wasn't
+                    just another birthday message.
+                    Something you could open, smile at,
+                    and keep as a little memory.
+                </p>
+
+                <p>
+                    Thank you for all the laughs,
+                    the random moments, the conversations,
+                    and all the memories that somehow
+                    become my favourite ones.
+                </p>
+
+                <p>
+                    I hope this year brings you everything
+                    you're wishing for — happiness,
+                    crazy adventures and plenty of
+                    reasons to smile.
+                </p>
+
+                <p>
+                    And whenever you look back at these
+                    pictures, I hope you remember just
+                    how special you are. ❤️
+                </p>
+
+                <p>
+                    <b>
+                        Happy Birthday, MAZI GUBBU. 😘💗
+                    </b>
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="showPage(6)"
+                style="margin-top:18px">
+
+                Okay... last last last thing 👀
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PAGE 6
+======================================================= -->
+
+<section
+    class="page"
+    id="page6">
+
+    <div class="paper">
+
+        <div class="content">
+
+            <div class="big-emoji">
+                🎥
+            </div>
+
+            <div class="eyebrow">
+                PRESS PLAY
+            </div>
+
+            <h2>
+                I made this<br>
+                for you.
+            </h2>
+
+            <div class="video-card">
+
+                <video
+                    id="finalVideo"
+                    controls
+                    playsinline
+                    preload="metadata">
+
+                    <source
+                        src="birthday.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <p class="video-caption">
+                A tiny movie of us 💗
+            </p>
+
+            <button
+                onclick="showPage(7)">
+
+                ok final 😗💌
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PAGE 7
+======================================================= -->
+
+<section
+    class="page"
+    id="page7">
+
+
+    <div class="paper">
+
+        <div class="content">
+
+            <div class="big-emoji">
+                🌙
+            </div>
+
+            <div class="eyebrow">
+                THE END... MAYBE
+            </div>
+
+            <h2>
+                And if you<br>
+                ever forget...
+            </h2>
+
+            <p
+                style="
+                font-family:Georgia,serif;
+                font-size:21px;
+                color:#742c49;
+                ">
+
+                you are loved,<br>
+
+                you are appreciated,<br>
+
+                and you deserve beautiful things
+                my princess 👸🌹
+
+            </p>
+
+            <div class="name">
+                Always. ♡
+            </div>
+
+            <div class="eyebrow">
+                MADE JUST FOR YOU ✨
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SECRET BUTTON
+    ================================================= -->
+
+    <div class="secret-gift">
+
+        <button
+            class="secret-btn"
+            onclick="showPage(8)"
+            aria-label="One more secret">
+
+            🎞️
+
+        </button>
+
+        <div class="secret-gift-text">
+            one more secret 🤫
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =======================================================
+     PAGE 8
+     SECRET VERTICAL FILM ROLL
+======================================================= -->
+
+<section
+    class="page film-page"
+    id="page8">
+
+
+    <!-- =================================================
+         FULL SCREEN FILM
+    ================================================= -->
+
+    <div class="full-film-background">
+
+
+        <!-- LEFT SPROCKETS -->
+
+        <div
+            class="film-holes left-holes">
+        </div>
+
+
+        <!-- RIGHT SPROCKETS -->
+
+        <div
+            class="film-holes right-holes">
+        </div>
+
+
+        <!-- MOVING FILM -->
+
+        <div class="film-moving">
+
+            <div
+                id="filmRoll"
+                class="film-roll">
+            </div>
+
+        </div>
 
 
     </div>
 
-   </div>
 
+    <!-- =================================================
+         CONTROL PANEL
+    ================================================= -->
 
-   <button
-    onclick="showPage(5)">
+    <div class="film-controls">
 
-    One last last thing 💌👀
 
-   </button>
+        <div class="eyebrow">
+            SECRET MEMORY ROLL 🎞️
+        </div>
 
-  </div>
 
- </div>
+        <h2>
+            Our little<br>
+            film roll
+        </h2>
 
-</section>
 
+        <p>
+            Add up to 10 pictures and watch
+            your memories travel through the
+            film strip.
+        </p>
 
-<!-- =====================================================
-     PAGE 5
-===================================================== -->
 
-<section
- class="page"
- id="page5">
+        <input
+            id="photoUpload"
+            type="file"
+            accept="image/*"
+            multiple
+            hidden>
 
- <div class="paper">
 
-  <div class="content">
+        <button
+            type="button"
+            onclick="
+                document
+                .getElementById('photoUpload')
+                .click()
+            ">
 
-   <div class="big-emoji">
-    💌
-   </div>
+            Add Photos 📸
 
+        </button>
 
-   <div class="eyebrow">
-    A MESSAGE FOR YOU
-   </div>
 
+        <button
+            type="button"
+            class="secondary"
+            onclick="resetRoll()">
 
-   <h2>
-    Just a few<br>
-    words...
-   </h2>
+            Reset Roll
 
+        </button>
 
-   <div class="letter-card">
 
-    <p>
-     Hey birthday girl,
-    </p>
+        <div
+            id="uploadStatus"
+            class="film-status">
 
+            0 / 10 memories saved.
 
-    <p>
-     I wanted to make something that wasn't
-     just another birthday message.
-     Something you could open, smile at,
-     and keep as a little memory.
-    </p>
+        </div>
 
 
-    <p>
-     Thank you for all the laughs,
-     the random moments, the conversations,
-     and all the memories that somehow
-     become my favourite ones.
-    </p>
+    </div>
 
-
-    <p>
-     I hope this year brings you everything
-     you're wishing for — happiness,
-     crazy adventures and plenty of
-     reasons to smile.
-    </p>
-
-
-    <p>
-     And whenever you look back at these
-     pictures, I hope you remember just
-     how special you are. ❤️
-    </p>
-
-
-    <p>
-     <b>
-      Happy Birthday, MAZI GUBBU. 😘💗
-     </b>
-    </p>
-
-
-   </div>
-
-
-   <button
-    onclick="showPage(6)"
-    style="margin-top:18px">
-
-    Okay... last last last thing 👀
-
-   </button>
-
-  </div>
-
- </div>
-
-</section>
-
-
-<!-- =====================================================
-     PAGE 6
-===================================================== -->
-
-<section
- class="page"
- id="page6">
-
- <div class="paper">
-
-  <div class="content">
-
-   <div class="big-emoji">
-    🎥
-   </div>
-
-
-   <div class="eyebrow">
-    PRESS PLAY
-   </div>
-
-
-   <h2>
-    I made this<br>
-    for you.
-   </h2>
-
-
-   <div class="video-card">
-
-    <video
-     id="finalVideo"
-     controls
-     playsinline
-     preload="metadata">
-
-     <source
-      src="birthday.mp4"
-      type="video/mp4">
-
-     Your browser does not support video.
-
-    </video>
-
-   </div>
-
-
-   <p class="video-caption">
-    A tiny movie of us 💗
-   </p>
-
-
-   <button
-    onclick="showPage(7)">
-
-    ok final 😗💌
-
-   </button>
-
-  </div>
-
- </div>
-
-</section>
-
-
-<!-- =====================================================
-     PAGE 7
-===================================================== -->
-
-<section
- class="page"
- id="page7">
-
-
- <div class="paper">
-
-  <div class="content">
-
-
-   <div class="big-emoji">
-    🌙
-   </div>
-
-
-   <div class="eyebrow">
-    THE END... MAYBE
-   </div>
-
-
-   <h2>
-    And if you<br>
-    ever forget...
-   </h2>
-
-
-   <p
-    style="
-     font-family:Georgia,serif;
-     font-size:21px;
-     color:#742c49;
-    ">
-
-    you are loved,<br>
-
-    you are appreciated,<br>
-
-    and you deserve beautiful things
-    my princess 👸🌹
-
-   </p>
-
-
-   <div class="name">
-    Always. ♡
-   </div>
-
-
-   <div class="eyebrow">
-    MADE JUST FOR YOU ✨
-   </div>
-
-
-  </div>
-
- </div>
-
-
- <!-- =================================================
-      SECRET FILM BUTTON
-      FIXED TO SCREEN
- ================================================= -->
-
- <div class="secret-gift">
-
-
-  <button
-   class="secret-btn"
-   onclick="showPage(8)"
-   aria-label="One more secret">
-
-   🎞️
-
-  </button>
-
-
-  <div class="secret-gift-text">
-
-   one more secret 🤫
-
-  </div>
-
-
- </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     PAGE 8
-     SECRET FULL SCREEN FILM ROLL
-===================================================== -->
-
-<section
- class="page film-page"
- id="page8">
-
-
- <!-- =================================================
-      FULL SCREEN FILM BACKGROUND
- ================================================= -->
-
- <div class="full-film-background">
-
-
-  <div
-   class="film-holes top-holes">
-  </div>
-
-
-  <div class="film-moving">
-
-
-   <div
-    id="filmRoll"
-    class="film-roll">
-   </div>
-
-
-  </div>
-
-
-  <div
-   class="film-holes bottom-holes">
-  </div>
-
-
- </div>
-
-
- <!-- =================================================
-      CENTER CONTROL CARD
- ================================================= -->
-
- <div class="film-overlay">
-
-
-  <div class="film-content">
-
-
-   <div class="eyebrow">
-    SECRET MEMORY ROLL
-   </div>
-
-
-   <h2>
-    Our little<br>
-    film roll 🎞️
-   </h2>
-
-
-   <p>
-    Add up to 10 pictures and watch
-    your memories roll across the screen.
-   </p>
-
-
-   <input
-    id="photoUpload"
-    type="file"
-    accept="image/*"
-    multiple
-    hidden>
-
-
-   <button
-    type="button"
-    onclick="
-     document
-      .getElementById('photoUpload')
-      .click()
-    ">
-
-    Add Photos 📸
-
-   </button>
-
-
-   <button
-    type="button"
-    class="secondary"
-    onclick="resetRoll()">
-
-    Reset Roll
-
-   </button>
-
-
-   <div
-    id="uploadStatus"
-    class="film-status">
-
-    0 / 10 memories saved.
-
-   </div>
-
-
-  </div>
-
- </div>
 
 </section>
 
@@ -2254,81 +2701,105 @@ button.secondary{
 <script>
 
 
-/* =====================================================
-   FALLING HEARTS
-===================================================== */
+/* =========================================================
+   HEARTS
+========================================================= */
 
 function createFloatingHearts(){
 
- const container=
-  document.getElementById(
-   "floatingHearts"
-  );
+    const container =
+        document.getElementById(
+            "floatingHearts"
+        );
 
 
- const hearts=[
-  "♥","♡","♥","♡",
-  "♥","♡","♥","♥",
-  "♡","♥","♡","♥",
-  "♡","♥","♡","♥",
-  "♡","♥","♡","♥",
-  "♡","♥","♡","♥"
- ];
+    const hearts = [
+        "♥","♡","♥","♡",
+        "♥","♡","♥","♥",
+        "♡","♥","♡","♥",
+        "♡","♥","♡","♥",
+        "♡","♥","♡","♥",
+        "♡","♥","♡","♥"
+    ];
 
 
- hearts.forEach(
-  function(heart){
+    hearts.forEach(
+        function(heart){
 
-   const span=
-    document.createElement(
-     "span"
+            const span =
+                document.createElement(
+                    "span"
+                );
+
+
+            span.innerHTML =
+                heart;
+
+
+            span.style.left =
+                Math.random() * 100 +
+                "%";
+
+
+            span.style.fontSize =
+                (16 +
+                Math.random() * 18) +
+                "px";
+
+
+            span.style.setProperty(
+                "--duration",
+                (8 +
+                Math.random() * 8) +
+                "s"
+            );
+
+
+            span.style.setProperty(
+                "--delay",
+                (-Math.random() * 12) +
+                "s"
+            );
+
+
+            span.style.setProperty(
+                "--drift1",
+                (-70 +
+                Math.random() * 140) +
+                "px"
+            );
+
+
+            span.style.setProperty(
+                "--drift2",
+                (-100 +
+                Math.random() * 200) +
+                "px"
+            );
+
+
+            span.style.setProperty(
+                "--drift3",
+                (-80 +
+                Math.random() * 160) +
+                "px"
+            );
+
+
+            span.style.setProperty(
+                "--drift4",
+                (-120 +
+                Math.random() * 240) +
+                "px"
+            );
+
+
+            container.appendChild(
+                span
+            );
+
+        }
     );
-
-
-   span.innerHTML=
-    heart;
-
-
-   span.style.left=
-    Math.random()*100+
-    "%";
-
-
-   span.style.fontSize=
-    (16+
-     Math.random()*18)+
-    "px";
-
-
-   span.style.setProperty(
-    "--duration",
-    (6+
-     Math.random()*7)+
-    "s"
-   );
-
-
-   span.style.setProperty(
-    "--delay",
-    (-Math.random()*10)+
-    "s"
-   );
-
-
-   span.style.setProperty(
-    "--drift",
-    (-50+
-     Math.random()*100)+
-    "px"
-   );
-
-
-   container.appendChild(
-    span
-   );
-
-  }
- );
 
 }
 
@@ -2337,92 +2808,122 @@ createFloatingHearts();
 
 
 
-/* =====================================================
+/* =========================================================
    TEDDY BEARS
-===================================================== */
+   CONTINUOUSLY FLOW UPWARD
+========================================================= */
 
 function createTeddyBears(){
 
- const container=
-  document.getElementById(
-   "teddyBackground"
-  );
+    const container =
+        document.getElementById(
+            "teddyBackground"
+        );
 
 
- const teddyCount=18;
+    const teddyCount = 20;
 
 
- for(
-  let i=0;
-  i<teddyCount;
-  i++
- ){
+    for(
+        let i = 0;
+        i < teddyCount;
+        i++
+    ){
 
-  const teddy=
-   document.createElement(
-    "div"
-   );
-
-
-  teddy.className=
-   "teddy";
+        const teddy =
+            document.createElement(
+                "div"
+            );
 
 
-  teddy.innerHTML=
-   "🧸";
+        teddy.className =
+            "teddy";
 
 
-  teddy.style.left=
-   Math.random()*100+
-   "%";
+        teddy.innerHTML =
+            "🧸";
 
 
-  teddy.style.top=
-   Math.random()*100+
-   "%";
+        teddy.style.left =
+            Math.random() * 100 +
+            "%";
 
 
-  teddy.style.setProperty(
-   "--size",
-   (22+
-    Math.random()*42)+
-   "px"
-  );
+        teddy.style.setProperty(
+            "--size",
+            (22 +
+            Math.random() * 45) +
+            "px"
+        );
 
 
-  teddy.style.setProperty(
-   "--opacity",
-   (0.12+
-    Math.random()*0.22)
-  );
+        teddy.style.setProperty(
+            "--opacity",
+            (0.13 +
+            Math.random() * 0.22)
+        );
 
 
-  teddy.style.setProperty(
-   "--rotation",
-   (-15+
-    Math.random()*30)+
-   "deg"
-  );
+        teddy.style.setProperty(
+            "--rotation",
+            (-15 +
+            Math.random() * 30) +
+            "deg"
+        );
 
 
-  teddy.style.setProperty(
-   "--duration",
-   (3+
-    Math.random()*4)+
-   "s"
-  );
+        teddy.style.setProperty(
+            "--duration",
+            (10 +
+            Math.random() * 9) +
+            "s"
+        );
 
 
-  teddy.style.animationDelay=
-   (-Math.random()*5)+
-   "s";
+        teddy.style.setProperty(
+            "--delay",
+            (-Math.random() * 18) +
+            "s"
+        );
 
 
-  container.appendChild(
-   teddy
-  );
+        teddy.style.setProperty(
+            "--drift1",
+            (-80 +
+            Math.random() * 160) +
+            "px"
+        );
 
- }
+
+        teddy.style.setProperty(
+            "--drift2",
+            (-120 +
+            Math.random() * 240) +
+            "px"
+        );
+
+
+        teddy.style.setProperty(
+            "--drift3",
+            (-100 +
+            Math.random() * 200) +
+            "px"
+        );
+
+
+        teddy.style.setProperty(
+            "--drift4",
+            (-150 +
+            Math.random() * 300) +
+            "px"
+        );
+
+
+        container.appendChild(
+            teddy
+        );
+
+    }
 
 }
 
@@ -2431,1172 +2932,1413 @@ createTeddyBears();
 
 
 
-/* =====================================================
+/* =========================================================
    PAGE SYSTEM
-===================================================== */
+========================================================= */
 
-let currentPage=1;
+let currentPage = 1;
 
-const totalVisiblePages=7;
+const totalVisiblePages = 7;
 
 
 
 function updateDots(){
 
- const dots=
-  document.getElementById(
-   "dots"
-  );
+    const dots =
+        document.getElementById(
+            "dots"
+        );
 
 
- dots.innerHTML="";
+    dots.innerHTML = "";
 
 
- for(
-  let i=1;
-  i<=totalVisiblePages;
-  i++
- ){
+    for(
+        let i = 1;
+        i <= totalVisiblePages;
+        i++
+    ){
 
-  const dot=
-   document.createElement(
-    "div"
-   );
-
-
-  dot.className=
-   "dot"+
-   (
-    i===currentPage
-     ?
-     " active"
-     :
-     ""
-   );
+        const dot =
+            document.createElement(
+                "div"
+            );
 
 
-  dots.appendChild(
-   dot
-  );
+        dot.className =
+            "dot" +
+            (
+                i === currentPage
+                ?
+                " active"
+                :
+                ""
+            );
 
- }
+
+        dots.appendChild(
+            dot
+        );
+
+    }
 
 }
 
 
 
-/* =====================================================
+/* =========================================================
    SHOW PAGE
-===================================================== */
+========================================================= */
 
 function showPage(number){
 
+    document
+    .querySelectorAll(".page")
+    .forEach(
+        function(page){
 
- /* Remove active class */
+            page.classList.remove(
+                "active"
+            );
 
- document
-  .querySelectorAll(".page")
-  .forEach(
-   function(page){
-
-    page.classList.remove(
-     "active"
+        }
     );
 
-   }
-  );
+
+    const selected =
+        document.getElementById(
+            "page" + number
+        );
 
 
- /* Select requested page */
+    if(selected){
 
- const selected=
-  document.getElementById(
-   "page"+number
-  );
-
-
- if(selected){
-
-  selected.classList.add(
-   "active"
-  );
-
-  currentPage=
-   number;
-
-  updateDots();
-
- }
+        selected.classList.add(
+            "active"
+        );
 
 
- /* Pause video when leaving Page 6 */
-
- const video=
-  document.getElementById(
-   "finalVideo"
-  );
+        currentPage =
+            number;
 
 
- if(
-  video &&
-  number!==6
- ){
+        updateDots();
 
-  video.pause();
-
- }
+    }
 
 
- /* Normal background */
+    /* ================================================
+       VIDEO
+    ================================================ */
 
- const hearts=
-  document.getElementById(
-   "floatingHearts"
-  );
-
-
- const teddy=
-  document.getElementById(
-   "teddyBackground"
-  );
+    const video =
+        document.getElementById(
+            "finalVideo"
+        );
 
 
- if(number!==8){
+    if(
+        video &&
+        number !== 6
+    ){
 
-  /*
-   Show hearts
-  */
+        video.pause();
 
-  hearts.style.display=
-   "block";
-
-
-  /*
-   Show teddy bears
-  */
-
-  teddy.style.display=
-   "block";
+    }
 
 
-  /*
-   Restore pink background
-  */
+    /* ================================================
+       NORMAL BACKGROUND
+    ================================================ */
 
-  document.body.style.background=
-   "";
-
-
- }
-
-
- /* =================================================
-    PAGE 8
-    REMOVE EVERYTHING FROM NORMAL BACKGROUND
- ================================================= */
-
- if(number===8){
-
-  /*
-   REMOVE FALLING HEARTS
-  */
-
-  hearts.style.display=
-   "none";
+    const hearts =
+        document.getElementById(
+            "floatingHearts"
+        );
 
 
-  /*
-   REMOVE TEDDY BEARS
-  */
-
-  teddy.style.display=
-   "none";
+    const teddy =
+        document.getElementById(
+            "teddyBackground"
+        );
 
 
-  /*
-   REMOVE PINK BACKGROUND
-  */
+    if(number !== 8){
 
-  document.body.style.background=
-   "#111";
+        hearts.style.display =
+            "block";
 
 
-  /*
-   LOAD SAVED PHOTOS
-  */
-
-  loadFilmRoll();
-
- }
+        teddy.style.display =
+            "block";
 
 
- /* Confetti */
+        document.body.style.background =
+            "";
 
- if(number===3){
+    }
 
-  launchConfetti();
 
- }
+    /* ================================================
+       SECRET FILM PAGE
+    ================================================ */
+
+    if(number === 8){
+
+        /*
+           Remove hearts completely
+        */
+
+        hearts.style.display =
+            "none";
+
+
+        /*
+           Remove teddy bears completely
+        */
+
+        teddy.style.display =
+            "none";
+
+
+        /*
+           Remove pink background
+        */
+
+        document.body.style.background =
+            "#090909";
+
+
+        /*
+           Load photos
+        */
+
+        loadFilmRoll();
+
+    }
+
+
+    /* ================================================
+       CONFETTI
+    ================================================ */
+
+    if(number === 3){
+
+        launchConfetti();
+
+    }
 
 }
 
 
 
-/* =====================================================
-   YES BUTTON
-===================================================== */
+/* =========================================================
+   YES
+========================================================= */
 
 function yesFirst(){
 
- showPage(2);
+    showPage(2);
 
 }
 
 
 
-/* =====================================================
-   NO BUTTON
-===================================================== */
+/* =========================================================
+   NO
+========================================================= */
 
-let noClicks=0;
+let noClicks = 0;
 
 
 function noFirst(){
 
- noClicks++;
+    noClicks++;
 
 
- const message=
-  document.getElementById(
-   "noMessage"
-  );
+    const message =
+        document.getElementById(
+            "noMessage"
+        );
 
 
- const noBtn=
-  document.getElementById(
-   "noBtn"
-  );
+    const noBtn =
+        document.getElementById(
+            "noBtn"
+        );
 
 
- message.innerHTML=
-  "HOW DARE YOUU! 😭😒<br>Try again.";
+    message.innerHTML =
+        "HOW DARE YOUU! 😭😒<br>Try again.";
 
 
- const scale=
-  Math.max(
-   0,
-   1-
-   (noClicks*0.18)
-  );
+    const scale =
+        Math.max(
+            0,
+            1 -
+            (noClicks * .18)
+        );
 
 
- noBtn.style.transform=
-  "scale("+
-  scale+
-  ")";
+    noBtn.style.transform =
+        "scale(" +
+        scale +
+        ")";
 
 
- noBtn.style.opacity=
-  String(
-   Math.max(
-    0,
-    1-
-    (noClicks*0.16)
-   )
-  );
+    noBtn.style.opacity =
+        String(
+            Math.max(
+                0,
+                1 -
+                (noClicks * .16)
+            )
+        );
 
 
- if(noClicks>=6){
+    if(noClicks >= 6){
 
-  noBtn.style.display=
-   "none";
-
-
-  message.innerHTML=
-   "Okay okay... you win. 😭💗";
-
- }
+        noBtn.style.display =
+            "none";
 
 
- const paper=
-  document.querySelector(
-   "#page1 .paper"
-  );
+        message.innerHTML =
+            "Okay okay... you win. 😭💗";
+
+    }
 
 
- paper.animate(
+    const paper =
+        document.querySelector(
+            "#page1 .paper"
+        );
 
-  [
-   {
-    transform:
-     "translateX(0)"
-   },
 
-   {
-    transform:
-     "translateX(-10px)"
-   },
+    paper.animate(
 
-   {
-    transform:
-     "translateX(10px)"
-   },
+        [
 
-   {
-    transform:
-     "translateX(-7px)"
-   },
+            {
+                transform:
+                "translateX(0)"
+            },
 
-   {
-    transform:
-     "translateX(7px)"
-   },
+            {
+                transform:
+                "translateX(-10px)"
+            },
 
-   {
-    transform:
-     "translateX(0)"
-   }
-  ],
+            {
+                transform:
+                "translateX(10px)"
+            },
 
-  {
-   duration:450
-  }
+            {
+                transform:
+                "translateX(-7px)"
+            },
 
- );
+            {
+                transform:
+                "translateX(7px)"
+            },
+
+            {
+                transform:
+                "translateX(0)"
+            }
+
+        ],
+
+        {
+            duration:450
+        }
+
+    );
 
 }
 
 
 
-/* =====================================================
+/* =========================================================
    ENVELOPE
-===================================================== */
+========================================================= */
 
 function openEnvelope(){
 
- const envelope=
-  document.getElementById(
-   "envelope"
-  );
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
 
 
- envelope.classList.add(
-  "open"
- );
+    envelope.classList.add(
+        "open"
+    );
 
 
- document.getElementById(
-  "envelopeHint"
- ).innerHTML=
-  "Okay... now you're ready. 💗";
+    document.getElementById(
+        "envelopeHint"
+    ).innerHTML =
+        "Okay... now you're ready. 💗";
 
 }
 
 
 
-/* =====================================================
+/* =========================================================
    CONFETTI
-===================================================== */
+========================================================= */
 
 function launchConfetti(){
 
- const box=
-  document.getElementById(
-   "confetti"
-  );
+    const box =
+        document.getElementById(
+            "confetti"
+        );
 
 
- box.innerHTML="";
+    box.innerHTML = "";
 
 
- const colors=[
-  "#d85c83",
-  "#efadc3",
-  "#f4c85b",
-  "#9d3e61",
-  "#ffffff"
- ];
+    const colors = [
+
+        "#d85c83",
+        "#efadc3",
+        "#f4c85b",
+        "#9d3e61",
+        "#ffffff"
+
+    ];
 
 
- for(
-  let i=0;
-  i<50;
-  i++
- ){
+    for(
+        let i = 0;
+        i < 50;
+        i++
+    ){
 
-  const piece=
-   document.createElement(
-    "i"
-   );
-
-
-  piece.style.left=
-   Math.random()*100+
-   "%";
+        const piece =
+            document.createElement(
+                "i"
+            );
 
 
-  piece.style.top=
-   "-20px";
+        piece.style.left =
+            Math.random() * 100 +
+            "%";
 
 
-  piece.style.background=
-   colors[
-    Math.floor(
-     Math.random()*
-     colors.length
-    )
-   ];
+        piece.style.top =
+            "-20px";
 
 
-  piece.style.animationDelay=
-   Math.random()*
-   0.7+
-   "s";
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
 
 
-  box.appendChild(
-   piece
-  );
+        piece.style.animationDelay =
+            Math.random() *
+            .7 +
+            "s";
 
- }
+
+        box.appendChild(
+            piece
+        );
+
+    }
 
 }
 
 
 
-/* =====================================================
+/* =========================================================
    INDEXED DATABASE
-===================================================== */
+========================================================= */
 
-const DB_NAME=
- "chamuMemoryRollDB";
-
-
-const DB_VERSION=1;
+const DB_NAME =
+    "chamuMemoryRollDB";
 
 
-const STORE_NAME=
- "photos";
+const DB_VERSION = 1;
+
+
+const STORE_NAME =
+    "photos";
 
 
 
 function openPhotoDB(){
 
- return new Promise(
-  function(resolve,reject){
+    return new Promise(
+        function(resolve,reject){
 
-   const request=
-    indexedDB.open(
-     DB_NAME,
-     DB_VERSION
+            const request =
+                indexedDB.open(
+                    DB_NAME,
+                    DB_VERSION
+                );
+
+
+            request.onupgradeneeded =
+                function(event){
+
+                    const db =
+                        event.target.result;
+
+
+                    if(
+                        !db.objectStoreNames
+                        .contains(
+                            STORE_NAME
+                        )
+                    ){
+
+                        db.createObjectStore(
+                            STORE_NAME,
+                            {
+                                keyPath:"id",
+                                autoIncrement:true
+                            }
+                        );
+
+                    }
+
+                };
+
+
+            request.onsuccess =
+                function(){
+
+                    resolve(
+                        request.result
+                    );
+
+                };
+
+
+            request.onerror =
+                function(){
+
+                    reject(
+                        request.error
+                    );
+
+                };
+
+        }
     );
-
-
-   request.onupgradeneeded=
-    function(event){
-
-     const db=
-      event.target.result;
-
-
-     if(
-      !db.objectStoreNames
-       .contains(
-        STORE_NAME
-       )
-     ){
-
-      db.createObjectStore(
-       STORE_NAME,
-       {
-        keyPath:"id",
-        autoIncrement:true
-       }
-      );
-
-     }
-
-    };
-
-
-   request.onsuccess=
-    function(){
-
-     resolve(
-      request.result
-     );
-
-    };
-
-
-   request.onerror=
-    function(){
-
-     reject(
-      request.error
-     );
-
-    };
-
-  }
- );
 
 }
 
 
 
-/* =====================================================
-   GET SAVED PHOTOS
-===================================================== */
+/* =========================================================
+   GET PHOTOS
+========================================================= */
 
 function getStoredPhotos(){
 
- return openPhotoDB()
-  .then(
-   function(db){
+    return openPhotoDB()
+    .then(
+        function(db){
 
-    return new Promise(
-     function(resolve,reject){
+            return new Promise(
+                function(resolve,reject){
 
-      const transaction=
-       db.transaction(
-        STORE_NAME,
-        "readonly"
-       );
-
-
-      const store=
-       transaction.objectStore(
-        STORE_NAME
-       );
+                    const transaction =
+                        db.transaction(
+                            STORE_NAME,
+                            "readonly"
+                        );
 
 
-      const request=
-       store.getAll();
+                    const store =
+                        transaction
+                        .objectStore(
+                            STORE_NAME
+                        );
 
 
-      request.onsuccess=
-       function(){
-
-        resolve(
-         request.result
-        );
-
-       };
+                    const request =
+                        store.getAll();
 
 
-      request.onerror=
-       function(){
+                    request.onsuccess =
+                        function(){
 
-        reject(
-         request.error
-        );
+                            resolve(
+                                request.result
+                            );
 
-       };
+                        };
 
-     }
+
+                    request.onerror =
+                        function(){
+
+                            reject(
+                                request.error
+                            );
+
+                        };
+
+                }
+            );
+
+        }
     );
-
-   }
-  );
 
 }
 
 
 
-/* =====================================================
-   ADD PHOTO TO DATABASE
-===================================================== */
+/* =========================================================
+   ADD PHOTO
+========================================================= */
 
 function addStoredPhoto(blob){
 
- return openPhotoDB()
-  .then(
-   function(db){
+    return openPhotoDB()
+    .then(
+        function(db){
 
-    return new Promise(
-     function(resolve,reject){
+            return new Promise(
+                function(resolve,reject){
 
-      const transaction=
-       db.transaction(
-        STORE_NAME,
-        "readwrite"
-       );
-
-
-      transaction
-       .objectStore(
-        STORE_NAME
-       )
-       .add({
-        blob:blob
-       });
+                    const transaction =
+                        db.transaction(
+                            STORE_NAME,
+                            "readwrite"
+                        );
 
 
-      transaction.oncomplete=
-       function(){
+                    transaction
+                    .objectStore(
+                        STORE_NAME
+                    )
+                    .add({
+                        blob:blob
+                    });
 
-        resolve();
 
-       };
+                    transaction.oncomplete =
+                        function(){
+
+                            resolve();
+
+                        };
 
 
-      transaction.onerror=
-       function(){
+                    transaction.onerror =
+                        function(){
 
-        reject(
-         transaction.error
-        );
+                            reject(
+                                transaction.error
+                            );
 
-       };
+                        };
 
-     }
+                }
+            );
+
+        }
     );
-
-   }
-  );
 
 }
 
 
 
-/* =====================================================
+/* =========================================================
    DELETE ALL PHOTOS
-===================================================== */
+========================================================= */
 
 function deleteAllStoredPhotos(){
 
- return openPhotoDB()
-  .then(
-   function(db){
+    return openPhotoDB()
+    .then(
+        function(db){
 
-    return new Promise(
-     function(resolve,reject){
+            return new Promise(
+                function(resolve,reject){
 
-      const transaction=
-       db.transaction(
-        STORE_NAME,
-        "readwrite"
-       );
-
-
-      transaction
-       .objectStore(
-        STORE_NAME
-       )
-       .clear();
+                    const transaction =
+                        db.transaction(
+                            STORE_NAME,
+                            "readwrite"
+                        );
 
 
-      transaction.oncomplete=
-       function(){
+                    transaction
+                    .objectStore(
+                        STORE_NAME
+                    )
+                    .clear();
 
-        resolve();
 
-       };
+                    transaction.oncomplete =
+                        function(){
+
+                            resolve();
+
+                        };
 
 
-      transaction.onerror=
-       function(){
+                    transaction.onerror =
+                        function(){
 
-        reject(
-         transaction.error
-        );
+                            reject(
+                                transaction.error
+                            );
 
-       };
+                        };
 
-     }
+                }
+            );
+
+        }
     );
-
-   }
-  );
 
 }
 
 
 
-/* =====================================================
+/* =========================================================
    COMPRESS IMAGE
-===================================================== */
+========================================================= */
 
 function compressImage(file){
 
- return new Promise(
-  function(resolve,reject){
+    return new Promise(
+        function(resolve,reject){
 
-   const reader=
-    new FileReader();
-
-
-   reader.onload=
-    function(event){
-
-     const img=
-      new Image();
+            const reader =
+                new FileReader();
 
 
-     img.onload=
-      function(){
+            reader.onload =
+                function(event){
 
-       const maxSize=1200;
-
-
-       let width=
-        img.width;
+                    const img =
+                        new Image();
 
 
-       let height=
-        img.height;
+                    img.onload =
+                        function(){
+
+                            /*
+                               Keep good quality while
+                               reducing storage size.
+                            */
+
+                            const maxSize =
+                                1400;
 
 
-       if(
-        width>maxSize ||
-        height>maxSize
-       ){
-
-        const ratio=
-         Math.min(
-          maxSize/width,
-          maxSize/height
-         );
+                            let width =
+                                img.width;
 
 
-        width=
-         Math.round(
-          width*ratio
-         );
+                            let height =
+                                img.height;
 
 
-        height=
-         Math.round(
-          height*ratio
-         );
+                            if(
+                                width > maxSize ||
+                                height > maxSize
+                            ){
 
-       }
+                                const ratio =
+                                    Math.min(
+                                        maxSize /
+                                        width,
+
+                                        maxSize /
+                                        height
+                                    );
 
 
-       const canvas=
+                                width =
+                                    Math.round(
+                                        width *
+                                        ratio
+                                    );
+
+
+                                height =
+                                    Math.round(
+                                        height *
+                                        ratio
+                                    );
+
+                            }
+
+
+                            const canvas =
+                                document
+                                .createElement(
+                                    "canvas"
+                                );
+
+
+                            canvas.width =
+                                width;
+
+
+                            canvas.height =
+                                height;
+
+
+                            const ctx =
+                                canvas
+                                .getContext(
+                                    "2d"
+                                );
+
+
+                            ctx.drawImage(
+                                img,
+                                0,
+                                0,
+                                width,
+                                height
+                            );
+
+
+                            canvas.toBlob(
+
+                                function(blob){
+
+                                    if(blob){
+
+                                        resolve(
+                                            blob
+                                        );
+
+                                    }
+                                    else{
+
+                                        reject(
+                                            new Error(
+                                                "Could not process image."
+                                            )
+                                        );
+
+                                    }
+
+                                },
+
+                                "image/jpeg",
+
+                                .84
+
+                            );
+
+                        };
+
+
+                    img.onerror =
+                        function(){
+
+                            reject(
+                                new Error(
+                                    "Invalid image."
+                                )
+                            );
+
+                        };
+
+
+                    img.src =
+                        event.target.result;
+
+                };
+
+
+            reader.onerror =
+                function(){
+
+                    reject(
+                        reader.error
+                    );
+
+                };
+
+
+            reader.readAsDataURL(
+                file
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   CREATE FILM PHOTO
+   AUTO ASPECT RATIO
+========================================================= */
+
+function createFilmPhoto(
+    record,
+    index
+){
+
+    return new Promise(
+        function(resolve){
+
+            const frame =
+                document.createElement(
+                    "div"
+                );
+
+
+            frame.className =
+                "film-photo";
+
+
+            const img =
+                document.createElement(
+                    "img"
+                );
+
+
+            const objectURL =
+                URL.createObjectURL(
+                    record.blob
+                );
+
+
+            img.src =
+                objectURL;
+
+
+            img.alt =
+                "Saved memory " +
+                (index + 1);
+
+
+            /*
+               Once image loads,
+               calculate natural aspect ratio.
+            */
+
+            img.onload =
+                function(){
+
+                    const naturalWidth =
+                        img.naturalWidth;
+
+
+                    const naturalHeight =
+                        img.naturalHeight;
+
+
+                    if(
+                        naturalWidth &&
+                        naturalHeight
+                    ){
+
+                        const maxWidth =
+                            window.innerWidth *
+                            (
+                                window.innerWidth <= 700
+                                ?
+                                .76
+                                :
+                                .54
+                            );
+
+
+                        const maxHeight =
+                            window.innerHeight *
+                            .65;
+
+
+                        let width =
+                            Math.min(
+                                naturalWidth,
+                                maxWidth
+                            );
+
+
+                        let height =
+                            width *
+                            naturalHeight /
+                            naturalWidth;
+
+
+                        /*
+                           If image is too tall,
+                           reduce width so the
+                           entire image fits.
+                        */
+
+                        if(
+                            height > maxHeight
+                        ){
+
+                            height =
+                                maxHeight;
+
+
+                            width =
+                                height *
+                                naturalWidth /
+                                naturalHeight;
+
+                        }
+
+
+                        frame.style.width =
+                            width + "px";
+
+                    }
+
+
+                    resolve(frame);
+
+                };
+
+
+            frame.appendChild(
+                img
+            );
+
+
+            /*
+               Fallback if image
+               takes time to load.
+            */
+
+            setTimeout(
+                function(){
+
+                    resolve(frame);
+
+                },
+                1500
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   BUILD ONE FILM SET
+========================================================= */
+
+async function makeFilmSet(
+    records
+){
+
+    const set =
         document.createElement(
-         "canvas"
+            "div"
         );
 
 
-       canvas.width=
-        width;
-
-
-       canvas.height=
-        height;
-
-
-       const ctx=
-        canvas.getContext(
-         "2d"
-        );
-
-
-       ctx.drawImage(
-        img,
-        0,
-        0,
-        width,
-        height
-       );
-
-
-       canvas.toBlob(
-        function(blob){
-
-         if(blob){
-
-          resolve(
-           blob
-          );
-
-         }else{
-
-          reject(
-           new Error(
-            "Could not process image."
-           )
-          );
-
-         }
-
-        },
-        "image/jpeg",
-        0.82
-       );
-
-      };
-
-
-     img.onerror=
-      function(){
-
-       reject(
-        new Error(
-         "Invalid image."
-        )
-       );
-
-      };
-
-
-     img.src=
-      event.target.result;
-
-    };
-
-
-   reader.onerror=
-    function(){
-
-     reject(
-      reader.error
-     );
-
-    };
-
-
-   reader.readAsDataURL(
-    file
-   );
-
-  }
- );
-
-}
-
-
-
-/* =====================================================
-   RENDER FILM ROLL
-===================================================== */
-
-function renderFilmRoll(records){
-
- const roll=
-  document.getElementById(
-   "filmRoll"
-  );
-
-
- roll.innerHTML="";
-
-
- if(!records.length){
-
-  roll.innerHTML=
-   '<div class="empty-roll">' +
-   'Your film roll is waiting for memories... 📸💗' +
-   '</div>';
-
-  return;
-
- }
-
-
- function makeSet(){
-
-  const set=
-   document.createElement(
-    "div"
-   );
-
-
-  set.className=
-   "film-set";
-
-
-  records.forEach(
-   function(record,index){
-
-    const frame=
-     document.createElement(
-      "div"
-     );
-
-
-    frame.className=
-     "film-photo";
-
-
-    const img=
-     document.createElement(
-      "img"
-     );
-
-
-    img.src=
-     URL.createObjectURL(
-      record.blob
-     );
-
-
-    img.alt=
-     "Saved memory "+
-     (index+1);
-
-
-    frame.appendChild(
-     img
-    );
-
-
-    set.appendChild(
-     frame
-    );
-
-   }
-  );
-
-
-  return set;
-
- }
-
-
- /*
-   Two copies make
-   continuous animation
- */
-
- roll.appendChild(
-  makeSet()
- );
-
-
- roll.appendChild(
-  makeSet()
- );
-
-}
-
-
-
-/* =====================================================
-   LOAD FILM ROLL
-===================================================== */
-
-async function loadFilmRoll(){
-
- const status=
-  document.getElementById(
-   "uploadStatus"
-  );
-
-
- try{
-
-  const records=
-   await getStoredPhotos();
-
-
-  renderFilmRoll(
-   records
-  );
-
-
-  status.textContent=
-   records.length+
-   " / 10 memories saved.";
-
-
- }catch(error){
-
-  console.error(
-   error
-  );
-
-
-  status.textContent=
-   "Could not load the saved roll.";
-
- }
-
-}
-
-
-
-/* =====================================================
-   UPLOAD PHOTOS
-===================================================== */
-
-document
- .getElementById(
-  "photoUpload"
- )
- .addEventListener(
-  "change",
-  async function(event){
-
-   const files=
-    Array.from(
-     event.target.files || []
-    );
-
-
-   if(!files.length){
-
-    return;
-
-   }
-
-
-   const status=
-    document.getElementById(
-     "uploadStatus"
-    );
-
-
-   try{
-
-    const existing=
-     await getStoredPhotos();
-
-
-    const remaining=
-     10-existing.length;
-
-
-    if(remaining<=0){
-
-     status.textContent=
-      "The roll already has 10 photos. Reset it to add new ones.";
-
-
-     event.target.value="";
-
-     return;
-
-    }
-
-
-    const selected=
-     files.slice(
-      0,
-      remaining
-     );
+    set.className =
+        "film-set";
 
 
     for(
-     const file of selected
+        let i = 0;
+        i < records.length;
+        i++
     ){
 
-     const compressed=
-      await compressImage(
-       file
-      );
+        const frame =
+            await createFilmPhoto(
+                records[i],
+                i
+            );
 
 
-     await addStoredPhoto(
-      compressed
-     );
+        set.appendChild(
+            frame
+        );
 
     }
 
 
-    const skipped=
-     files.length-
-     selected.length;
-
-
-    status.textContent=
-     selected.length+
-     " photo(s) added."+
-     (
-      skipped>0
-       ?
-       " "+
-       skipped+
-       " could not be added because the limit is 10."
-       :
-       ""
-     );
-
-
-    await loadFilmRoll();
-
-
-   }catch(error){
-
-    console.error(
-     error
-    );
-
-
-    status.textContent=
-     "Something went wrong while saving the photos.";
-
-   }
-
-
-   event.target.value="";
-
-  }
- );
-
-
-
-/* =====================================================
-   RESET ROLL
-===================================================== */
-
-async function resetRoll(){
-
- const confirmed=
-  confirm(
-   "Reset the film roll and remove all saved photos?"
-  );
-
-
- if(!confirmed){
-
-  return;
-
- }
-
-
- try{
-
-  await deleteAllStoredPhotos();
-
-
-  document.getElementById(
-   "filmRoll"
-  ).innerHTML=
-   '<div class="empty-roll">' +
-   'Your film roll is waiting for memories... 📸💗' +
-   '</div>';
-
-
-  document.getElementById(
-   "uploadStatus"
-  ).textContent=
-   "Roll reset. 0 / 10 memories saved.";
-
-
- }catch(error){
-
-  console.error(
-   error
-  );
-
-
-  document.getElementById(
-   "uploadStatus"
-  ).textContent=
-   "Could not reset the roll.";
-
- }
+    return set;
 
 }
 
 
 
-/* =====================================================
-   START WEBSITE
-===================================================== */
+/* =========================================================
+   RENDER FILM
+========================================================= */
+
+async function renderFilmRoll(
+    records
+){
+
+    const roll =
+        document.getElementById(
+            "filmRoll"
+        );
+
+
+    roll.innerHTML = "";
+
+
+    /*
+       No photos
+    */
+
+    if(!records.length){
+
+        roll.innerHTML =
+
+            '<div class="film-set">' +
+
+            '<div class="empty-roll">' +
+
+            'Your film roll is waiting for memories... 📸💗' +
+
+            '</div>' +
+
+            '</div>' +
+
+            '<div class="film-set">' +
+
+            '<div class="empty-roll">' +
+
+            'Add your first memory to begin 🎞️' +
+
+            '</div>' +
+
+            '</div>';
+
+        return;
+
+    }
+
+
+    /*
+       Create first copy
+    */
+
+    const firstSet =
+        await makeFilmSet(
+            records
+        );
+
+
+    /*
+       Create second identical copy
+       for seamless looping
+    */
+
+    const secondSet =
+        await makeFilmSet(
+            records
+        );
+
+
+    roll.appendChild(
+        firstSet
+    );
+
+
+    roll.appendChild(
+        secondSet
+    );
+
+
+    /*
+       Restart animation
+    */
+
+    roll.style.animation =
+        "none";
+
+
+    void roll.offsetHeight;
+
+
+    roll.style.animation =
+        "verticalFilmMove 32s linear infinite";
+
+}
+
+
+
+/* =========================================================
+   LOAD FILM ROLL
+========================================================= */
+
+async function loadFilmRoll(){
+
+    const status =
+        document.getElementById(
+            "uploadStatus"
+        );
+
+
+    try{
+
+        const records =
+            await getStoredPhotos();
+
+
+        await renderFilmRoll(
+            records
+        );
+
+
+        status.textContent =
+            records.length +
+            " / 10 memories saved.";
+
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        status.textContent =
+            "Could not load the saved roll.";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   PHOTO UPLOAD
+========================================================= */
+
+document
+.getElementById(
+    "photoUpload"
+)
+.addEventListener(
+    "change",
+    async function(event){
+
+        const files =
+            Array.from(
+                event.target.files || []
+            );
+
+
+        if(!files.length){
+
+            return;
+
+        }
+
+
+        const status =
+            document.getElementById(
+                "uploadStatus"
+            );
+
+
+        try{
+
+            const existing =
+                await getStoredPhotos();
+
+
+            const remaining =
+                10 -
+                existing.length;
+
+
+            if(remaining <= 0){
+
+                status.textContent =
+                    "The roll already has 10 photos. Reset it to add new ones.";
+
+
+                event.target.value =
+                    "";
+
+
+                return;
+
+            }
+
+
+            const selected =
+                files.slice(
+                    0,
+                    remaining
+                );
+
+
+            for(
+                const file
+                of selected
+            ){
+
+                /*
+                   Only accept actual images.
+                */
+
+                if(
+                    !file.type.startsWith(
+                        "image/"
+                    )
+                ){
+
+                    continue;
+
+                }
+
+
+                const compressed =
+                    await compressImage(
+                        file
+                    );
+
+
+                await addStoredPhoto(
+                    compressed
+                );
+
+            }
+
+
+            const skipped =
+                files.length -
+                selected.length;
+
+
+            status.textContent =
+                selected.length +
+                " photo(s) added." +
+                (
+                    skipped > 0
+                    ?
+                    " " +
+                    skipped +
+                    " could not be added because the limit is 10."
+                    :
+                    ""
+                );
+
+
+            await loadFilmRoll();
+
+        }
+        catch(error){
+
+            console.error(
+                error
+            );
+
+
+            status.textContent =
+                "Something went wrong while saving the photos.";
+
+        }
+
+
+        event.target.value =
+            "";
+
+    }
+);
+
+
+
+/* =========================================================
+   RESET FILM
+========================================================= */
+
+async function resetRoll(){
+
+    const confirmed =
+        confirm(
+            "Reset the film roll and remove all saved photos?"
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
+
+
+    try{
+
+        await deleteAllStoredPhotos();
+
+
+        document.getElementById(
+            "filmRoll"
+        ).innerHTML =
+
+            '<div class="film-set">' +
+
+            '<div class="empty-roll">' +
+
+            'Your film roll is waiting for memories... 📸💗' +
+
+            '</div>' +
+
+            '</div>' +
+
+            '<div class="film-set">' +
+
+            '<div class="empty-roll">' +
+
+            'Add your first memory to begin 🎞️' +
+
+            '</div>' +
+
+            '</div>';
+
+
+        document.getElementById(
+            "uploadStatus"
+        ).textContent =
+            "Roll reset. 0 / 10 memories saved.";
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        document.getElementById(
+            "uploadStatus"
+        ).textContent =
+            "Could not reset the roll.";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   START
+========================================================= */
 
 updateDots();
 
